@@ -47,6 +47,15 @@
   height: 135px;
 }
 
+.body {
+  width: 1920px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right:auto;
+  height: auto;
+}
+
 .rowFlex {
   display: flex;
 }
