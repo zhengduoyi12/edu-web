@@ -7,17 +7,21 @@ export default class trainCard extends Component {
     render() {
         return (
             <div>
-                <p>12312321</p>
+                <div className="trainRowTit">{this.props.arr.title}</div>
                 <div className="trainRow">
                     {
-                        this.props.arr.cardInfo.map(item => { 
+                        this.props.arr.cardInfo.map((item,index) => { 
                             return (
-                                <div className="trainCard">
-                                    <img alt="sadsad" src={require("./u161_a.png")}>
-                                    </img>
-                                    <div>
-                                        asdsadsa
-                                    </div>
+                                <div className="trainCard" style={{ marginRight: index === 3 ? '0px' : '30px'}}>
+                                    <img src={item.img} style={{ height: '172px', width:'279px' }} alt="" />
+                                    <div style={{ padding: '8px' }}>
+                                        <div style={{ fontSize: '32px', color:'#000000' }}>
+                                            {item.name}
+                                        </div>
+                                        <div style={{ fontSize: '14px', color:'#CCCCCC' }}>
+                                            {item.desc}
+                                        </div>
+                                    </div>   
                                 </div>
                             )
                         })

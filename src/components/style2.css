@@ -4,24 +4,20 @@
     height:310px;
     margin-bottom:69px;
 }
-.trainRow:first-child{
-    display:flex;
-    width:1200px;
-    height:310px;
-    margin-bottom:69px;
-    margin-top:69px;
-}
-.trainTitle{
-    width:1200px;
-    height:31px;
+.trainRowTit{
     text-align: center;
+    font-size:32px;
+    color:#000000;
+    margin-bottom:18px;
 }
+
 .trainCard{
     float:left;
     width:280px;
     height:260px;
-    margin-right:10px;
-    border: 1px solid #CCCCCC;
+    margin-right:20px;
+    border: 1px solid #999;
+    text-align: center;
 }
 .trainRow img{
     width:280px;
