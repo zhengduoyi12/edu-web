@@ -4,14 +4,14 @@ import React from "react"
 import { Button, Input, Card } from 'antd'
 import { Link } from 'react-router-dom'
 
-import Banner from './Banner/index.js'
-import Title from './Title/index.js'
+import Header from 'components/Header.js'
+import Footer from 'components/Footer.js'
 import bannerUrl from './img/banner-ad.jpg'
 import './index.css'
 
 const { Search } = Input
 const { Meta } = Card
-const Practice = () => {
+const Practice = (props = {}) => {
     const jobTop = ['计算机', '算法', '大数据']
     const hotJobTop = [
         { name: '计算机数据分析', num: 1233 },
@@ -26,20 +26,10 @@ const Practice = () => {
         { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }
     ]
     return (
-        <div className="container">
-            <div className="left"></div>
-            <div className="center">
-                <Banner />
-                <Title />
-                {/* <div className="title">
-                    <div>平台概况</div>
-                    <div>实习就业</div>
-                    <div>智慧培训</div>
-                    <div>树莓交易</div>
-                    <div>技能认证</div>
-                    <div>双师互聘</div>
-                    <div>设备共享</div>
-                </div> */}
+        <div className="App">
+            {/* <div className="left"></div> */}
+            <Header props={props} />
+            <div className="body">
                 <div className="ad">
                     <div className="ad-area">
                         <img src={bannerUrl} />
@@ -115,12 +105,9 @@ const Practice = () => {
                         <Meta title="智慧推荐" description="4万人已加入" />
                     </Card>
                 </div>
-                
-                <div className="footer">
-                    <div className="footer-area"></div>
-                </div>
+
             </div>
-            <div className="left"></div>
+            <Footer />
         </div>
     )
 }

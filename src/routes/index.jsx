@@ -9,6 +9,7 @@ import Practice from 'routes/practice'
 import PracticeIndex from 'routes/practiceIndex'
 import TrainIndex from 'routes/trainIndex'
 import JobIndex from 'routes/jobIndex'
+import Not from 'routes/not/index'
 
 const Routes = () => (
   <HashRouter>
@@ -21,7 +22,7 @@ const Routes = () => (
         <Route path="/practiceIndex" component={PracticeIndex} />
         <Route path="/trainIndex" component={TrainIndex} />
         <Route path="/jobIndex" component={JobIndex} />
-        
+        <Route path="*" component={Not} />
       </Switch>
     </div>
   </HashRouter>
