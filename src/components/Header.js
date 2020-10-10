@@ -33,7 +33,7 @@ class Header extends Component {
     // 有点奇怪，需要封装
     const pageMap = {
       1: 'home',
-      2: 'test'
+      2: 'practice',
     }
     this.props.props.history.push({
       pathname: pageMap[index] || 'home',

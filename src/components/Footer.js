@@ -10,7 +10,7 @@ const localStyle = {
   },
 };
 
-class Header extends Component {
+class Footer extends Component {
   render() {
     return (
       <div className="footer_wrap">
@@ -26,4 +26,4 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+export default Footer;
