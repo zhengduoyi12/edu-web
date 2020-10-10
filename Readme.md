@@ -73,3 +73,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - 引入git
 - npm run eject
 - npm install antd --save
+
+## question
+1. 多class的写法，以及用className还是style，以及style组织如何更优雅
+2. 诡异的router，js跳转，需要单独抽出来封装

@@ -4,6 +4,7 @@ import { HashRouter, Switch } from 'react-router-dom'
 
 import Home from 'routes/home/home'
 import Intelligence from 'routes/intelligence/intelligence'
+import Test from 'routes/test/test'
 
 const Routes = () => (
   <HashRouter>
@@ -12,6 +13,7 @@ const Routes = () => (
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/intelligence" component={Intelligence} />
+        <Route path="/test" component={Test} />
       </Switch>
     </div>
   </HashRouter>
