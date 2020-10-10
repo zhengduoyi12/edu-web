@@ -1,6 +1,6 @@
 export const baseStyle = {
     header:{
-        width: '1920px',
+        width: '1200px',
         left: 0,
         right: 0,
         marginleft: 'auto',
