@@ -1,7 +1,7 @@
 // 首页
-import React, { useState } from "react"
+import React from "react"
 import { Carousel } from 'antd';
-import Header from 'components/header.js'
+import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
@@ -179,12 +179,12 @@ const bannerList = [
 // 内容5：数字媒体交易
 // 内容6：优秀人才
 // 内容7：双师互聘
-const HomeView = () => {
-  const [crtIndex] = useState(0)
+// footer
+const HomeView = (props = {}) => {
 
   return (
     <div className='App'>
-      <Header />
+      <Header props={props} />
       <div className='body_wrap1920'>
         <Carousel autoplay>
           {bannerList.map((item, index) => (

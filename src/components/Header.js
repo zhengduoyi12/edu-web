@@ -30,7 +30,15 @@ const localStyle = {
 
 class Header extends Component {
   tabChange = (index) => {
-    alert(index)
+    // 有点奇怪，需要封装
+    const pageMap = {
+      1: 'home',
+      2: 'test'
+    }
+    this.props.props.history.push({
+      pathname: pageMap[index] || 'home',
+      params: {}
+    });
   }
 
   render() {
