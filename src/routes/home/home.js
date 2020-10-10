@@ -31,13 +31,33 @@ const localStyle = {
 // 内容1: banner
 // 内容2：四大资源
 
-const TopBox = ({ name = "", index }) => {
+const TopBox = ({ name = "", index, src }) => {
   return (
-    <div style={index === 0 ? localStyle.flex1 : localStyle.flex}>{name}</div>
+    <div style={index === 0 ? localStyle.flex1 : localStyle.flex}>
+      <div style={{ backgroundImage: `url(${src})`, height: '100%', color: '#fff', fontSize:'30px' }}>{name}</div>
+    </div>
   )
 }
 
-const tabs = ['人才画像', '数字媒体资源库', 'AI课堂', '智慧培训保障']
+// require只能引字符串
+const content1Tabs = [
+  {
+    name: '人才画像',
+    img: require('styles/images/u103_a.png')
+  },
+  {
+    name: '数字媒体资源库',
+    img: require('styles/images/u106_a.jpg')
+  },
+  {
+    name: 'AI课堂',
+    img: require('styles/images/u109_a.png')
+  },
+  {
+    name: '智慧培训保障',
+    img: require('styles/images/u112_a.jpg')
+  },
+]
 
 const bannerList = [
   {
@@ -77,8 +97,8 @@ const HomeView = () => {
       </div>
       <div className='body'>
         <div style={{ display: "flex" }}>
-          {tabs.map((name, index) => (
-            <TopBox key={name} name={name} index={index} />
+          {content1Tabs.map((item, index) => (
+            <TopBox key={index} name={item.name} index={index} src={item.img} />
           ))}
         </div>
       </div>
