@@ -1,3 +1,6 @@
+* {
+    font-family: Adobe Heiti Std R;
+}
 .ad {
     background-color: #dddddd;
     height: 220px;
@@ -95,4 +98,21 @@
 .per-card .bot .img-area {
     width: 184px;
     height: 261px;
+}
+
+.job-title {
+    margin-top: 60px;
+    text-align: left;
+    height: 70px;
+    font-size: 32px;
+    line-height: 70px;
+}
+
+.know-more {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 18px;
+    width: 140px;
+    height: 40px;
+    background: linear-gradient(0deg, #0099FF 2%, #66CCFF 100%);
 }
