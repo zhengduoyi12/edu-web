@@ -10,7 +10,8 @@ import Practice from 'routes/practice'
 import PracticeIndex from 'routes/practiceIndex'
 import TrainIndex from 'routes/trainIndex'
 import JobIndex from 'routes/jobIndex'
-
+import Login from 'routes/login/login'
+import Register from 'routes/login/login'
 const Routes = () => (
   <HashRouter>
     <div>
@@ -23,7 +24,8 @@ const Routes = () => (
         <Route path="/practiceIndex" component={PracticeIndex} />
         <Route path="/trainIndex" component={TrainIndex} />
         <Route path="/jobIndex" component={JobIndex} />
-        
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </Switch>
     </div>
   </HashRouter>

@@ -1,0 +1,17 @@
+.ant-menu {
+    width:800px;
+    margin-top:56px;
+}
+.ant-menu-item {
+    width:160px;
+    text-align: center;
+}
+.ant-menu-item .ant-menu-item-only-child .ant-menu-item-selected{
+    color:red;
+}
+.ant-form {
+ width:340px;
+ margin-left:auto; 
+ margin-right:auto;
+ margin-top:51px;
+}
