@@ -2,6 +2,8 @@
 import React, { useState } from "react"
 import Header from 'components/header.js'
 import { Carousel } from 'antd';
+import TrainIndex from './components/TrainIndex.js';
+import TradeIndex from './components/TradeIndex.js';
 
 const localStyle = {
   flex: {
@@ -54,7 +56,7 @@ const JobIndex = () => {
   return (
     <div>
       <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
-        <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', marginTop: '43px', display: 'inline-block' }}>实习就业</span>
+        <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', display: 'inline-block' }}>实习就业</span>
         <span style={{ marginTop: '53px', display: 'inline-block' }}>对接学校和企业，完培训就业一体</span>
         <span style={{ marginTop: '53px', float: 'right' }}>查看更多</span>
       </div>
@@ -170,7 +172,8 @@ const bannerList = [
 // 内容1: banner
 // 内容2：四大资源
 // 内容3：实习就业+名企榜单
-
+// 内容4：智慧培训
+// 内容5：数字媒体交易
 const HomeView = () => {
   const [crtIndex] = useState(0)
 
@@ -201,6 +204,8 @@ const HomeView = () => {
             <CompanyRank />
           </div>
         </div>
+        <TrainIndex />
+        <TradeIndex />
       </div>
     </div>
   )
