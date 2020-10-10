@@ -4,6 +4,8 @@ import Header from 'components/header.js'
 import { Carousel } from 'antd';
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
+import ResumeIndex from './components/ResumeIndex.js';
+import TeacherIndex from './components/TeacherIndex.js';
 
 const localStyle = {
   flex: {
@@ -174,9 +176,10 @@ const bannerList = [
 // 内容3：实习就业+名企榜单
 // 内容4：智慧培训
 // 内容5：数字媒体交易
+// 内容6：优秀人才
+// 内容7：双师互聘
 const HomeView = () => {
   const [crtIndex] = useState(0)
-
 
   return (
     <div className='App'>
@@ -206,6 +209,8 @@ const HomeView = () => {
         </div>
         <TrainIndex />
         <TradeIndex />
+        <ResumeIndex />
+        <TeacherIndex />
       </div>
     </div>
   )

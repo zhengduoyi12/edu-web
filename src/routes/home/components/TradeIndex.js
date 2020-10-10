@@ -36,7 +36,7 @@ class TradeIndex extends Component {
   render() {
     const { tradeTabs } = this.state;
     return (
-      <div style={{ height: '225px', marginTop: '28px' }}>
+      <div style={{ height: '260px', marginTop: '28px' }}>
         <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
           <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', display: 'inline-block' }}>数字媒体交易</span>
           <span style={{ marginTop: '53px', display: 'inline-block' }}>对接学校和企业，完培训就业一体化</span>

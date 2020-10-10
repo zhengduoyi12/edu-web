@@ -37,7 +37,7 @@ class TrainIndex extends Component {
   render() {
     const { trainTabs } = this.state;
     return (
-      <div style={{ height: '200px', marginTop: '28px' }}>
+      <div style={{ height: '220px', marginTop: '28px' }}>
         <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
           <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', display: 'inline-block' }}>智慧培训</span>
           <span style={{ marginTop: '53px', display: 'inline-block' }}>线上线下结合的数字化课程</span>
