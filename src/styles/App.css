@@ -47,13 +47,33 @@
   height: 135px;
 }
 
-.body_wrap {
+.body_wrap1920 {
   width: 1920px;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right:auto;
   height: auto;
+}
+
+.body_wrap {
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.footer_wrap {
+  margin-top:20px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right:auto;
+  height: 300px;
+  background:#666;
 }
 
 .body {

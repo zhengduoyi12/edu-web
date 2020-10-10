@@ -1,7 +1,8 @@
 // 首页
 import React, { useState } from "react"
-import Header from 'components/header.js'
 import { Carousel } from 'antd';
+import Header from 'components/header.js'
+import Footer from 'components/Footer.js'
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
@@ -184,7 +185,7 @@ const HomeView = () => {
   return (
     <div className='App'>
       <Header />
-      <div className='body_wrap'>
+      <div className='body_wrap1920'>
         <Carousel autoplay>
           {bannerList.map((item, index) => (
             <div key={index} >
@@ -212,6 +213,7 @@ const HomeView = () => {
         <ResumeIndex />
         <TeacherIndex />
       </div>
+      <Footer />
     </div>
   )
 }
