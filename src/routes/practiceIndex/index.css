@@ -36,6 +36,7 @@
     height: 69px;
 }
 .stu-resume .top .title {
+    height: 69px;
     float: left;
     margin-left: 10px;
     font-size: 32px;
@@ -77,6 +78,7 @@
     height: 65px;
     border-bottom: 1px solid #ccc;
 }.per-card .top .title {
+    height: 69px;
     float: left;
     margin-left: 10px;
     font-size: 32px;
