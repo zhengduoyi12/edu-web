@@ -68,16 +68,16 @@ export default class panel extends Component {
                         />
                     </Form.Item>
                     <Form.Item>
-                        <a className="login-form-forgot" href="">
+                        <a className="login-form-forgot" href="" style={{color:'#000000' }}>
                             验证码登陆
                             </a>
 
-                        <a className="login-form-forgot" href="" style={{ float: "right" }}>
+                        <a className="login-form-forgot" href="" style={{ float: "right", color:'#000000' }}>
                             忘记密码
                             </a>
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
+                        <Button type="primary" htmlType="submit" block>
                             登陆
                             </Button>
                     </Form.Item>
