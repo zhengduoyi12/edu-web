@@ -13,9 +13,9 @@ import TypeModule from './components/TypeModule'
 
 const PracticeIndex = (props) => {
     const stuResume = [
-        { name: '杨虹', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
-        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
-        { name: '王曦', job: '计算机视觉', school: '四川长江职业学院', major: '电子商务' },
+        { name: '杨虹', job: '物流电器', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
+        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
+        { name: '王曦', job: '计算机视觉', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
         { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
         { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
         { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
@@ -38,8 +38,8 @@ const PracticeIndex = (props) => {
         <div className="App">
             <Header props={props}></Header>
             <div className="body">
-                <div className="ad">
-                    <div className="ad-area">
+                <div className="pbanner">
+                    <div className="pbanner-area">
                         <img src={bannerUrl} alt="" />
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const PracticeIndex = (props) => {
                         </div>
                         <div className="bot">
                             {stuResume.map((item, index) => {
-                                return <div key={index} style={{ padding: "8px 0" }}><span style={{ marginLeft: 10, width: 120 }}>{item.name}</span><span style={{ width: 180 }}>{item.job}</span><span style={{ width: 230 }}>{item.school}</span><span style={{ width: 230 }}>{item.major}</span></div>
+                                return <div key={index} style={{ padding: "8px 0",color:item.color||"#000" }}><span style={{ marginLeft: 10, width: 120 }}>{item.name}</span><span style={{ width: 180 }}>{item.job}</span><span style={{ width: 230 }}>{item.school}</span><span style={{ width: 230 }}>{item.major}</span></div>
                             })}
                         </div>
                     </div>

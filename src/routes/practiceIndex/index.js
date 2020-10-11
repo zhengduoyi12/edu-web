@@ -1,3 +1,3 @@
-// 实训页面
+// 实习页面
 import PracticeIndex from './practiceIndex'
 export default PracticeIndex

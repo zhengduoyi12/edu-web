@@ -1,0 +1,88 @@
+* {
+    font-family: Adobe Heiti Std R;
+}
+.pbanner {
+    background-color: #dddddd;
+    height: 220px;
+    position: relative;
+}
+.pbanner-area {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1920px;
+    height: 220px;
+}
+.pbanner-area img {
+    width: 100%;
+    height: 220px;
+}
+
+.about {
+    height: 400px;
+    position: relative;
+}
+.about .background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1920px;
+    height: 400px;
+    background-color: rgba(204, 204, 204,0.3);
+    display: flex;
+    justify-content: center;
+}
+.about .about-article {
+    margin: 20px 10px 20px 0;
+    width: 440px;
+    height: 360px;
+    text-align: left;
+}
+.about-article .ant-card-head-title {
+    font-size: 32px;
+    color: #000;
+}
+.about .about-carousel {
+    margin: 20px 0 20px 10px;
+    width: 740px;
+    height: 360px;
+} 
+.about-carousel .slick-dots li {
+    background-color: #ccc;
+}
+.about-carousel .slick-dots li.slick-active button {
+    background-color: #0099ff;
+}
+
+.train-plan {
+    margin-top: 40px;
+    height: 118px;
+    display: flex;
+    justify-content: space-between;
+}
+.train-achiv {
+    text-align: left;
+    margin-top: 40px;
+    height: 400px;
+}.train-achiv .ant-card-head-title{
+    text-align: center;
+    font-size: 32px;
+}
+.train-achiv .ant-card-bordered {
+    border-color: #ccc;
+}
+.train-achiv .cpy-area {
+    width: 1150px;
+    height: 290px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}.train-achiv .base-area {
+    width: 1150px;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}

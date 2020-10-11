@@ -4,34 +4,34 @@ import React from "react"
 const ResumeIndex = () => {
   const resumeTabs = [
     {
-      title: '计算机',
+      title: '销售',
       name: '陈星宜',
       desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
       img: require('styles/images/u67_a.jpg'),
     },
     {
-      title: '计算机',
+      title: '会计',
       name: '陈星宜',
       desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
-      img: require('styles/images/u67_a.jpg'),
+      img: require('styles/images/people-1.jpg'),
+    },
+    {
+      title: '教师',
+      name: '陈星宜',
+      desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
+      img: require('styles/images/people-2.jpg'),
     },
     {
       title: '计算机',
       name: '陈星宜',
       desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
-      img: require('styles/images/u67_a.jpg'),
+      img: require('styles/images/people-3.jpg'),
     },
     {
-      title: '计算机',
+      title: '文员',
       name: '陈星宜',
       desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
-      img: require('styles/images/u67_a.jpg'),
-    },
-    {
-      title: '计算机',
-      name: '陈星宜',
-      desc2: '中科大计算机毕业，获得过全国计算机大赛一等奖，全球计算机对抗赛二等优秀',
-      img: require('styles/images/u67_a.jpg'),
+      img: require('styles/images/people-4.jpg'),
     },
   ];
 

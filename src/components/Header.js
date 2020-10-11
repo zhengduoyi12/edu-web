@@ -3,12 +3,14 @@ import React, { Component } from "react";
 // import { baseStyle } from 'styles/baseStyle';
 import { Input, Button, Tabs } from 'antd';
 
+import './header.css'
+
 const { Search } = Input;
 const { TabPane } = Tabs;
 
 const localStyle = {
   row: {
-    height: '90px',
+    height: '80px',
     display: 'flex',
   },
   title: {
@@ -24,24 +26,47 @@ const localStyle = {
     flex: 1,
   },
   tab: {
-    height: '45px',
+    height: '45px'
   }
 }
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      crtIndex: String(props.crtIndex),
+    };
+  }
+
+  login = () => {
+    this.props.props.history.push({
+      pathname: 'login',
+      params: {}
+    });
+  }
+
+  register = () => {
+    this.props.props.history.push({
+      pathname: 'register',
+      params: {}
+    });
+  }
+
   tabChange = (index) => {
     // 有点奇怪，需要封装
     const pageMap = {
       1: 'home',
       2: 'practice',
+      3: 'intelligence',
     }
     this.props.props.history.push({
-      pathname: pageMap[index] || 'home',
+      pathname: pageMap[index] || '404',
       params: {}
     });
   }
 
   render() {
+    const { crtIndex } = this.state;
     return (
       <div className="header">
         <div style={localStyle.row}>
@@ -57,13 +82,13 @@ class Header extends Component {
             />
           </div>
           <div style={localStyle.flex1}>
-            <Button type="primary">登录</Button>
-            <Button style={{ marginLeft: '10px' }}>注册</Button>
+            <Button type="primary" onClick={this.login} >登录</Button>
+            <Button style={{ marginLeft: '10px' }} onClick={this.register} >注册</Button>
           </div>
         </div>
         <div style={localStyle.tab}>
-          <Tabs defaultActiveKey="1" onChange={this.tabChange}>
-            <TabPane tab="平台概况" key="1" />
+          <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
+            <TabPane tab="平台概况" key="1" style={{fontSize:'20px'}}/>
             <TabPane tab="实习就业" key="2" />
             <TabPane tab="智慧培训" key="3" />
             <TabPane tab="数媒交易" key="4" />
