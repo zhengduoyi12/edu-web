@@ -30,13 +30,10 @@ const Routes = () => (
         <Route path="/jobIndex" component={JobIndex} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-<<<<<<< HEAD
         <Route path="/register2" component={Register2} />
         <Route path="/register3" component={RegisterFinal} />
-=======
         <Route path="/404" component={Not} />
         <Route path="*" component={Not} />
->>>>>>> 7631f32dfc5a2a18c8f6a88ab582732f1d7c8230
       </Switch>
     </div>
   </HashRouter>
