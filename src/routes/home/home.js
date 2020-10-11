@@ -185,9 +185,9 @@ const HomeView = (props = {}) => {
   const bannerRef = useRef();
   return (
     <div className='App'>
-      <Header props={props} />
+      <Header props={props} crtIndex={1} />
       <div className='body_wrap1920'>
-        <div class="body">
+        <div className="body">
           <div className="bannerHover">
             {banneHoverList.map((text, index) => (
               <div key={index} >

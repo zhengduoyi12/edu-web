@@ -28,7 +28,7 @@ const Practice = (props = {}) => {
     return (
         <div className="App">
             {/* <div className="left"></div> */}
-            <Header props={props} />
+            <Header props={props} crtIndex={2} />
             <div className="body">
                 <div className="ad">
                     <div className="ad-area">

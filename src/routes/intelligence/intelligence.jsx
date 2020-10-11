@@ -98,9 +98,10 @@ export default class intelligence extends Component {
         }
     }
     render() {
+        const { rightInfo, classList, trainCard } = this.state;
         return (
             <Layout>
-                <Header/>
+                <Header props={this.props} crtIndex={3} />
                 <div className="banner">
                 </div>
                 <Content>
@@ -113,9 +114,9 @@ export default class intelligence extends Component {
                             </div>
                             <div className="rightInfo">
                                 {
-                                    this.state.rightInfo.map((item, index) => {
+                                    rightInfo.map((item, index) => {
                                         return (
-                                            <div style={{  display: 'flex', padding:'8px'}}>
+                                            <div key={`rightInfo_`+index} style={{  display: 'flex', padding:'8px'}}>
                                                 <div style={{ width:'72px', textAlign:'center'}}>
                                                     <CaretDownOutlined  style={{ color:index===0||index===1? "#0099FF":"#999999"}}/>
                                                 </div>
@@ -130,14 +131,12 @@ export default class intelligence extends Component {
                                         )
                                     })
                                 }
-
-
                             </div>
                         </div>
                         {
-                            this.state.classList.map((item, index) => {
+                            classList.map((item, index) => {
                                 return (
-                                    <div style={{ marginTop: '35px', marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
+                                    <div key={`classList_`+index} style={{ marginTop: '35px', marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
                                         <div style={{ height: '300px', width: '280px', display: 'inline-block', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
                                             <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
                                             <div style={{ padding: '8px' }}>
@@ -160,12 +159,10 @@ export default class intelligence extends Component {
                             })
                         }
                         {
-                            this.state.trainCard.map(item => {
+                            trainCard.map((item, index) => {
                                 return (
-                                    <div>
-
-                                        <TrainCard arr={item}>
-                                        </TrainCard>
+                                    <div key={`trainCard_`+index}>
+                                        <TrainCard arr={item} />
                                     </div>
                                 )
                             })

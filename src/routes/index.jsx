@@ -28,6 +28,7 @@ const Routes = () => (
         <Route path="/jobIndex" component={JobIndex} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/404" component={Not} />
         <Route path="*" component={Not} />
       </Switch>
     </div>
