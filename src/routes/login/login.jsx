@@ -2,14 +2,6 @@ import React, { Component } from 'react'
 import Panel from './panel'
 
 export default class Login extends Component {
-    onFinish = (values) => {
-        console.log('Success:', values);
-        //this.props.history.replace('/home');
-      };
-    
-    onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
     render() {
         return (
             <div style={{width:"1920px", height:"720px"}}>  

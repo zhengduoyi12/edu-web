@@ -3,12 +3,14 @@ import { Form, Input, Button } from 'antd';
 import { Menu } from 'antd';
 
 import './formStyle.css'
+
 export default class panel extends Component {
+    
     state = {
         current: 'entre',
     };
     onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        window.location.replace('/home')
     }
     handleClick = e => {
         console.log('click ', e);
