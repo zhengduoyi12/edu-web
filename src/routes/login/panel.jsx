@@ -50,7 +50,7 @@ export default class panel extends Component {
                             },
                             ]}
                         >
-                            <Input placeholder="Username" />
+                            <Input placeholder="用户名/手机号/邮箱" />
                         </Form.Item>
                         <Form.Item
                             name="password"
@@ -63,7 +63,7 @@ export default class panel extends Component {
                         >
                             <Input
                                 type="password"
-                                placeholder="Password"
+                                placeholder="请输入密码"
                             />
                         </Form.Item>
                         <Form.Item>
