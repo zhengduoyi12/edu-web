@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Layout } from 'antd'
 import { CaretDownOutlined } from '@ant-design/icons';
 
 import './style.css'
 import TrainCard from '../../components/trainCard'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
-const {Content} =Layout
+
 export default class intelligence extends Component {
     constructor(props) {
         super(props)
@@ -100,11 +99,11 @@ export default class intelligence extends Component {
     render() {
         const { rightInfo, classList, trainCard } = this.state;
         return (
-            <Layout>
+            <div className="App">
                 <Header props={this.props} crtIndex={3} />
                 <div className="banner">
                 </div>
-                <Content>
+
                     <div className="insideCont">
                         <div className="title">
                             在线直播课程
@@ -168,9 +167,8 @@ export default class intelligence extends Component {
                             })
                         }
                     </div>
-                </Content>
                 <Footer />
-            </Layout>
+            </div>
         )
     }
 }

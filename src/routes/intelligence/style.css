@@ -1,17 +1,17 @@
 
 .banner{
+    margin:0 auto;
+    width: 1920px;
     height:220px;
     background-image: url("../../assets/ibanner.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     -moz-background-size:100% 100%;
 }
-.ant-layout-content{
-    display: flex;
-    justify-content: center;
-}
+
 .insideCont{
     width:1200px;
+    margin:  0 auto;
 }
 .title{
     display: flex;
