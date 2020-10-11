@@ -2,17 +2,6 @@
     margin: 0;
     padding: 0;
 } */
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-family: Adobe Heiti Std;
-    /* align-items: center; */
-}
-.center {
-    width: 1200px;
-    /* background-color: #dddddd; */
-}
 /* .center .banner {
     text-align: center;
     width: 100%;
@@ -43,7 +32,7 @@
     height: 30px;
 } */
 
-.center .ad {
+.ad {
     background-color: #dddddd;
     height: 220px;
     position: relative;
@@ -110,6 +99,7 @@
     color: #fff;
 }
 .job-search .key {
+    text-align: left;
     margin-top: 26px;
     height: 18px;
     font-size: 18px;
@@ -123,6 +113,7 @@
     justify-content: space-between;
 }
 .hot-item {
+    text-align: left;
     width: 578px;
     height: 578px;
     border: 1px solid #ccc;
@@ -142,7 +133,7 @@
     padding: 34px 85px 0 88px;
 }.hot-item .job-item {
     line-height: 40px;
-    color: #0099FF;
+    /* color: #0099FF; */
     font-size: 18px;
 }
 

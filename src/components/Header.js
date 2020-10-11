@@ -29,20 +29,29 @@ const localStyle = {
 }
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      crtIndex: String(props.crtIndex),
+    };
+  }
+
+
   tabChange = (index) => {
     // 有点奇怪，需要封装
     const pageMap = {
       1: 'home',
       2: 'practice',
-      3: 'intelligence'
+      3: 'intelligence',
     }
     this.props.props.history.push({
-      pathname: pageMap[index] || 'home',
+      pathname: pageMap[index] || '404',
       params: {}
     });
   }
 
   render() {
+    const { crtIndex } = this.state;
     return (
       <div className="header">
         <div style={localStyle.row}>
@@ -63,7 +72,7 @@ class Header extends Component {
           </div>
         </div>
         <div style={localStyle.tab}>
-          <Tabs defaultActiveKey="1" onChange={this.tabChange}>
+          <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange}>
             <TabPane tab="平台概况" key="1" />
             <TabPane tab="实习就业" key="2" />
             <TabPane tab="智慧培训" key="3" />
