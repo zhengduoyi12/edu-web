@@ -47,7 +47,7 @@ export default class panel extends Component {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your Username!',
+                                message: '请输入账号',
                             },
                         ]}
                     >
@@ -58,7 +58,7 @@ export default class panel extends Component {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your Password!',
+                                message: '请输入密码',
                             },
                         ]}
                     >
