@@ -29,9 +29,9 @@ const Practice = (props = {}) => {
             {/* <div className="left"></div> */}
             <Header props={props} crtIndex={2} />
             <div className="body">
-                <div className="ad">
-                    <div className="ad-area">
-                        <img src={'http://cdn.qjycloud.com/prictise_banner.jpg'} alt=""/>
+                <div className="pbanner">
+                    <div className="pbanner-area">
+                    <img src={'http://cdn.qjycloud.com/prictise_banner.jpg'} alt=""/>
                     </div>
                 </div>
                 <div className="enter">
