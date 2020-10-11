@@ -18,7 +18,7 @@ import Register2 from 'routes/login/register2'
 import RegisterFinal from 'routes/login/registerFinal'
 const Routes = () => (
   <HashRouter>
-    <div>
+    
       <Route exact path="/" render={() => <Redirect to="/home" />} />
       <Switch>
         <Route path="/home" component={Home} />
@@ -35,7 +35,7 @@ const Routes = () => (
         <Route path="/404" component={Not} />
         <Route path="*" component={Not} />
       </Switch>
-    </div>
+   
   </HashRouter>
 )
 

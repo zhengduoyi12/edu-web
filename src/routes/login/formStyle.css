@@ -5,11 +5,14 @@
 .ant-menu-item {
     width:160px;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:#999999;
 }
-
 .ant-form {
  width:340px;
  margin-left:auto; 
  margin-right:auto;
  margin-top:51px;
 }
+

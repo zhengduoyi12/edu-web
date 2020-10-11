@@ -41,7 +41,7 @@ class TrainIndex extends Component {
         <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
           <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', display: 'inline-block' }}>智慧培训</span>
           <span style={{ marginTop: '53px', display: 'inline-block' }}>线上线下结合的数字化课程</span>
-          <a  href="/intelligence" style={{ marginTop: '53px', float: 'right', color:'#999999' }}>查看更多</a>
+          <a  href="#intelligence" style={{ marginTop: '53px', float: 'right', color:'#999999' }}>查看更多</a>
         </div>
         {trainTabs.map((item, index) => (
           <div key={index} style={{ height: '120px', width:'210px', display:'inline-block',marginLeft: index === 0 ? '0px' : '35px'}}>

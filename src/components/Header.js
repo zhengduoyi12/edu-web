@@ -3,12 +3,14 @@ import React, { Component } from "react";
 // import { baseStyle } from 'styles/baseStyle';
 import { Input, Button, Tabs } from 'antd';
 
+import './header.css'
+
 const { Search } = Input;
 const { TabPane } = Tabs;
 
 const localStyle = {
   row: {
-    height: '90px',
+    height: '80px',
     display: 'flex',
   },
   title: {
@@ -24,7 +26,7 @@ const localStyle = {
     flex: 1,
   },
   tab: {
-    height: '45px',
+    height: '45px'
   }
 }
 
@@ -85,8 +87,8 @@ class Header extends Component {
           </div>
         </div>
         <div style={localStyle.tab}>
-          <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange}>
-            <TabPane tab="平台概况" key="1" />
+          <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
+            <TabPane tab="平台概况" key="1" style={{fontSize:'20px'}}/>
             <TabPane tab="实习就业" key="2" />
             <TabPane tab="智慧培训" key="3" />
             <TabPane tab="数媒交易" key="4" />

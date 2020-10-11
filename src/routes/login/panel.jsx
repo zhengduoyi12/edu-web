@@ -22,7 +22,7 @@ export default class panel extends Component {
         return (
             <div style={{ width: "800px", height: '440px', background: "white", borderRadius: "8px", position: "relative" }}>
                 <div style={{ width: "240px", height: "60px", background: "white", borderRadius: "30px", position: "absolute", margin: '280px', marginTop: '-30px', boxShadow: "0px 3px 7px 0px #cccccc", fontSize: "32px", textAlign: "center" }}>
-                    登陆
+                    登录
                     </div>
                 <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
                     <Menu.Item key="entre" >
@@ -51,7 +51,7 @@ export default class panel extends Component {
                             },
                         ]}
                     >
-                        <Input placeholder="用户名/手机号/邮箱" />
+                        <Input placeholder="用户名/手机号/邮箱" size="large"/>
                     </Form.Item>
                     <Form.Item
                         name="password"
@@ -63,13 +63,14 @@ export default class panel extends Component {
                         ]}
                     >
                         <Input
+                            size="large"
                             type="password"
                             placeholder="请输入密码"
                         />
                     </Form.Item>
                     <Form.Item>
                         <a className="login-form-forgot" href="" style={{color:'#000000' }}>
-                            验证码登陆
+                            验证码登录
                             </a>
 
                         <a className="login-form-forgot" href="" style={{ float: "right", color:'#000000' }}>
@@ -77,12 +78,12 @@ export default class panel extends Component {
                             </a>
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" block>
-                            登陆
+                        <Button type="primary" htmlType="submit" size="large" block>
+                            登录
                             </Button>
                     </Form.Item>
                     <Form.Item>
-                        <a href="#register" style={{ float: 'right' }}>没有账号, 赶快注册</a>
+                        <a href="#register" style={{ float: 'right',fontSize:"12px", marginTop:"-30px"}}>没有账号, 赶快注册</a>
                     </Form.Item>
                 </Form>
 

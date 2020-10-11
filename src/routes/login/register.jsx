@@ -20,11 +20,11 @@ export default class register extends Component {
         const { current } = this.state;
         
         return (
-            <div style={{width:"1920px", height:"720px"}}>  
+            <div style={{width:"1920px", height:"100%"}}>  
                 <div style={{height:"70px",width:"1920px",background:"white", fontSize:"24px", color:"#000000" ,paddingLeft:"380px",lineHeight:"65px"}}>
                     长三角产教融合智慧云平台
                 </div>
-                <div style={{background: "linear-gradient(90deg, #0BBAFB 0%, #4285EC 100%)", width:"1920px", height:"650px", display:'flex', justifyContent:'center',alignItems:'center'}}>
+                <div style={{background: "linear-gradient(90deg, #0BBAFB 0%, #4285EC 100%)", width:"1920px", height:"100%", display:'flex', justifyContent:'center',alignItems:'center'}}>
                     <div style={{width:"800px", height:'440px',background:"white",  borderRadius: "8px", position:"relative"}}>
                         <div style={{width:"240px",height:"60px",background:"white", borderRadius: "30px", position:"absolute", margin:'280px', marginTop:'-30px', boxShadow:"0px 3px 7px 0px #cccccc", fontSize: "32px", textAlign:"center"}}>
                             注册
@@ -50,7 +50,7 @@ export default class register extends Component {
                             onFinish={this.onFinish}
                         >
                             <Form.Item style={{marginBottom:'10px',height:"14px"}}>
-                            <p style={{fontSize:'14px', color:'#000000', padding:"0"}}> 第一步：手机验证</p>
+                            <p style={{fontSize:'14px', color:'#000000', padding:"0", fontWeight:"400"}}> 第一步：手机验证</p>
                             </Form.Item>
                             <Form.Item
                                 name="username"
@@ -61,7 +61,7 @@ export default class register extends Component {
                                 },
                                 ]}
                             >
-                                <Input placeholder="手机号" />
+                                <Input placeholder="手机号" size="large"/>
                             </Form.Item>
                             <Form.Item style={{marginBottom:"0px", height:"48px"}}>
                                 <Row gutter={8}>
@@ -71,13 +71,14 @@ export default class register extends Component {
                                     rules={[{ required: true, message: '请输入密码' }]}
                                     style={{height:"48px"}}
                                     >
-                                        <Input 
+                                        <Input
+                                            size="large"
                                             type="password"
                                             placeholder="请输入密码"/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={8} >
-                                    <Button style={{float:"right"}} className="register-form-button" >发送验证码</Button>
+                                    <Button style={{float:"right"}} className="register-form-button" size="large" >发送验证码</Button>
                                 </Col>
                                 </Row>
                             </Form.Item>
@@ -94,7 +95,7 @@ export default class register extends Component {
                                 </Checkbox>
                             </Form.Item>
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" block>
+                                <Button type="primary" htmlType="submit" size="large" style={{marginTop:"20px"}}block>
                                     下一步
                                 </Button>
                             </Form.Item>
