@@ -36,6 +36,19 @@ class Header extends Component {
     };
   }
 
+  login = () => {
+    this.props.props.history.push({
+      pathname: 'login',
+      params: {}
+    });
+  }
+
+  register = () => {
+    this.props.props.history.push({
+      pathname: 'register',
+      params: {}
+    });
+  }
 
   tabChange = (index) => {
     // 有点奇怪，需要封装
@@ -67,8 +80,8 @@ class Header extends Component {
             />
           </div>
           <div style={localStyle.flex1}>
-            <Button type="primary">登录</Button>
-            <Button style={{ marginLeft: '10px' }}>注册</Button>
+            <Button type="primary" onClick={this.login} >登录</Button>
+            <Button style={{ marginLeft: '10px' }} onClick={this.register} >注册</Button>
           </div>
         </div>
         <div style={localStyle.tab}>
