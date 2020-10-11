@@ -10,7 +10,7 @@ export default class panel extends Component {
         current: 'entre',
     };
     onFinish = (values) => {
-        window.location.replace('/home')
+        window.location.replace('#home')
     }
     handleClick = e => {
         console.log('click ', e);
