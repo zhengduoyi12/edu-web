@@ -38,8 +38,8 @@ const PracticeIndex = (props) => {
         <div className="App">
             <Header props={props}></Header>
             <div className="body">
-                <div className="ad">
-                    <div className="ad-area">
+                <div className="pbanner">
+                    <div className="pbanner-area">
                         <img src={bannerUrl} alt="" />
                     </div>
                 </div>

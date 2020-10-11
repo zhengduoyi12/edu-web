@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import TypeModule from './components/TypeModule'
-import bannerUrl from './img/banner-ad.jpg'
 import './index.css'
 
 const { Search } = Input
@@ -28,11 +27,11 @@ const Practice = (props = {}) => {
     return (
         <div className="App">
             {/* <div className="left"></div> */}
-            <Header props={props} />
+            <Header props={props} crtIndex={2} />
             <div className="body">
-                <div className="ad">
-                    <div className="ad-area">
-                        <img src={bannerUrl} alt=""/>
+                <div className="pbanner">
+                    <div className="pbanner-area">
+                    <img src={'http://cdn.qjycloud.com/prictise_banner.jpg'} alt=""/>
                     </div>
                 </div>
                 <div className="enter">

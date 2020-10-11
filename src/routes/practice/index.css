@@ -32,12 +32,12 @@
     height: 30px;
 } */
 
-.ad {
+.pbanner {
     background-color: #dddddd;
     height: 220px;
     position: relative;
 }
-.ad-area {
+.pbanner-area {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -45,7 +45,7 @@
     width: 1920px;
     height: 220px;
 }
-.ad-area img {
+.pbanner-area img {
     width: 100%;
     height: 220px;
 }
