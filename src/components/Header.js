@@ -34,6 +34,7 @@ class Header extends Component {
     const pageMap = {
       1: 'home',
       2: 'practice',
+      3: 'intelligence'
     }
     this.props.props.history.push({
       pathname: pageMap[index] || 'home',

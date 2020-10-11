@@ -1,5 +1,5 @@
 // 首页
-import React from "react"
+import React, {useRef} from "react"
 import { Carousel } from 'antd';
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
@@ -65,8 +65,8 @@ const JobIndex = () => {
       </div>
       <div style={{ textAlign: 'left' }}>
         {jobTabs.map((item, index) => (
-          <div key={index} style={{ height: '300px', width:'280px', display:'inline-block',marginLeft: index === 0 ? '0px' : '30px', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
-            <img src={item.img} style={{ height: '172px',width:'100%' }} alt="" />
+          <div key={index} style={{ height: '300px', width: '280px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
+            <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
             <div style={{ padding: '8px' }}>
               <div style={{ height: '60px', fontSize: '18px' }}>
                 {item.title}
@@ -120,15 +120,15 @@ const CompanyRank = () => {
     },
   ]
   return (
-    <div style={{ height: '400px', fontSize: '18px', color: '#999', background:'#ddd',marginLeft: '30px' }}>
-        <div style={{ height: '100px', fontSize: '32px', color: '#000', lineHeight:'100px' }}>
+    <div style={{ height: '400px', fontSize: '18px', color: '#999', background: '#ddd', marginLeft: '30px' }}>
+      <div style={{ height: '100px', fontSize: '32px', color: '#000', lineHeight: '100px' }}>
         名企榜单
     </div>
-    {compTabs.map((item, index) => (
-          <div key={index} style={{ fontSize: '18px', lineHeight:'32px', color: item.color}}>
-            {item.title}
-                  </div>
-        ))}
+      {compTabs.map((item, index) => (
+        <div key={index} style={{ fontSize: '18px', lineHeight: '32px', color: item.color }}>
+          {item.title}
+        </div>
+      ))}
     </div>
   )
 }
@@ -171,6 +171,7 @@ const bannerList = [
   },
 ]
 
+const banneHoverList = ['浙江经济职业技术学院', '培训风采', '桐乡首家！试点单位', '浙江经济职业技术学院', '义乌高鸿培训合作对接']
 // header
 // 内容1: banner
 // 内容2：四大资源
@@ -181,12 +182,23 @@ const bannerList = [
 // 内容7：双师互聘
 // footer
 const HomeView = (props = {}) => {
-
+  const bannerRef = useRef();
   return (
     <div className='App'>
       <Header props={props} />
       <div className='body_wrap1920'>
-        <Carousel autoplay>
+        <div class="body">
+          <div className="bannerHover">
+            {banneHoverList.map((text, index) => (
+              <div key={index} >
+                <div style={{ color: '#fff', lineHeight: '42px',fontSize:'18px', cursor: 'pointer' }} onClick={()=>{
+                  bannerRef.current.goTo(index);
+                }}>{text}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
           {bannerList.map((item, index) => (
             <div key={index} >
               <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }}>{index}</div>

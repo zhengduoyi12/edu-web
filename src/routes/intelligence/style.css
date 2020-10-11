@@ -1,0 +1,54 @@
+.ant-layout-header{
+    padding:0;
+    height:220px;
+}
+.banner{
+    height:220px;
+    background-image: url("../../assets/ibanner.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size:100% 100%;
+}
+.ant-layout-content{
+    display: flex;
+    justify-content: center;
+}
+.insideCont{
+    width:1200px;
+}
+.title{
+    display: flex;
+    padding:0;
+    height: 140px;
+    justify-content: center;
+    align-items:center;
+    font-size:32px;
+    color:#000000;
+}
+
+.leftImg{
+    float:left;
+    width:600px;
+    height:320px;
+    background-image: url("../../assets/leftTop.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size:100% 100%;
+}
+.rightInfo{
+    float:right;
+    width:600px;
+    height:320px;
+    background-color:#CCCCCC;
+}
+p{
+    padding-left:80px;
+}
+
+.trainTitle{
+    font-size: 32px;
+    color: #000000;
+    width: 1200px;
+    height:31px;
+    margin-bottom: 30px;
+}
