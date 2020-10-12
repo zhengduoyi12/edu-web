@@ -1,24 +1,3 @@
-* {
-    font-family: Adobe Heiti Std R;
-}
-.pbanner {
-    background-color: #dddddd;
-    height: 220px;
-    position: relative;
-}
-.pbanner-area {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 1920px;
-    height: 220px;
-}
-.pbanner-area img {
-    width: 100%;
-    height: 220px;
-}
-
 .about {
     height: 400px;
     position: relative;

@@ -37,7 +37,7 @@ const Practice = (props = {}) => {
                 <div className="enter">
                     <Button><Link to="/practiceIndex">实习入口</Link></Button>
                     <Button><Link to="/trainIndex">实训入口</Link></Button>
-                    <Button><Link to="/jobInde">求职入口</Link></Button>
+                    <Button><Link to="/jobIndex">求职入口</Link></Button>
                 </div>
                 <div className="enter-title">为你匹配新工作</div>
                 <div className="job-search">

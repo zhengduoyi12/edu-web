@@ -32,6 +32,9 @@
     height: 30px;
 } */
 
+* {
+    font-family: Adobe Heiti Std R;
+}
 .pbanner {
     background-color: #dddddd;
     height: 220px;
