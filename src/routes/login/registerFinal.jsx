@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Button} from 'antd';
-
+import {withRouter} from 'react-router-dom'
 import './register.css'
-export default class registerFinal extends Component {
+class registerFinal extends Component {
 
     handleClick = e => {
-        window.location.replace('#login')
+        this.props.history.replace('/login')
     };
    
     render() {
@@ -29,3 +29,5 @@ export default class registerFinal extends Component {
         )
     }
 }
+
+export default (withRouter(registerFinal));

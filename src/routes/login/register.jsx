@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Row, Col ,Checkbox} from 'antd';
 import { Menu } from 'antd';
+import {withRouter} from 'react-router-dom'
+
 import './register.css'
-export default class register extends Component {
+class register extends Component {
 
     state = {
         current: 'entre',
         
     };
     onFinish = (values) => {
-        window.location.replace('#register2')
+        this.props.history.replace('/register2')
     }
     handleClick = e => {
         console.log('click ', e);
@@ -106,3 +108,5 @@ export default class register extends Component {
         )
     }
 }
+
+export default (withRouter(register))

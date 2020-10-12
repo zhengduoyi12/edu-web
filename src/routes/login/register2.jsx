@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Row, Col ,Checkbox} from 'antd';
 import { Menu } from 'antd';
+import {withRouter} from 'react-router-dom'
 import './register.css'
-export default class register2 extends Component {
+ class register2 extends Component {
     onFinish = (values) => {
-        window.location.replace('#register3')
+        this.props.history.replace('/register3')
     }
     render() {
         return (
@@ -69,3 +70,5 @@ export default class register2 extends Component {
         )
     }
 }
+
+export default (withRouter(register2));
