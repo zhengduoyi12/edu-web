@@ -11,6 +11,8 @@ import PracticeIndex from 'routes/practiceIndex'
 import TrainIndex from 'routes/trainIndex'
 import JobIndex from 'routes/jobIndex'
 import Not from 'routes/not/index'
+import Mine from 'routes/mine/index'
+
 
 import Login from 'routes/login/login'
 import Register from 'routes/login/register'
@@ -33,6 +35,7 @@ const Routes = () => (
         <Route path="/register2" component={Register2} />
         <Route path="/register3" component={RegisterFinal} />
         <Route path="/404" component={Not} />
+        <Route path="/mine" component={Mine} />
         <Route path="*" component={Not} />
       </Switch>
    

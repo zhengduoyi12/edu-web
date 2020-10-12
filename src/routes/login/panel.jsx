@@ -10,7 +10,12 @@ export default class panel extends Component {
         current: 'entre',
     };
     onFinish = (values) => {
-        window.location.replace('#home')
+        const { current } = this.state;
+        if(current==='student'){
+            window.location.replace('#mine')
+        }else{
+            window.location.replace('#home')
+        }
     }
     handleClick = e => {
         console.log('click ', e);
