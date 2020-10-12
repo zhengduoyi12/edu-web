@@ -1,32 +1,22 @@
 // js， hooks写法
-import React, { useState } from "react"
+import React from "react"
 import Header from 'components/Header.js'
-
-const TestView = (props = {}) => {
-  console.log(props.location.params && props.location.params.id)
-  const [n, setN] = useState(0)
-
-  const onClick = () => {
-    setN(100)
-  }
-
-  const go = () => {
-    props.history.push({
-      pathname: '/home',
-      params: {
-        id: n
-      }
-    });
-  }
-
+import Footer from 'components/Footer.js'
+const MineView = (props = {}) => {
+  const mine1 = require('styles/images/mine_1.png');
+  const mine2 = require('styles/images/mine_2.png');
+  const mine3 = require('styles/images/mine_3.png');
   return (
     <div className='App'>
-      <Header props={props} />
-      <h1>{n}</h1>
-      <button onClick={onClick}>Click</button>
-      <button onClick={go}>go Home</button>
+      <Header props={props} crtIndex={3} />
+      <div className="body">
+        <img src={mine1} style={{ height: 'auto', width: '100%' }} alt="" />
+        <img src={mine2} style={{ height: 'auto', width: '100%' }} alt="" />
+        <img src={mine3} style={{ height: 'auto', width: '100%' }} alt="" />
+      </div>
+      <Footer />
     </div>
   )
 }
 
-export default TestView;
+export default MineView;
