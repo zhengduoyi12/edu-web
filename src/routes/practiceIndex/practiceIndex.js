@@ -1,6 +1,6 @@
 // 首页
 import React from "react"
-import {Button} from 'antd'
+import { Button } from 'antd'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import bannerUrl from './img/banner1_u295.JPG'
@@ -13,26 +13,26 @@ import TypeModule from './components/TypeModule'
 
 const PracticeIndex = (props) => {
     const stuResume = [
-        { name: '杨虹', job: '物流电器', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
-        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
-        { name: '王曦', job: '计算机视觉', school: '四川长江职业学院', major: '电子商务',color:"#0099ff" },
-        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
-        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
-        { name: '王曦', job: '物流电器', school: '四川长江职业学院', major: '电子商务' },
+        { name: '杨虹', job: '财务', school: '四川长江职业学院', major: '财务管理', color: "#0099ff" },
+        { name: '王曦', job: 'UI设计师', school: '四川长江职业学院', major: 'UI设计', color: "#0099ff" },
+        { name: '李阳', job: 'Java', school: '四川长江职业学院', major: '计算机科学与技术', color: "#0099ff" },
+        { name: '王金萍', job: '产品经理', school: '四川长江职业学院', major: '财务管理' },
+        { name: '郑和', job: '市场营销', school: '四川长江职业学院', major: '财务管理' },
+        { name: '安顺', job: '算法工程师', school: '四川长江职业学院', major: '计算机科学与技术' },
     ]
     const jobList = [
-        { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },{ name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
-        { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
-        { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
-        { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },{ name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },{ name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
+        { name: '数据治理', cmp: "浙江大华", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '测试工程师', cmp: "e签宝", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
+        { name: '安全研发工程师', cmp: "货拉拉科技", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '产品运营', cmp: "乐刻运动健身", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
+        { name: 'Java', cmp: "鲸灵", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '信贷/保险销售', cmp: "阿思拓", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
+        { name: '结构工程师', cmp: "基准方中", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '课程顾问', cmp: "华尔街英语", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '主播', cmp: "乐娱文化", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
     ]
     const cmpList = [
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
-        {name:'电器集团有限公司',site: "浙江宁波", week: "6天/周", month: "3个月",num:100},
+        { name: '蚂蚁金服', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100,url:require('./img/cmy01.jpg') },
+        { name: '海康威视', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy02.jpg') },
+        { name: '滴滴出行', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy03.jpg') },
+        { name: '博彦科技', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy04.jpg') },
+        { name: '涂鸦智能', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy05.jpg') },
+        { name: '麦当劳', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy06.jpg') },
     ]
     return (
         <div className="App">
@@ -54,7 +54,7 @@ const PracticeIndex = (props) => {
                         </div>
                         <div className="bot">
                             {stuResume.map((item, index) => {
-                                return <div key={index} style={{ padding: "8px 0",color:item.color||"#000" }}><span style={{ marginLeft: 10, width: 120 }}>{item.name}</span><span style={{ width: 180 }}>{item.job}</span><span style={{ width: 230 }}>{item.school}</span><span style={{ width: 230 }}>{item.major}</span></div>
+                                return <div key={index} style={{ padding: "8px 0", color: item.color || "#000" }}><span style={{ marginLeft: 10, width: 120 }}>{item.name}</span><span style={{ width: 180 }}>{item.job}</span><span style={{ width: 230 }}>{item.school}</span><span style={{ width: 230 }}>{item.major}</span></div>
                             })}
                         </div>
                     </div>
@@ -74,7 +74,7 @@ const PracticeIndex = (props) => {
                 <div className="job-title">热门企业</div>
                 <HotCmp cmpList={cmpList} />
                 <Button className="know-more">了解更多</Button>
-                <TypeModule/>
+                <TypeModule />
 
             </div>
             <Footer></Footer>

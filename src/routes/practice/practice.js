@@ -11,18 +11,21 @@ import './index.css'
 
 const { Search } = Input
 const Practice = (props = {}) => {
-    const jobTop = ['计算机', '算法', '大数据']
+    const jobTop = [' 人力资源经理', ' 视频编辑', ' 售后客服']
     const hotJobTop = [
-        { name: '计算机数据分析', num: 1233,color:"#0099FF" },
-        { name: '人工智能算法研究', num: 897,color:"#0099FF" },
-        { name: '数据分析', num: 687,color:"#0099FF" }, { name: '计算机数据分析', num: 1233 },
-        { name: '人工智能算法研究', num: 897 },
-        { name: '数据分析', num: 687 }, { name: '计算机数据分析', num: 1233 },
-        { name: '人工智能算法研究', num: 897 },
-        { name: '数据分析', num: 687 }, { name: '计算机数据分析', num: 1233 }
+        { name: '销售经理', num: 1306, color: "#0099FF" },
+        { name: '销售代表', num: 897, color: "#0099FF" },
+        { name: '产品经理', num: 574, color: "#0099FF" },
+        { name: '销售专员', num: 563 },
+        { name: '项目经理', num: 552 },
+        { name: 'java开发工程师', num: 550 },
+        { name: '会计', num: 547 },
+        { name: '销售工程师', num: 546 },
+        { name: '销售助理', num: 480 },
+        { name: '区域销售经理', num: 479 }
     ]
     const hotCmpTop = [
-        { name: '企业名称', num: 213,color:"#0099FF" }, { name: '企业名称', num: 213,color:"#0099FF" }, { name: '企业名称', num: 213,color:"#0099FF" }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }, { name: '企业名称', num: 213 }
+        { name: '阿里巴巴集团', num: 13896, color: "#0099FF" }, { name: '华为', num: 8829, color: "#0099FF" }, { name: '网易', num: 2325, color: "#0099FF" }, { name: '星巴克咖啡', num: 453 }, { name: '京东', num: 407 }, { name: '智云健康', num: 210 }, { name: '个推', num: 223 }, { name: '顺网科技', num: 98 }, { name: '九阳', num: 66 }, { name: '贝贝集团', num: 26 }
     ]
     return (
         <div className="App">
@@ -31,7 +34,7 @@ const Practice = (props = {}) => {
             <div className="body">
                 <div className="pbanner">
                     <div className="pbanner-area">
-                    <img src={'http://cdn.qjycloud.com/prictise_banner.jpg'} alt=""/>
+                        <img src={'http://cdn.qjycloud.com/prictise_banner.jpg'} alt="" />
                     </div>
                 </div>
                 <div className="enter">
@@ -53,9 +56,9 @@ const Practice = (props = {}) => {
                 </div>
                 <div className="hot-top">
                     <div className="hot-item">
-                        <Card title="热门岗位榜单" extra={<span style={{color:'#3FB9FF',fontSize:18}}>24h热门</span>} bordered={false}>
+                        <Card title="热门岗位榜单" extra={<span style={{ color: '#3FB9FF', fontSize: 18 }}>24h热门</span>} bordered={false}>
                             {hotJobTop.map((item, index) => {
-                                return <div className="job-item" key={index} style={{color:item.color||"#000"}}>
+                                return <div className="job-item" key={index} style={{ color: item.color || "#000" }}>
                                     <span style={{ marginRight: 40 }}>{index + 1}</span>
                                     <span>{item.name}</span><span style={{ float: 'right' }}>{item.num}</span>
                                 </div>
@@ -63,9 +66,9 @@ const Practice = (props = {}) => {
                         </Card>
                     </div>
                     <div className="hot-item">
-                        <Card title="企业就业最佳榜单" extra={<span style={{color:'#3FB9FF',fontSize:18}}>一周热门</span>} bordered={false}>
+                        <Card title="企业就业最佳榜单" extra={<span style={{ color: '#3FB9FF', fontSize: 18 }}>一周热门</span>} bordered={false}>
                             {hotCmpTop.map((item, index) => {
-                                return <div className="job-item" key={index} style={{color:item.color||"#000"}}>
+                                return <div className="job-item" key={index} style={{ color: item.color || "#000" }}>
                                     <span style={{ marginRight: 40 }}>{index + 1}</span>
                                     <span>{item.name}</span><span style={{ float: 'right' }}>{item.num}</span>
                                 </div>
@@ -73,7 +76,7 @@ const Practice = (props = {}) => {
                         </Card>
                     </div>
                 </div>
-                <TypeModule/>
+                <TypeModule />
             </div>
             <Footer />
         </div>
