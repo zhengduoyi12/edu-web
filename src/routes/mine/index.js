@@ -2,6 +2,7 @@
 import React from "react"
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
+import { sort } from "semver"
 
 const MineSide = () => {
   const compTabs = [
@@ -45,12 +46,11 @@ const MineSide = () => {
   )
 }
 
-
 const MineView = (props = {}) => {
-  const mine1 = require('styles/images/mine_1.png');
-  const mine2 = require('styles/images/mine_2.png');
-  const mine3 = require('styles/images/mine_3.png');
-  const mine4 = require('styles/images/mine4.png');
+  const mine1 = require('assets/images/mine_1.png');
+  const mine2 = require('assets/images/mine_2.png');
+  const mine3 = require('assets/images/mine_3.png');
+  const mine4 = require('assets/images/mine4.png');
   return (
     <div className='App'>
       <Header props={props} crtIndex={3} />

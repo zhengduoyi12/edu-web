@@ -45,15 +45,15 @@ const JobIndex = () => {
   const jobTabs = [
     {
       title: 'MyAQL基础入门-数据库概述',
-      img: require('styles/images/u161_a.png'),
+      img: require('assets/images/u161_a.png'),
     },
     {
       title: 'MyAQL基础入门-数据库概述',
-      img: require('styles/images/u169_a.png')
+      img: require('assets/images/u169_a.png')
     },
     {
       title: '培养专业数据人才-大数据分析基础课第一节',
-      img: require('styles/images/u177_a.png')
+      img: require('assets/images/u177_a.png')
     },
   ]
   return (
@@ -137,19 +137,19 @@ const CompanyRank = () => {
 const content1Tabs = [
   {
     name: '人才画像',
-    img: require('styles/images/u103_a.png')
+    img: require('assets/images/u103_a.png')
   },
   {
     name: '数字媒体资源库',
-    img: require('styles/images/u106_a.jpg')
+    img: require('assets/images/u106_a.jpg')
   },
   {
     name: 'AI课堂',
-    img: require('styles/images/u109_a.png')
+    img: require('assets/images/u109_a.png')
   },
   {
     name: '智慧培训保障',
-    img: require('styles/images/u112_a.jpg')
+    img: require('assets/images/u112_a.jpg')
   },
 ]
 

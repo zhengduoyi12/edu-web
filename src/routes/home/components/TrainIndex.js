@@ -12,19 +12,19 @@ class TrainIndex extends Component {
   componentDidMount(){
     const trainTabs = [
       {
-        img: require('styles/images/u28_a.jpg'),
+        img: require('assets/images/u28_a.jpg'),
       },
       {
-        img: require('styles/images/u29_a.jpg')
+        img: require('assets/images/u29_a.jpg')
       },
       {
-        img: require('styles/images/u30_a.jpg')
+        img: require('assets/images/u30_a.jpg')
       },
       {
-        img: require('styles/images/u33_a.png')
+        img: require('assets/images/u33_a.png')
       },
       {
-        img: require('styles/images/u39_a.jpg')
+        img: require('assets/images/u39_a.jpg')
       },
     ];
     this.setState({trainTabs})

@@ -4,16 +4,16 @@ import React from "react"
 const ResumeIndex = () => {
   const teacherTabs = [
     {
-      img: require('styles/images/u69_a.jpg'),
+      img: require('assets/images/u69_a.jpg'),
     },
     {
-      img: require('styles/images/u70_a.jpg')
+      img: require('assets/images/u70_a.jpg')
     },
     {
-      img: require('styles/images/u71_a.jpg')
+      img: require('assets/images/u71_a.jpg')
     },
     {
-      img: require('styles/images/u39_a.jpg')
+      img: require('assets/images/u39_a.jpg')
     },
   ];
 

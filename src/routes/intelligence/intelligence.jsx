@@ -13,23 +13,23 @@ export default class intelligence extends Component {
             classList: [{
                 "name": "MyAQL基础入门-数据库概述",
                 "content": "南京大学基础课程",
-                "img": require("../../assets/u161_a.png"),
+                "img": require("assets/u161_a.png"),
                 "member": "380"
             }, {
                 "name": "MyAQL基础入门-数据库概述",
                 "content": "南京大学基础课程",
-                "img": require("../../assets/u169_a.png"),
+                "img": require("assets/u169_a.png"),
                 "member": "380"
 
             }, {
                 "name": "全技能数据人才培养方案：第一课理论基础",
                 "content": "湖南大学基础课程",
-                "img": require("../../assets/u177_a.png"),
+                "img": require("assets/u177_a.png"),
                 "member": "380"
             }, {
                 "name": "MyAQL基础入门-数据库概述",
                 "content": "南京大学基础课程",
-                "img": require("../../assets/u161_a.png"),
+                "img": require("assets/u161_a.png"),
                 "member": "380"
             }],
             trainCard: [{
@@ -37,38 +37,38 @@ export default class intelligence extends Component {
                 "cardInfo": [{
                     "name": "线上VR训练",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/u810_a.jpg"),
+                    "img": require("assets/u810_a.jpg"),
                 }, {
                     "name": "学生学习评价",
                     "desc": "3000最新企业岗位",
-                    "img": require("../../assets/zzz.JPG"),
+                    "img": require("assets/zzz.JPG"),
                 }, {
                     "name": "培训监管",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/aaa.JPG"),
+                    "img": require("assets/aaa.JPG"),
                 }, {
                     "name": "成绩更新",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/u187_div.JPG"),
+                    "img": require("assets/u187_div.JPG"),
                 }]
             }, {
                 "title": "VR虚拟训练",
                 "cardInfo": [{
                     "name": "线上VR训练",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/u810_a.jpg"),
+                    "img": require("assets/u810_a.jpg"),
                 }, {
                     "name": "学习之星",
                     "desc": "3000最新企业岗位",
-                    "img": require("../../assets/zzz.JPG"),
+                    "img": require("assets/zzz.JPG"),
                 }, {
                     "name": "培训监管",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/u865_a.png"),
+                    "img": require("assets/u865_a.png"),
                 }, {
                     "name": "成绩更新",
                     "desc": "4万人已加入",
-                    "img": require("../../assets/u875_a.png"),
+                    "img": require("assets/u875_a.png"),
                 }]
             }],
             rightInfo: [{
