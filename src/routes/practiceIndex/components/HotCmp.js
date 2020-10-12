@@ -7,7 +7,7 @@ const HotCmp = ({cmpList}) => {
         {cmpList.map((item,index)=>{
             return <div key={index} style={{width:"400px",height:"300px",display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <div style={{width:"107px",height:"107px",marginTop:"35px",lineHeight:"107px",fontSize:"32px",background:"rgba(204,204,204,0.3)",color:"#CCC"}}>
-                    {item.url?<img style={{width:"107px",height:"107px"}} src={item.url}></img>:<span>公司</span>}
+                    {item.url?<img style={{width:"107px",height:"107px"}} src={item.url} alt=""></img>:<span>公司</span>}
                     
                     {/* <span>公司</span> */}
                 </div>

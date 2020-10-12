@@ -3,13 +3,13 @@ import React from "react"
 import { Button } from 'antd'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
-import bannerUrl from './img/banner1_u295.JPG'
-import cardrUrl from './img/u359.JPG'
+import bannerUrl from 'assets/images/prac_banner1.jpg'
+import cardrUrl from 'assets/images/prac_card.jpg'
 
 import './index.css'
 import NewJob from "./components/NewJob"
 import HotCmp from "./components/HotCmp"
-import TypeModule from './components/TypeModule'
+import TypeModule from 'components/TypeModule'
 
 const PracticeIndex = (props) => {
     const stuResume = [
@@ -27,12 +27,12 @@ const PracticeIndex = (props) => {
         { name: '结构工程师', cmp: "基准方中", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '课程顾问', cmp: "华尔街英语", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" }, { name: '主播', cmp: "乐娱文化", money: "4000-5999", site: "浙江杭州", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
     ]
     const cmpList = [
-        { name: '蚂蚁金服', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100,url:require('./img/cmy01.jpg') },
-        { name: '海康威视', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy02.jpg') },
-        { name: '滴滴出行', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy03.jpg') },
-        { name: '博彦科技', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy04.jpg') },
-        { name: '涂鸦智能', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy05.jpg') },
-        { name: '麦当劳', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('./img/cmy06.jpg') },
+        { name: '蚂蚁金服', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100,url:require('assets/images/prac_cpy01.jpg')},
+        { name: '海康威视', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy02.jpg')},
+        { name: '滴滴出行', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy03.jpg')},
+        { name: '博彦科技', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy04.jpg')},
+        { name: '涂鸦智能', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy05.jpg')},
+        { name: '麦当劳', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy06.jpg')},
     ]
     return (
         <div className="App">

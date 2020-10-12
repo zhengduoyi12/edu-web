@@ -4,12 +4,12 @@ import { Card, Input, Carousel,Button } from 'antd'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 
-import bannerUrl from './img/banner1_u295.JPG'
+import bannerUrl from 'assets/images/prac_banner1.jpg'
 
 import './index.css'
 import NewJob from "./components/NewJob"
 import HotCmp from "./components/HotCmp"
-import TypeModule from './components/TypeModule'
+import TypeModule from 'components/TypeModule'
 
 const { Search } = Input
 const JobIndex = (props) => {
@@ -23,27 +23,24 @@ const JobIndex = (props) => {
     const jobTop = ['计算机', '算法', '大数据']
     const carouselList = [
         {
-            url: require('./img/u592.jpg'),
+            url: require('assets/images/prac_crs6.jpg'),
+        },{
+            url: require('assets/images/prac_crs6.jpg'),
+        },{
+            url: require('assets/images/prac_crs6.jpg'),
+        },{
+            url: require('assets/images/prac_crs6.jpg'),
         },
-        {
-            url: require('./img/u592.jpg'),
-        },
-        {
-            url: require('./img/u592.jpg'),
-        },
-        {
-            url: require('./img/u592.jpg'),
-        }
     ]
     const siteList = [
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
-        { url: require('./img/u619.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
+        { url: require('assets/images/prac_site1.jpg') },
     ]
     const jobList = [
         { name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },{ name: '储备干部', cmp: "实验室", money: "4000-5999", site: "浙江宁波", week: "6天/周", month: "3个月", meeting: "米秋集团秋季招聘", type: "认证企业" },
