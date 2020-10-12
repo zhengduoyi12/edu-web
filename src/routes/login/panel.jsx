@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { Form, Input, Button } from 'antd';
 import { Menu } from 'antd';
-
+import {withRouter} from 'react-router-dom'
 import './formStyle.css'
 
-export default class panel extends Component {
 
+class panel extends Component {
     state = {
         current: 'entre',
     };
     onFinish = (values) => {
         const { current } = this.state;
         if(current==='student'){
-            window.location.replace('#mine')
+            this.props.history.replace('/mine')
         }else{
-            window.location.replace('#home')
+            this.props.history.replace('/')
         }
     }
     handleClick = e => {
@@ -96,3 +96,5 @@ export default class panel extends Component {
         )
     }
 }
+
+export default (withRouter(panel));

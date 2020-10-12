@@ -15,19 +15,19 @@ class TradeIndex extends Component {
         title:'分布式计算机构架师',
         desc:'昆仑国际集团秋季招聘',
         desc2:'算法，设计，咨询等300岗位招聘',
-        img: require('styles/images/joblogo-1.jpg'),
+        img: require('assets/images/joblogo-1.jpg'),
       },
       {
         title:'分布式计算机构架师',
         desc:'米秋集团秋季招聘',
         desc2:'算法，设计，咨询等300岗位招聘',
-        img: require('styles/images/joblogo-2.jpg'),
+        img: require('assets/images/joblogo-2.jpg'),
       },
       {
         title:'分布式计算机构架师',
         desc:'南通市政秋季招聘',
         desc2:'算法，设计，咨询等300岗位招聘',
-        img: require('styles/images/joblogo-3.jpg'),
+        img: require('assets/images/joblogo-3.jpg'),
       },
     ];
     this.setState({tradeTabs})
