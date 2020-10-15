@@ -1,5 +1,5 @@
 // 首页
-import React, {useRef, useEffect, useState} from "react"
+import React, { useRef, useEffect, useState } from "react"
 import { Carousel } from 'antd';
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
@@ -9,8 +9,8 @@ import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
 import { baseStyle } from "../../styles/baseStyle.js";
 import './login.css'
-import { cache, UniqueFn, homeBannerList } from "utils";
-import { getHomeBannerInfo } from 'apis'
+import { homeBannerList, homeTopBoxTabs } from "utils";
+import { getHomeBannerInfo, getHomeInfo } from 'apis'
 
 const localStyle = {
   flex: {
@@ -51,21 +51,7 @@ const TopBox = ({ name = "", index, src }) => {
 }
 
 // 内容3部分组件
-const JobIndex = () => {
-  const jobTabs = [
-    {
-      title: 'MyAQL基础入门-数据库概述',
-      img: require('assets/images/u161_a.png'),
-    },
-    {
-      title: 'MyAQL基础入门-数据库概述',
-      img: require('assets/images/u169_a.png')
-    },
-    {
-      title: '培养专业数据人才-大数据分析基础课第一节',
-      img: require('assets/images/u177_a.png')
-    },
-  ]
+const JobIndex = ({ jobTabs = [] }) => {
   return (
     <div>
       <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
@@ -98,70 +84,20 @@ const JobIndex = () => {
   )
 }
 
-const CompanyRank = () => {
-  const compTabs = [
-    {
-      title: '1. 阿里巴巴',
-      color: '#3399CC',
-    },
-    {
-      title: '2. 网易',
-      color: '#3399CC',
-    },
-    {
-      title: '3. 海康威视',
-      color: '#3399CC',
-    },
-    {
-      title: '4. 浙江大华股份',
-      color: '#999',
-    },
-    {
-      title: '5. 恒生电子',
-      color: '#999',
-    },
-    {
-      title: '6. 浙江宇视科技有限公司',
-      color: '#999',
-    },
-    {
-      title: '7. 华三通信（H3C）',
-      color: '#999',
-    },
-  ]
+const CompanyRank = ({ compTabs = [] }) => {
   return (
     <div style={{ height: '400px', fontSize: '18px', color: '#999', background: '#ddd', marginLeft: '30px' }}>
       <div style={{ height: '100px', fontSize: '32px', color: '#000', lineHeight: '100px' }}>
         名企榜单
     </div>
       {compTabs.map((item, index) => (
-        <div key={index} style={{ fontSize: '18px', lineHeight: '32px', color: item.color, textAlign:'left', paddingLeft:'30px'}}>
+        <div key={index} style={{ fontSize: '18px', lineHeight: '32px', color: item.color, textAlign: 'left', paddingLeft: '30px' }}>
           {item.title}
         </div>
       ))}
     </div>
   )
 }
-
-// require只能引字符串
-const content1Tabs = [
-  {
-    name: '人才画像',
-    img: require('assets/images/u103_a.png')
-  },
-  {
-    name: '数字媒体资源库',
-    img: require('assets/images/u106_a.jpg')
-  },
-  {
-    name: 'AI课堂',
-    img: require('assets/images/u109_a.png')
-  },
-  {
-    name: '智慧培训保障',
-    img: require('assets/images/u112_a.jpg')
-  },
-]
 
 // header
 // 内容1: banner
@@ -174,19 +110,23 @@ const content1Tabs = [
 // footer
 const HomeView = () => {
   const bannerRef = useRef();
-  cache.set('ws',10000000000);
-  console.log(cache.get('ws'))
-  console.log(UniqueFn([{a:'1',b:'2', b:'3'}], 'a'))
-
   const [bannerHoverList, setBannerHoverList] = useState([]);
+  const [compTabs, setCompTabs] = useState([]);
+  const [jobTabs, setJobTabs] = useState([]);
 
   useEffect(() => {
-    getHomeBannerInfo().then((res)=>{
+    getHomeBannerInfo().then((res) => {
       setBannerHoverList(res);
-    },(e)=>{
+    }, (e) => {
       console.log(e);
     })
-  },[]);
+    getHomeInfo().then((res) => {
+      setCompTabs(res.compTabs);
+      setJobTabs(res.jobTabs);
+    }, (e) => {
+      console.log(e);
+    })
+  }, []);
 
   return (
     <div className='App'>
@@ -196,7 +136,7 @@ const HomeView = () => {
           <div className="bannerHover">
             {bannerHoverList.map((text, index) => (
               <div key={index} >
-                <div style={{ color: '#fff', lineHeight: '42px',fontSize:'18px', cursor: 'pointer' }} onClick={()=>{
+                <div style={{ color: '#fff', lineHeight: '42px', fontSize: '18px', cursor: 'pointer' }} onClick={() => {
                   bannerRef.current.goTo(index);
                 }}>{text}</div>
               </div>
@@ -213,16 +153,16 @@ const HomeView = () => {
       </div>
       <div className='body'>
         <div style={{ display: "flex" }}>
-          {content1Tabs.map((item, index) => (
+          {homeTopBoxTabs.map((item, index) => (
             <TopBox key={index} name={item.name} index={index} src={item.img} />
           ))}
         </div>
         <div style={{ height: '400px', display: 'flex', marginTop: '28px' }}>
           <div style={{ flex: 3 }}>
-            <JobIndex />
+            <JobIndex jobTabs={jobTabs} />
           </div>
           <div style={{ flex: 1 }}>
-            <CompanyRank />
+            <CompanyRank compTabs={compTabs} />
           </div>
         </div>
         <TrainIndex />
