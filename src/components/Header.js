@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 // import { baseStyle } from 'styles/baseStyle';
 import { Input, Button, Tabs } from 'antd';
-
+import { withRouter } from 'react-router-dom';
 import './header.css'
 
 const { Search } = Input;
@@ -39,14 +39,14 @@ class Header extends Component {
   }
 
   login = () => {
-    this.props.props.history.push({
+    this.props.history.push({
       pathname: 'login',
       params: {}
     });
   }
 
   register = () => {
-    this.props.props.history.push({
+    this.props.history.push({
       pathname: 'register',
       params: {}
     });
@@ -59,7 +59,7 @@ class Header extends Component {
       2: 'practice',
       3: 'intelligence',
     }
-    this.props.props.history.push({
+    this.props.history.push({
       pathname: pageMap[index] || '404',
       params: {}
     });
@@ -101,4 +101,4 @@ class Header extends Component {
     )
   }
 }
-export default Header
+export default withRouter(Header)

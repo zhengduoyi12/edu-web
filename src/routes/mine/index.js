@@ -53,7 +53,7 @@ const MineView = (props = {}) => {
   const mine4 = require('assets/images/mine4.png');
   return (
     <div className='App'>
-      <Header props={props} crtIndex={3} />
+      <Header crtIndex={3} />
       <div className="body">
         <img src={mine1} style={{ height: 'auto', width: '100%' }} alt="" />
 

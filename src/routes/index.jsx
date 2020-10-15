@@ -18,6 +18,7 @@ import Login from 'routes/login/login'
 import Register from 'routes/login/register'
 import Register2 from 'routes/login/register2'
 import RegisterFinal from 'routes/login/registerFinal'
+
 const Routes = () => (
   <HashRouter>
     

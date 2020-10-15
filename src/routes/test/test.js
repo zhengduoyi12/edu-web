@@ -21,7 +21,7 @@ const TestView = (props = {}) => {
 
   return (
     <div className='App'>
-      <Header props={props} />
+      <Header/>
       <h1>{n}</h1>
       <button onClick={onClick}>Click</button>
       <button onClick={go}>go Home</button>

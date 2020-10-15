@@ -197,7 +197,7 @@ const HomeView = (props = {}) => {
   console.log(UniqueFn([{a:'1',b:'2', b:'3'}], 'a'))
   return (
     <div className='App'>
-      <Header props={props} crtIndex={1} />
+      <Header crtIndex={1} />
       <div className='body_wrap1920'>
         <div className="body">
           <div className="bannerHover">

@@ -30,7 +30,7 @@ const Practice = (props = {}) => {
     return (
         <div className="App">
             {/* <div className="left"></div> */}
-            <Header props={props} crtIndex={2} />
+            <Header crtIndex={2} />
             <div className="body">
                 <div className="pbanner">
                     <div className="pbanner-area">
