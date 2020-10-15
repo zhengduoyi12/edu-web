@@ -9,6 +9,7 @@ import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
 import { baseStyle } from "../../styles/baseStyle.js";
 import './login.css'
+import { cache, UniqueFn } from "utils";
 
 const localStyle = {
   flex: {
@@ -191,6 +192,9 @@ const banneHoverList = ['浙江经济职业技术学院', '培训风采', '桐�
 // footer
 const HomeView = (props = {}) => {
   const bannerRef = useRef();
+  cache.set('ws',10000000000);
+  console.log(cache.get('ws'))
+  console.log(UniqueFn([{a:'1',b:'2', b:'3'}], 'a'))
   return (
     <div className='App'>
       <Header props={props} crtIndex={1} />
