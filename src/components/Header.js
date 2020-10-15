@@ -3,6 +3,7 @@ import React, { Component } from "react";
 // import { baseStyle } from 'styles/baseStyle';
 import { Input, Button, Tabs } from 'antd';
 import { withRouter } from 'react-router-dom';
+import { navigate } from 'utils';
 import './header.css'
 
 const { Search } = Input;
@@ -38,18 +39,8 @@ class Header extends Component {
     };
   }
 
-  login = () => {
-    this.props.history.push({
-      pathname: 'login',
-      params: {}
-    });
-  }
-
-  register = () => {
-    this.props.history.push({
-      pathname: 'register',
-      params: {}
-    });
+  goPage = (page, params = {}) => {
+    navigate(this.props.history, page, params)
   }
 
   tabChange = (index) => {
@@ -59,10 +50,7 @@ class Header extends Component {
       2: 'practice',
       3: 'intelligence',
     }
-    this.props.history.push({
-      pathname: pageMap[index] || '404',
-      params: {}
-    });
+    this.goPage(pageMap[index] || '404');
   }
 
   render() {
@@ -82,13 +70,13 @@ class Header extends Component {
             />
           </div>
           <div style={localStyle.flex1}>
-            <Button type="primary" onClick={this.login} >登录</Button>
-            <Button style={{ marginLeft: '10px' }} onClick={this.register} >注册</Button>
+            <Button type="primary" onClick={() => { this.goPage('login'); }} >登录</Button>
+            <Button style={{ marginLeft: '10px' }} onClick={() => { this.goPage('register'); }} >注册</Button>
           </div>
         </div>
         <div style={localStyle.tab}>
           <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
-            <TabPane tab="平台概况" key="1" style={{fontSize:'20px'}}/>
+            <TabPane tab="平台概况" key="1" style={{ fontSize: '20px' }} />
             <TabPane tab="实习就业" key="2" />
             <TabPane tab="智慧培训" key="3" />
             <TabPane tab="数媒交易" key="4" />
