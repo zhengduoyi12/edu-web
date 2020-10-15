@@ -81,6 +81,50 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 2. className的形式，自定义样式单独写style了，本页样式可以同级目录css下，公共样式可以写styles下
 <span className="yellow big" style={{marginLeft:'100px' }}>实习就业</span>
 
+
+## 目录结构
+routes：
+-- 首页
+-- 登录
+-- 注册
+-- 实训模块首页（未登录）
+-- -- 学生端（空页面，直接包含components/实训学生，下写xx端的同样操作）
+-- -- 学校端
+-- -- 企业端
+-- -- 信息页面，实训课程介绍
+-- 实习就业首页（未登录），区分实习和就业
+-- -- 学生端/个人端
+-- -- 学校端
+-- -- 企业端
+-- -- 信息页面，岗位介绍
+-- 智慧培训首页（未登录）
+-- -- 学生端
+-- -- 学校端（教师端）
+-- -- 企业端（教师端）
+-- -- 信息页面，课程介绍
+-- 通用信息页
+-- -- 学校介绍
+-- -- 企业介绍
+-- 个人中心
+-- -- 学生登录
+-- -- -- 实训tab（空页面，直接包含components/实训学生，下写xxtab的同样操作）
+-- -- -- 实习tab
+-- -- -- 就业tab
+-- -- -- 个人画像tab
+-- -- 学校登录
+-- -- -- xxxx
+
+components：
+-- 实训
+-- -- 学生端页面
+-- -- 学校端页面
+-- -- 企业端页面
+-- 实习/就业
+-- -- xx
+
+
+
+
 ## question
 1. 多class的写法，以及用className还是style，以及style组织如何更优雅
 2. 诡异的router，js跳转，需要单独抽出来封装
