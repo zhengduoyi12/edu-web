@@ -9,7 +9,7 @@ import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
 import { baseStyle } from "../../styles/baseStyle.js";
 import './login.css'
-import { cache, UniqueFn } from "utils";
+import { cache, UniqueFn, homeBannerList } from "utils";
 
 const localStyle = {
   flex: {
@@ -162,24 +162,6 @@ const content1Tabs = [
   },
 ]
 
-const bannerList = [
-  {
-    url: 'http://cdn.qjycloud.com/u1_a.jpg',
-  },
-  {
-    url: 'http://cdn.qjycloud.com/u3_a.jpg',
-  },
-  {
-    url: 'http://cdn.qjycloud.com/u4_a.jpg',
-  },
-  {
-    url: 'http://cdn.qjycloud.com/u8_a.jpg',
-  },
-  {
-    url: 'http://cdn.qjycloud.com/u10_a.jpg',
-  },
-]
-
 const banneHoverList = ['浙江经济职业技术学院', '培训风采', '桐乡首家！试点单位', '浙江经济职业技术学院', '义乌高鸿培训合作对接']
 // header
 // 内容1: banner
@@ -190,7 +172,7 @@ const banneHoverList = ['浙江经济职业技术学院', '培训风采', '桐�
 // 内容6：优秀人才
 // 内容7：双师互聘
 // footer
-const HomeView = (props = {}) => {
+const HomeView = () => {
   const bannerRef = useRef();
   cache.set('ws',10000000000);
   console.log(cache.get('ws'))
@@ -211,7 +193,7 @@ const HomeView = (props = {}) => {
           </div>
         </div>
         <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
-          {bannerList.map((item, index) => (
+          {homeBannerList.map((item, index) => (
             <div key={index} >
               <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }}>{index}</div>
             </div>

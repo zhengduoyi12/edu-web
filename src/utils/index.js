@@ -3,3 +3,4 @@ export { cache }
 
 export { UniqueFn } from './utils';
 export { navigate } from './navigator';
+export * from './constant';
