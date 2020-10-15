@@ -10,7 +10,7 @@ import TeacherIndex from './components/TeacherIndex.js';
 import { baseStyle } from "../../styles/baseStyle.js";
 import './login.css'
 import { cache, UniqueFn, homeBannerList } from "utils";
-import { getHomeBannerInfo } from '../../api'
+import { getHomeBannerInfo } from 'apis'
 
 const localStyle = {
   flex: {
