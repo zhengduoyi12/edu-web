@@ -9,5 +9,8 @@ export const baseStyle = {
     },
     rowFlex: {
         display: 'flex'
+    },
+    blue: {
+        color:'blue'
     }
 }

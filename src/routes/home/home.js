@@ -7,6 +7,8 @@ import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
+import { baseStyle } from "../../styles/baseStyle.js";
+import './login.css'
 
 const localStyle = {
   flex: {
@@ -30,6 +32,12 @@ const localStyle = {
     justifyContent: 'center',
     color: '#fff',
   },
+  red: {
+    color: 'red'
+  },
+  yellow: {
+    background: 'yellow'
+  }
 }
 
 const TopBox = ({ name = "", index, src }) => {

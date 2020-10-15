@@ -74,6 +74,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - npm run eject
 - npm install antd --save
 
+## 多class的写法
+1. 本页样式写在localStyle里，公共样式写在baseStyle里，没有用scss或者less的写法，公共样式可以用...引用，因为本质是对象变量
+<span style={{...baseStyle.blue, ...localStyle.yellow,...{fontSize:'30px'} }}>实习就业</span>
+<span style={{...baseStyle.blue, ...localStyle.yellow, fontSize:'30px', marginLeft:'100px' }}>实习就业</span>
+2. className的形式，自定义样式单独写style了，本页样式可以同级目录css下，公共样式可以写styles下
+<span className="yellow big" style={{marginLeft:'100px' }}>实习就业</span>
+
 ## question
 1. 多class的写法，以及用className还是style，以及style组织如何更优雅
 2. 诡异的router，js跳转，需要单独抽出来封装
