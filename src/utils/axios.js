@@ -2,7 +2,7 @@ import axios from 'axios';
 import qs from 'qs';
 
 // import index from '@/index';
-import { getAuth } from '@/utils/authentication';
+import { getAuth } from './authentication';
 
 const baseURL = '/api';
 const timeout = 20000;
@@ -113,4 +113,5 @@ const axiosDownload = async (url) => {
     return axios.get(url, {responseType: 'blob'});
 }
 
+export default instance;
 export { axiosGet, axiosDelete, axiosHead, axiosPost, axiosPut, axiosPatch, axiosDownload, JSON_HEADER };

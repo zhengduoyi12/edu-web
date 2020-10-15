@@ -1,5 +1,5 @@
 // 首页
-import React, {useRef} from "react"
+import React, {useRef, useEffect, useState} from "react"
 import { Carousel } from 'antd';
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
@@ -10,6 +10,7 @@ import TeacherIndex from './components/TeacherIndex.js';
 import { baseStyle } from "../../styles/baseStyle.js";
 import './login.css'
 import { cache, UniqueFn, homeBannerList } from "utils";
+import { getHomeBannerInfo } from '../../api'
 
 const localStyle = {
   flex: {
@@ -162,7 +163,6 @@ const content1Tabs = [
   },
 ]
 
-const banneHoverList = ['浙江经济职业技术学院', '培训风采', '桐乡首家！试点单位', '浙江经济职业技术学院', '义乌高鸿培训合作对接']
 // header
 // 内容1: banner
 // 内容2：四大资源
@@ -177,13 +177,24 @@ const HomeView = () => {
   cache.set('ws',10000000000);
   console.log(cache.get('ws'))
   console.log(UniqueFn([{a:'1',b:'2', b:'3'}], 'a'))
+
+  const [bannerHoverList, setBannerHoverList] = useState([]);
+
+  useEffect(() => {
+    getHomeBannerInfo().then((res)=>{
+      setBannerHoverList(res);
+    },(e)=>{
+      console.log(e);
+    })
+  },[]);
+
   return (
     <div className='App'>
       <Header crtIndex={1} />
       <div className='body_wrap1920'>
         <div className="body">
           <div className="bannerHover">
-            {banneHoverList.map((text, index) => (
+            {bannerHoverList.map((text, index) => (
               <div key={index} >
                 <div style={{ color: '#fff', lineHeight: '42px',fontSize:'18px', cursor: 'pointer' }} onClick={()=>{
                   bannerRef.current.goTo(index);
