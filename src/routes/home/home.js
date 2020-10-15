@@ -7,44 +7,13 @@ import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
-import { baseStyle } from "../../styles/baseStyle.js";
-import './login.css'
 import { homeBannerList, homeTopBoxTabs } from "utils";
 import { getHomeBannerInfo, getHomeInfo } from 'apis'
-
-const localStyle = {
-  flex: {
-    height: '120px',
-    lineHeight: '120px',
-    flex: 1,
-    marginTop: '18px',
-    marginLeft: '27px',
-    background: '#364d79',
-    textAlign: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-  flex1: {
-    height: '120px',
-    lineHeight: '120px',
-    flex: 1,
-    marginTop: '18px',
-    background: '#364d79',
-    textAlign: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-  red: {
-    color: 'red'
-  },
-  yellow: {
-    background: 'yellow'
-  }
-}
+import './home.css'
 
 const TopBox = ({ name = "", index, src }) => {
   return (
-    <div style={index === 0 ? localStyle.flex1 : localStyle.flex}>
+    <div className="topItem" style={{ marginLeft: index === 0 ? 0 : '27px' }}>
       <div style={{ backgroundImage: `url(${src})`, height: '100%', color: '#fff', fontSize: '30px' }}>{name}</div>
     </div>
   )
@@ -54,10 +23,10 @@ const TopBox = ({ name = "", index, src }) => {
 const JobIndex = ({ jobTabs = [] }) => {
   return (
     <div>
-      <div style={{ fontSize: '18px', color: '#999', textAlign: 'left', height: '95px' }}>
-        <span style={{ fontSize: '32px', marginRight: '20px', color: '#000', display: 'inline-block' }}>实习就业</span>
-        <span style={{ marginTop: '53px', display: 'inline-block' }}>对接学校和企业，完培训就业一体</span>
-        <span style={{ marginTop: '53px', float: 'right' }}>查看更多</span>
+      <div className='row'>
+        <span className='home_title'>实习就业</span>
+        <span className='home_desc'>对接学校和企业，完培训就业一体</span>
+        <span className='home_more'>查看更多</span>
       </div>
       <div style={{ textAlign: 'left' }}>
         {jobTabs.map((item, index) => (
@@ -136,7 +105,7 @@ const HomeView = () => {
           <div className="bannerHover">
             {bannerHoverList.map((text, index) => (
               <div key={index} >
-                <div style={{ color: '#fff', lineHeight: '42px', fontSize: '18px', cursor: 'pointer' }} onClick={() => {
+                <div className="bannerInfo" onClick={() => {
                   bannerRef.current.goTo(index);
                 }}>{text}</div>
               </div>
@@ -146,22 +115,22 @@ const HomeView = () => {
         <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
           {homeBannerList.map((item, index) => (
             <div key={index} >
-              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }}>{index}</div>
+              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }} />
             </div>
           ))}
         </Carousel>
       </div>
       <div className='body'>
-        <div style={{ display: "flex" }}>
+        <div className='rowFlex'>
           {homeTopBoxTabs.map((item, index) => (
             <TopBox key={index} name={item.name} index={index} src={item.img} />
           ))}
         </div>
-        <div style={{ height: '400px', display: 'flex', marginTop: '28px' }}>
-          <div style={{ flex: 3 }}>
+        <div className='rowFlex' style={{ height: '400px', marginTop: '28px' }}>
+          <div className='flex3'>
             <JobIndex jobTabs={jobTabs} />
           </div>
-          <div style={{ flex: 1 }}>
+          <div className='flex1'>
             <CompanyRank compTabs={compTabs} />
           </div>
         </div>

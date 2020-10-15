@@ -80,6 +80,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 <span style={{...baseStyle.blue, ...localStyle.yellow, fontSize:'30px', marginLeft:'100px' }}>实习就业</span>
 2. className的形式，自定义样式单独写style了，本页样式可以同级目录css下，公共样式可以写styles下
 <span className="yellow big" style={{marginLeft:'100px' }}>实习就业</span>
+采用方法2
 
 
 ## 目录结构
