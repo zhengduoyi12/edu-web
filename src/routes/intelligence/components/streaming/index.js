@@ -55,11 +55,16 @@ const StreamingIndex = () => {
                                 <img src={item.img} style={{width:'80px',height:'80px', borderRadius:'50%'}}/>
                             </div>
                             <div style={{width:'300px',float:'right',textAlign:'left'}}>
-                                <div>
-                                    {item.time}| 开播提醒
+                                <div style={{marginBottom:'10px'}}>
+                                    <span>{item.time}</span>
+                                    <span style={{margin:'0 15px'}}>|</span> 
+                                    <span style={{color:'#49af4f'}}>开播提醒 </span>
                                 </div>
-                                <p>{item.name}</p>
-                                <p>{item.hoster}{item.title}</p>
+                                <div style={{marginBottom:'10px'}}>{item.name}</div>
+                                <div style={{fontSize:'12px', color:'#666'}}>
+                                    <span style={{marginRight:'15px'}}>{item.hoster}</span>
+                                    <span>{item.title}</span>
+                                </div>
                             </div>
                         </div>
                     )
