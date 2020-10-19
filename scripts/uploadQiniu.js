@@ -2,7 +2,7 @@
 var qiniu = require('qiniu')
 var fs = require('fs')
 var join = require('path').join
-const { ACCESS_KEY, SECRET_KEY, BUCKET, DOMAIN } = require('./config')
+const { ACCESS_KEY, SECRET_KEY, BUCKET, DOMAIN } = require('../config.js')
 
 // 需要填写你的 Access Key 和 Secret Key
 qiniu.conf.ACCESS_KEY = ACCESS_KEY
@@ -70,7 +70,7 @@ function main() {
 
 main()
 
-// // test
-// upload_file('robots.txt', './build/robots.txt')
+// test
+// upload_file('robots.txt', '../build/robots.txt')
 // let files = getJsonFiles(filePath)
 // console.log(files)
