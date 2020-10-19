@@ -69,7 +69,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "upload": "node scripts/uploadQiniu.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -140,5 +141,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "qiniu": "^7.3.2"
   }
 }
