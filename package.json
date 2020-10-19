@@ -140,5 +140,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "qiniu": "^7.3.2"
   }
 }
