@@ -1,6 +1,5 @@
 // 首页
 import React from "react"
-import { Button } from 'antd'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import bannerUrl from 'assets/images/prac_banner1.jpg'
@@ -8,7 +7,7 @@ import Certificate from './components/certificate'
 import Resume from './components/resume'
 import NewJob from "./components/NewJob"
 import HotCmp from "./components/HotCmp"
-import TypeModule from 'components/TypeModule'
+
 
 const PracticeIndex = (props) => {
     const stuResume = [
