@@ -17,7 +17,7 @@ class intelligence extends Component {
         return (
             <div className="App">
                 <Header/>
-                <img src={bannerUrl} style={{width:'1920px',height:'220px'}}>
+                <img src={bannerUrl} alt="" style={{width:'1920px',height:'220px'}}>
                 </img>
                 <div style={{width:'1200px', margin:'0 auto'}}>
                     <div style={{fontSize:'32px', fontWeight:'bold', height:'140px',lineHeight:'140px'}}>

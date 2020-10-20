@@ -4,9 +4,8 @@ import { Button } from 'antd'
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import bannerUrl from 'assets/images/prac_banner1.jpg'
-import cardrUrl from 'assets/images/prac_card.jpg'
-
-import './index.css'
+import Certificate from './components/certificate'
+import Resume from './components/resume'
 import NewJob from "./components/NewJob"
 import HotCmp from "./components/HotCmp"
 import TypeModule from 'components/TypeModule'
@@ -36,47 +35,32 @@ const PracticeIndex = (props) => {
     ]
     return (
         <div className="App">
-            <Header props={props}></Header>
-            <div className="body">
-                <div className="pbanner">
-                    <div className="pbanner-area">
-                        <img src={bannerUrl} alt="" />
+            <Header/>    
+            <img src={bannerUrl} alt="" style={{width:'1920px',height:'220px'}}/>
+                <div style={{width:'1200px', margin:'0 auto'}}>
+                    <div  style={{display:'flex',justifyContent:'space-between',marginTop:'20px'}}>
+                        <Resume/> 
+                        <Certificate/>
                     </div>
-                </div>
-                <div className="stu-about">
-                    <div className="stu-resume">
-                        <div className="top">
-                            <span className="title">学生简历</span>
-                            <span className="more">更多</span>
-                        </div>
-                        <div className="mid">
-                            <span style={{ marginLeft: 10, width: 120 }}>姓名</span><span style={{ width: 180 }}>期望职位</span><span style={{ width: 230 }}>学校</span><span style={{ width: 230 }}>专业</span>
-                        </div>
-                        <div className="bot">
-                            {stuResume.map((item, index) => {
-                                return <div key={index} style={{ padding: "8px 0", color: item.color || "#000" }}><span style={{ marginLeft: 10, width: 120 }}>{item.name}</span><span style={{ width: 180 }}>{item.job}</span><span style={{ width: 230 }}>{item.school}</span><span style={{ width: 230 }}>{item.major}</span></div>
-                            })}
-                        </div>
+                    <div>
+                        <p style={{fontSize:'32px', fontWeight:'bold',textAlign:'left'}}>最新职位</p>
+                        <NewJob jobList={jobList}/>
                     </div>
-                    <div className="per-card">
-                        <div className="top">
-                            <span className="title">岗位人才证书</span>
-                            <span className="more">更多</span>
-                        </div>
-                        <div className="bot">
-                            <div className="img-area"><img src={cardrUrl} width="100%" alt="" /></div>
-                        </div>
+                
+                    <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
+                        <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
                     </div>
-                </div>
-                <div className="job-title">最新职位</div>
-                <NewJob jobList={jobList} />
-                <Button className="know-more">了解更多</Button>
-                <div className="job-title">热门企业</div>
-                <HotCmp cmpList={cmpList} />
-                <Button className="know-more">了解更多</Button>
-                <TypeModule />
+                   
+                    <div>
+                        <p style={{fontSize:'32px', fontWeight:'bold',textAlign:'left'}}>热门企业</p>
+                        <HotCmp cmpList={cmpList}/>
+                    </div>
 
-            </div>
+                    <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
+                        <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+                    </div>
+                </div>
+                 
             <Footer></Footer>
         </div>
     )

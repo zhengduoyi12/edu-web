@@ -6,8 +6,7 @@ import 'antd/dist/antd.css'
 import Home from 'routes/home/home'
 import Intelligence from 'routes/intelligence/intelligence'
 import Test from 'routes/test/test'
-import Practice from 'routes/practice'
-import PracticeIndex from 'routes/practiceIndex'
+import Internship from 'routes/internship'
 import TrainIndex from 'routes/trainIndex'
 import JobIndex from 'routes/jobIndex'
 import Not from 'routes/not/index'
@@ -27,8 +26,7 @@ const Routes = () => (
         <Route path="/home" component={Home} />
         <Route path="/intelligence" component={Intelligence} />
         <Route path="/test" component={Test} />
-        <Route path="/practice" component={Practice} />
-        <Route path="/practiceIndex" component={PracticeIndex} />
+        <Route path="/internship" component={Internship} />
         <Route path="/trainIndex" component={TrainIndex} />
         <Route path="/jobIndex" component={JobIndex} />
         <Route path="/login" component={Login} />
