@@ -2,7 +2,7 @@
 import React from "react"
 import { CaretDownOutlined } from '@ant-design/icons';
 
-const LiveInfo = () => {
+const LiveArea = () => {
     const leftImgUrl=require('assets/leftTop.png')
   const LiveList = [
     {
@@ -31,14 +31,12 @@ const LiveInfo = () => {
 
   return (
     <div style={{ width:'1200px',display:'flex'}}>
-        <img src={leftImgUrl} style={{width:'600px',height:'335px'}} >
-            
-        </img>
+        <img src={leftImgUrl} style={{width:'600px',height:'335px'}} alt=''></img>
         <div style={{width:'600px',height:'335px',backgroundColor:'#f2f2f2',padding:'16px 0'}}>
             {
                 LiveList.map((item,index)=>{
                     return(
-                        <div style={{display:'flex'}}>
+                        <div key={index} style={{display:'flex',lineHeight:'44px'}}>
                             <p style={{width:'72px', color: index ===0 || index===1 ? '#0099FF':'#999999'}}>
                                 <CaretDownOutlined />
                             </p>
@@ -53,4 +51,4 @@ const LiveInfo = () => {
   )
 }
 
-export default LiveInfo;
+export default LiveArea;

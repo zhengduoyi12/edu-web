@@ -1,7 +1,7 @@
 // js， hooks写法
 import React from "react"
 
-const ClassIndex = () => {
+const SelectArea = () => {
   const classTabs = [
     {
         "name": "MyAQL基础入门-数据库概述",
@@ -32,7 +32,7 @@ const ClassIndex = () => {
     {
         classTabs.map((item, index) => {
             return (
-                <div key={`classList_`+index} style={{ marginTop: '35px', marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
+                <div key={`classList_`+index} style={{ marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
                     <div style={{ height: '300px', width: '280px', display: 'inline-block', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
                         <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
                         <div style={{ padding: '8px' }}>
@@ -58,4 +58,4 @@ const ClassIndex = () => {
   )
 }
 
-export default ClassIndex;
+export default SelectArea;

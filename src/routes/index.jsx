@@ -12,6 +12,7 @@ import TrainIndex from 'routes/trainIndex'
 import JobIndex from 'routes/jobIndex'
 import Not from 'routes/not/index'
 import Mine from 'routes/mine/index'
+import ClassDetails from '../components/ClassDetails'
 
 
 import Login from 'routes/login/login'
@@ -26,6 +27,7 @@ const Routes = () => (
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/intelligence" component={Intelligence} />
+        <Route path="/classDetails" component={ClassDetails} />
         <Route path="/test" component={Test} />
         <Route path="/practice" component={Practice} />
         <Route path="/practiceIndex" component={PracticeIndex} />
