@@ -6,6 +6,9 @@ import 'antd/dist/antd.css'
 // 首页
 import Home from 'routes/home/home'
 
+//搜索
+import SearchResult from 'routes/search'
+
 // 智慧课程
 import Intelligence from 'routes/intelligence/intelligence'
 
@@ -14,9 +17,10 @@ import Internship from 'routes/internship'
 import TalentList from 'routes/internship/talentList'
 import RoleDetails from 'routes/internship/roleDetails'
 import EntreDetails from 'routes/internship/entreDetails'
-import RoleSearchResult from 'routes/internship/roleSearchResult'
-import EntreSearchResult from 'routes/internship/entreSearchResult'
+
+//实训
 import TrainIndex from 'routes/train'
+
 // 就业
 import JobIndex from 'routes/job'
 
@@ -45,8 +49,7 @@ const Routes = () => (
         <Route path="/talentList" component={TalentList} />
         <Route path="/roleDetails" component={RoleDetails} />
         <Route path="/entreDetails" component={EntreDetails} />
-        <Route path="/roleSearchResult" component={RoleSearchResult} />
-        <Route path="/EntreSearchResult" component={EntreSearchResult} />
+        <Route path="/search" component={SearchResult} />
         <Route path="/train" component={TrainIndex} />
         <Route path="/job" component={JobIndex} />
         <Route path="/login" component={Login} />

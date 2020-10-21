@@ -3,13 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 import { navigate } from 'utils';
 
-const EntreSearchResult = () => {
+const SearchResult = () => {
   
     return (
     <div>
-        企业搜索结果页
+        搜索结果页
     </div>
   )
 }
 
-export default EntreSearchResult;
+export default SearchResult;

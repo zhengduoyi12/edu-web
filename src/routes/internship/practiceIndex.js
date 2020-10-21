@@ -36,12 +36,9 @@ const PracticeIndex = (props) => {
     ]
     const history = useHistory();
    
-    function goRoleSearchResult(){
-      history.push("/roleSearchResult");
+    function goSearchResult(){
+      history.push("/search");
     }
-    function goEntreSearchResult(){
-        history.push("/entreSearchResult");
-      }
     return (
         <div className="App">
             <Header/>    
@@ -57,7 +54,7 @@ const PracticeIndex = (props) => {
                     </div>
                 
                     <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-                        <p onClick={() => { goRoleSearchResult()}}style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
+                        <p onClick={() => { goSearchResult()}}style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
                     </div>
                    
                     <div>
@@ -66,7 +63,7 @@ const PracticeIndex = (props) => {
                     </div>
 
                     <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-                        <p onClick={() => { goEntreSearchResult()}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+                        <p onClick={() => { goSearchResult()}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
                     </div>
                 </div>
                  

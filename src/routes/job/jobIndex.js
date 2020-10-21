@@ -1,5 +1,6 @@
 // 首页
 import React from "react"
+import { withRouter , useHistory } from 'react-router-dom';
 import { Card, Input, Carousel,Button } from 'antd'
 
 
@@ -52,18 +53,23 @@ const JobIndex = (props) => {
         { title: '6. 浙江宇视科技有限公司', color: '#999', },
         { title: '7. 华三通信（H3C）', color: '#999', },
     ]
+    const history = useHistory();
+   
+    function goSearchResult(){
+      history.push("/search");
+    }
 
     return (
         <div className="App">
             <Header/>
             <img src={bannerUrl} style={{width:'1920px', height:'220px'}} alt="" />
             <div style={{width:'1920px', height:'160px', backgroundColor:'#DDDDDD', margin:'0 auto'}}>
-                <Search placeholder="输入关键词" enterButton="搜索" style={{width:400}}/>  
+                <Search placeholder="输入关键词" enterButton="搜索" style={{width:400}} onSearch={() => { goSearchResult()}}/>  
             </div>
             <div style={{width:'1200px', margin:'0 auto'}}>
                 <div style={{display:'flex',justifyContent:'space-between',marginTop:'20px'}}>
                     <div style={{width:'400px',height:'376px'}}>
-                        <Card title="全部分类" extra={<span style={{ color: '#999', fontSize: "18px" }}>更多</span>} bordered={true}>
+                        <Card  title="全部分类" onClick={() => { goSearchResult()}} extra={<span style={{ color: '#999', fontSize: "18px" }}>更多</span>} bordered={true}>
                             {typeList.map((item, index) => {
                                 return <div key={index} style={{ fontSize: "18px", height: "35px", color: item.color || "#333" }}>
                                     <span style={{ width: "173px", display: "inline-block" }}>{item.name}</span>
@@ -98,14 +104,14 @@ const JobIndex = (props) => {
                     </div>
                 </div>
                 <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'30px auto 0'}}>
-                    <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+                    <p onClick={() => { goSearchResult()}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
                 </div>
                 <div>
                     <p style={{fontSize:'32px', fontWeight:'bold',textAlign:'left'}}>最新职位</p>
                     <NewJob jobList={jobList} />
                 </div>
                 <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'30px auto 0'}}>
-                        <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+                        <p onClick={() => { goSearchResult()}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
                 </div>
             </div>
             <Footer/>

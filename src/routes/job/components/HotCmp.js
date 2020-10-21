@@ -1,11 +1,17 @@
 import React from "react"
 import {Button} from 'antd';
+import { withRouter , useHistory } from 'react-router-dom';
 
 const HotCmp = ({cmpList}) => {
+    const history = useHistory();
+   
+    function goEntreDetails(){
+      history.push("/entreDetails");
+    }
   return (
     <div style={{width:"100%",height:"620px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
         {cmpList.map((item,index)=>{
-            return <div key={index} style={{width:"400px",height:"260px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+            return <div key={index} onClick={() => { goEntreDetails() }} style={{width:"400px",height:"260px",display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <div style={{width:"107px",height:"107px",marginTop:"0px",lineHeight:"107px",fontSize:"32px",background:"rgba(204,204,204,0.3)",color:"#CCC"}}>
                     公司
                 </div>
