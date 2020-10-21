@@ -1,0 +1,27 @@
+.ant-tabs-tab-btn{
+    font-size:20px;
+    color:#000000;
+    font-weight: normal;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    color: #1890ff;
+    font-weight: normal;
+}
+
+.header{
+    .ant-menu{
+        display: flex;
+        justify-content: space-between
+    }
+    .ant-menu-item{
+        font-size:20px;
+        color:#000000;
+        font-weight: normal;
+    }
+    .ant-menu-submenu{
+        font-size:20px;
+        color:#000000;
+        font-weight: normal;
+    } 
+     
+}

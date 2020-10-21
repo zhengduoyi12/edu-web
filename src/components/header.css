@@ -1,9 +1,0 @@
-.ant-tabs-tab-btn{
-    font-size:20px;
-    color:#000000;
-    font-weight: normal;
-}
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
-    color: #1890ff;
-    font-weight: normal;
-}
