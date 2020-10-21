@@ -1,5 +1,7 @@
 // 首页
 import React from "react"
+import { withRouter , useHistory } from 'react-router-dom';
+
 import Header from 'components/Header.js'
 import Footer from 'components/Footer.js'
 import bannerUrl from 'assets/images/prac_banner1.jpg'
@@ -32,6 +34,14 @@ const PracticeIndex = (props) => {
         { name: '涂鸦智能', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy05.jpg')},
         { name: '麦当劳', site: "浙江杭州", week: "6天/周", month: "3个月", num: 100 ,url:require('assets/images/prac_cpy06.jpg')},
     ]
+    const history = useHistory();
+   
+    function goRoleSearchResult(){
+      history.push("/roleSearchResult");
+    }
+    function goEntreSearchResult(){
+        history.push("/entreSearchResult");
+      }
     return (
         <div className="App">
             <Header/>    
@@ -47,7 +57,7 @@ const PracticeIndex = (props) => {
                     </div>
                 
                     <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-                        <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
+                        <p onClick={() => { goRoleSearchResult()}}style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
                     </div>
                    
                     <div>
@@ -56,7 +66,7 @@ const PracticeIndex = (props) => {
                     </div>
 
                     <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-                        <p style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+                        <p onClick={() => { goEntreSearchResult()}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
                     </div>
                 </div>
                  
