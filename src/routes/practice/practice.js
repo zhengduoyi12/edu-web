@@ -10,7 +10,7 @@ import TypeModule from 'components/TypeModule'
 import './index.css'
 
 const { Search } = Input
-const Practice = (props = {}) => {
+const Practice = () => {
     const jobTop = [' 人力资源经理', ' 视频编辑', ' 售后客服']
     const hotJobTop = [
         { name: '销售经理', num: 1306, color: "#0099FF" },
