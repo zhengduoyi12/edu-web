@@ -84,27 +84,27 @@ class Header extends Component {
           </div>
         </div>
         <div>
-          <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-            <Menu.Item key="home">
+          <Menu onClick={this.handleClick} selectedKeys={[this.props.history.location.pathname]} mode="horizontal">
+            <Menu.Item key="/home">
               平台概况
             </Menu.Item>
             <SubMenu key="SubMenu" title="实习就业">
-              <Menu.Item key="internship">实习入口</Menu.Item>
-              <Menu.Item key="job">就业入口</Menu.Item>
+              <Menu.Item key="/internship">实习入口</Menu.Item>
+              <Menu.Item key="/job">就业入口</Menu.Item>
             </SubMenu>
-            <Menu.Item key="intelligence">
+            <Menu.Item key="/intelligence">
               智慧培训
             </Menu.Item>
-            <Menu.Item key="trade">
+            <Menu.Item key="/trade">
               数媒交易
             </Menu.Item>
-            <Menu.Item key="certificate">
+            <Menu.Item key="/certificate">
               技能认证
             </Menu.Item>
-            <Menu.Item key="teacher">
+            <Menu.Item key="/teacher">
               双师互聘
             </Menu.Item>
-            <Menu.Item key="device">
+            <Menu.Item key="/device">
               设备共享
             </Menu.Item>
           </Menu>
