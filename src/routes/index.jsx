@@ -7,8 +7,8 @@ import Home from 'routes/home/home'
 import Intelligence from 'routes/intelligence/intelligence'
 import Test from 'routes/test/test'
 import Internship from 'routes/internship'
-import TrainIndex from 'routes/trainIndex'
-import JobIndex from 'routes/jobIndex'
+import TrainIndex from 'routes/train'
+import JobIndex from 'routes/job'
 import Not from 'routes/not/index'
 import Mine from 'routes/mine/index'
 
@@ -27,8 +27,8 @@ const Routes = () => (
         <Route path="/intelligence" component={Intelligence} />
         <Route path="/test" component={Test} />
         <Route path="/internship" component={Internship} />
-        <Route path="/trainIndex" component={TrainIndex} />
-        <Route path="/jobIndex" component={JobIndex} />
+        <Route path="/train" component={TrainIndex} />
+        <Route path="/job" component={JobIndex} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/register2" component={Register2} />
