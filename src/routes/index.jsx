@@ -3,9 +3,13 @@ import { Route, Redirect } from 'react-router'
 import { HashRouter, Switch } from 'react-router-dom'
 import 'antd/dist/antd.css'
 
+// 首页
 import Home from 'routes/home/home'
+
+// 智慧课程
 import Intelligence from 'routes/intelligence/intelligence'
-import Test from 'routes/test/test'
+
+// 实习
 import Internship from 'routes/internship'
 import TalentList from 'routes/internship/talentList'
 import RoleDetails from 'routes/internship/roleDetails'
@@ -13,15 +17,22 @@ import EntreDetails from 'routes/internship/entreDetails'
 import RoleSearchResult from 'routes/internship/roleSearchResult'
 import EntreSearchResult from 'routes/internship/entreSearchResult'
 import TrainIndex from 'routes/train'
+// 就业
 import JobIndex from 'routes/job'
-import Not from 'routes/not/index'
-import Mine from 'routes/mine/index'
 
+// 用户中心
+import Mine from 'routes/mine'
 
+// 登录注册
 import Login from 'routes/login/login'
 import Register from 'routes/login/register'
 import Register2 from 'routes/login/register2'
 import RegisterFinal from 'routes/login/registerFinal'
+
+// 404
+import NotFound from 'routes/404'
+
+
 
 const Routes = () => (
   <HashRouter>
@@ -30,7 +41,6 @@ const Routes = () => (
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/intelligence" component={Intelligence} />
-        <Route path="/test" component={Test} />
         <Route path="/internship" component={Internship} />
         <Route path="/talentList" component={TalentList} />
         <Route path="/roleDetails" component={RoleDetails} />
@@ -43,9 +53,9 @@ const Routes = () => (
         <Route path="/register" component={Register} />
         <Route path="/register2" component={Register2} />
         <Route path="/register3" component={RegisterFinal} />
-        <Route path="/404" component={Not} />
         <Route path="/mine" component={Mine} />
-        <Route path="*" component={Not} />
+        <Route path="/404" component={NotFound} />
+        <Route path="*" component={NotFound} />
       </Switch>
    
   </HashRouter>
