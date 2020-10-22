@@ -4,7 +4,7 @@ import { HashRouter, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
 // 首页
-import Home from 'routes/home/home';
+import Home from 'routes/home';
 
 //搜索
 import SearchResult from 'routes/search';
