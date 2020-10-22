@@ -38,7 +38,7 @@ const JobIndex = ({ jobTabs = [] }) => {
               </div>
               <div style={{ height: '20px', fontSize: '14px', color: '#999' }}>
                 南京大学基础课程
-                </div>
+              </div>
               <div style={{ marginTop: '10px' }}>
                 <div style={{ textAlign: 'left', width: '30%', display: 'inline-block' }}>
                   <span style={{ background: '#13B5B1', color: '#fff', width: '50px', height: '22px', lineHeight: '18px', fontSize: '12px', paddingLeft: '5px', paddingRight: '5px' }}>免费</span>
@@ -58,7 +58,7 @@ const CompanyRank = ({ compTabs = [] }) => {
     <div style={{ height: '400px', fontSize: '18px', color: '#999', background: '#ddd', marginLeft: '30px' }}>
       <div style={{ height: '100px', fontSize: '32px', color: '#000', lineHeight: '100px' }}>
         名企榜单
-    </div>
+      </div>
       {compTabs.map((item, index) => (
         <div key={index} style={{ fontSize: '18px', lineHeight: '32px', color: item.color, textAlign: 'left', paddingLeft: '30px' }}>
           {item.title}

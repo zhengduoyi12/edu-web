@@ -5,7 +5,7 @@ import { navigate } from 'utils';
 
 const SearchResult = () => {
   
-    return (
+  return (
     <div>
         搜索结果页
     </div>

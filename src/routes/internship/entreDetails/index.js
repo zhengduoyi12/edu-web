@@ -5,14 +5,14 @@ import { navigate } from 'utils';
 
 const entreDetails = () => {
   
-    return (
+  return (
     <div>
-        <div>
+      <div>
         企业详情
-        </div>
-        <div>
+      </div>
+      <div>
         企业公开岗位
-        </div>
+      </div>
     </div>
     
   );

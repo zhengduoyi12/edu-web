@@ -42,26 +42,26 @@ import NotFound from 'routes/404';
 const Routes = () => (
   <HashRouter>
     
-      <Route exact path="/" render={() => <Redirect to="/home" />} />
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/intelligence" component={Intelligence} />
-        <Route path="/classDetails" component={ClassDetails} />
-        <Route path="/internship" component={Internship} />
-        <Route path="/talentList" component={TalentList} />
-        <Route path="/roleDetails" component={RoleDetails} />
-        <Route path="/entreDetails" component={EntreDetails} />
-        <Route path="/search" component={SearchResult} />
-        <Route path="/train" component={TrainIndex} />
-        <Route path="/job" component={JobIndex} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/register2" component={Register2} />
-        <Route path="/register3" component={RegisterFinal} />
-        <Route path="/mine" component={Mine} />
-        <Route path="/404" component={NotFound} />
-        <Route path="*" component={NotFound} />
-      </Switch>
+    <Route exact path="/" render={() => <Redirect to="/home" />} />
+    <Switch>
+      <Route path="/home" component={Home} />
+      <Route path="/intelligence" component={Intelligence} />
+      <Route path="/classDetails" component={ClassDetails} />
+      <Route path="/internship" component={Internship} />
+      <Route path="/talentList" component={TalentList} />
+      <Route path="/roleDetails" component={RoleDetails} />
+      <Route path="/entreDetails" component={EntreDetails} />
+      <Route path="/search" component={SearchResult} />
+      <Route path="/train" component={TrainIndex} />
+      <Route path="/job" component={JobIndex} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
+      <Route path="/register2" component={Register2} />
+      <Route path="/register3" component={RegisterFinal} />
+      <Route path="/mine" component={Mine} />
+      <Route path="/404" component={NotFound} />
+      <Route path="*" component={NotFound} />
+    </Switch>
    
   </HashRouter>
 );
