@@ -72,7 +72,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "upload": "node scripts/uploadQiniu.js",
-    "lint": "eslint --ext .js .jsx src",
+    "lint": "eslint --ext .js --ext .jsx src",
     "lint-fix": "eslint --fix --ext .js --ext .jsx src"
   },
   "eslintConfig": {
