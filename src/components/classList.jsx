@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 
-import './style.css'
+import './style.css';
 
 
 export default class classList extends Component {
@@ -26,6 +26,6 @@ export default class classList extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }

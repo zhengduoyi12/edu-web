@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Menu } from 'antd';
-import {withRouter} from 'react-router-dom'
-import './formStyle.css'
+import {withRouter} from 'react-router-dom';
+import './formStyle.css';
 
 
 class panel extends Component {
@@ -12,9 +12,9 @@ class panel extends Component {
     onFinish = (values) => {
         const { current } = this.state;
         if(current==='student'){
-            this.props.history.replace('/mine')
+            this.props.history.replace('/mine');
         }else{
-            this.props.history.replace('/')
+            this.props.history.replace('/');
         }
     }
     handleClick = e => {
@@ -93,7 +93,7 @@ class panel extends Component {
                 </Form>
 
             </div>
-        )
+        );
     }
 }
 

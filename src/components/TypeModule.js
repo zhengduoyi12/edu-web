@@ -1,7 +1,7 @@
-import React from "react"
-import { Card } from 'antd'
+import React from "react";
+import { Card } from 'antd';
 
-const { Meta } = Card
+const { Meta } = Card;
 const TypeModule = () => {
     return (
         <div className="type">
@@ -34,7 +34,7 @@ const TypeModule = () => {
                 <Meta title="智慧推荐" description="4万人已加入" />
             </Card>
         </div>
-    )
-}
+    );
+};
 
-export default TypeModule
+export default TypeModule;

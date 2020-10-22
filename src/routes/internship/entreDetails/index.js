@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { withRouter } from 'react-router-dom';
 
 import { navigate } from 'utils';
@@ -15,7 +15,7 @@ const entreDetails = () => {
         </div>
     </div>
     
-  )
-}
+  );
+};
 
 export default entreDetails;

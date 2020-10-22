@@ -7,9 +7,9 @@ export function getHomeBannerInfo(params) {
     //     params,
     //   });
     return new Promise((resolve, reject) => {
-        const res = ['浙江经济职业技术学院', '培训风采', '桐乡首家！试点单位', '浙江经济职业技术学院', '义乌高鸿培训合作对接']
+        const res = ['浙江经济职业技术学院', '培训风采', '桐乡首家！试点单位', '浙江经济职业技术学院', '义乌高鸿培训合作对接'];
         resolve(res);
-    })
+    });
 }
 
 
@@ -48,7 +48,7 @@ export function getHomeInfo(params) {
           title: '7. 华三通信（H3C）',
           color: '#999',
         },
-      ]
+      ];
       const jobTabs = [
         {
           title: 'MyAQL基础入门-数据库概述',
@@ -62,9 +62,9 @@ export function getHomeInfo(params) {
           title: '培养专业数据人才-大数据分析基础课第一节',
           img: require('assets/images/u177_a.png')
         },
-      ]
+      ];
     return new Promise((resolve, reject) => {
-        const res = {jobTabs, compTabs }
+        const res = {jobTabs, compTabs };
         resolve(res);
-    })
+    });
 }

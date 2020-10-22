@@ -3,5 +3,5 @@ export const navigate = (history, pathname, params) => {
         pathname,
         params,
     });
-}
+};
 

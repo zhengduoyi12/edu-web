@@ -1,6 +1,6 @@
-import React from "react"
-import Header from 'components/Header'
-import Footer from 'components/Footer'
+import React from "react";
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const ClassDetails = () => {
     return (
@@ -9,7 +9,7 @@ const ClassDetails = () => {
                 <div>123</div>
             <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default ClassDetails
+export default ClassDetails;

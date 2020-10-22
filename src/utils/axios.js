@@ -54,7 +54,7 @@ instance.interceptors.response.use(response => {
 const toLogin = () => {
     // const {app: {_history: history}} = index;
     // history.replace('/login');
-}
+};
 
 const pathVariableReg = new RegExp('{\\w+}', 'g');
 
@@ -68,7 +68,7 @@ const handlePathVariable = ({url, params}) => {
         });
     }
     return url;
-}
+};
 
 const axiosGet = async (url, params, config) => {
     url = handlePathVariable({url, params});
@@ -76,7 +76,7 @@ const axiosGet = async (url, params, config) => {
         params,
         ...config,
     });
-}
+};
 
 const axiosDelete = async (url, params, config) => {
     url = handlePathVariable({url, params});
@@ -84,7 +84,7 @@ const axiosDelete = async (url, params, config) => {
         params,
         ...config,
     });
-}
+};
 
 const axiosHead = async (url, params, config) => {
     url = handlePathVariable({url, params});
@@ -92,26 +92,26 @@ const axiosHead = async (url, params, config) => {
         params,
         ...config,
     });
-}
+};
 
 const axiosPost = (url, params, config) => {
     url = handlePathVariable({url, params});
     return instance.post(url, params, config);
-}
+};
 
 const axiosPut = async (url, params, config) => {
     url = handlePathVariable({url, params});
     return instance.put(url, params, config);
-}
+};
 
 const axiosPatch = async (url, params, config) => {
     url = handlePathVariable({url, params});
     return instance.patch(url, params, config);
-}
+};
 
 const axiosDownload = async (url) => {
     return axios.get(url, {responseType: 'blob'});
-}
+};
 
 export default instance;
 export { axiosGet, axiosDelete, axiosHead, axiosPost, axiosPut, axiosPatch, axiosDownload, JSON_HEADER };

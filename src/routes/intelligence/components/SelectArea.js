@@ -1,5 +1,5 @@
 // js， hooks写法
-import React from "react"
+import React from "react";
 
 const SelectArea = () => {
   const classTabs = [
@@ -51,11 +51,11 @@ const SelectArea = () => {
                         </div>
                     </div>
                 </div>
-            )
+            );
         })
     }
     </div>
-  )
-}
+  );
+};
 
 export default SelectArea;

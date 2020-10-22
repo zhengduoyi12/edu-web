@@ -1,8 +1,8 @@
 // js， hooks写法
-import React from "react"
-import Header from 'components/Header.js'
-import Footer from 'components/Footer.js'
-import { sort } from "semver"
+import React from "react";
+import Header from 'components/Header.js';
+import Footer from 'components/Footer.js';
+import { sort } from "semver";
 
 const MineSide = () => {
   const compTabs = [
@@ -34,7 +34,7 @@ const MineSide = () => {
       title: '信息中心',
       color: '#999',
     },
-  ]
+  ];
   return (
     <div style={{ height: '400px', fontSize: '18px', color: '#999', background: '#eee', marginLeft: '30px', marginTop: '30px' }}>
       {compTabs.map((item, index) => (
@@ -43,8 +43,8 @@ const MineSide = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const MineView = (props = {}) => {
   const mine1 = require('assets/images/mine_1.png');
@@ -69,7 +69,7 @@ const MineView = (props = {}) => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default MineView;

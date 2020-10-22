@@ -1,6 +1,6 @@
 // js， hooks写法
 import { Card } from "antd";
-import React from "react"
+import React from "react";
 
 const FamousArea = () => {
     const streamingTabs = [
@@ -72,12 +72,12 @@ const FamousArea = () => {
                                 </Card>
 
                             </div>
-                        )
+                        );
                     })
                 }
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default FamousArea;

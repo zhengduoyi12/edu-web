@@ -1,9 +1,9 @@
 // js， hooks写法
-import React from "react"
+import React from "react";
 import { CaretDownOutlined } from '@ant-design/icons';
 
 const LiveArea = () => {
-    const leftImgUrl=require('assets/leftTop.png')
+    const leftImgUrl=require('assets/leftTop.png');
   const LiveList = [
     {
         "state": "正在直播",
@@ -43,12 +43,12 @@ const LiveArea = () => {
                             <p style={{width:'110px', fontSize:'18px',color: index ===0 || index===1 ? '#0099FF':'#999999'}}> {item.state} </p>
                             <p style={{fontSize:'18px',color:'#000000'}}>{item.info}  </p>
                         </div>
-                    )
+                    );
                 })
             }
         </div>
     </div>
-  )
-}
+  );
+};
 
 export default LiveArea;

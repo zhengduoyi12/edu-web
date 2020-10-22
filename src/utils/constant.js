@@ -15,7 +15,7 @@ export const homeBannerList = [
     {
       url: 'http://cdn.qjycloud.com/u10_a.jpg',
     },
-  ]
+  ];
 
 export const homeTopBoxTabs = [
   {
@@ -34,4 +34,4 @@ export const homeTopBoxTabs = [
     name: '智慧培训保障',
     img: require('assets/images/u112_a.jpg')
   },
-]
+];

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import Header from 'components/Header.js'
-import Footer from 'components/Footer.js'
+import Header from 'components/Header.js';
+import Footer from 'components/Footer.js';
 import FamousArea from './components/FamousArea';
-import LiveArea from './components/LiveArea'
-import SeniorArea from './components/SeniorArea'
-import SelectArea from './components/SelectArea'
-import TypeArea from './components/TypeArea'
+import LiveArea from './components/LiveArea';
+import SeniorArea from './components/SeniorArea';
+import SelectArea from './components/SelectArea';
+import TypeArea from './components/TypeArea';
 
 
-const bannerUrl=require('assets/ibanner.jpg')
+const bannerUrl=require('assets/ibanner.jpg');
 const Intelligence = () => {
         return (
             <div className="App">
@@ -41,6 +41,6 @@ const Intelligence = () => {
                 </div>
                 <Footer/>
             </div>
-        )
-}
+        );
+};
 export default Intelligence;

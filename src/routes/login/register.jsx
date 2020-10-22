@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Form, Input, Button, Row, Col ,Checkbox} from 'antd';
 import { Menu } from 'antd';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
-import './register.css'
+import './register.css';
 class register extends Component {
 
     state = {
@@ -11,7 +11,7 @@ class register extends Component {
         
     };
     onFinish = (values) => {
-        this.props.history.replace('/register2')
+        this.props.history.replace('/register2');
     }
     handleClick = e => {
         console.log('click ', e);
@@ -27,7 +27,7 @@ class register extends Component {
                     长三角产教融合智慧云平台
                 </div>
                 <div style={{background: "linear-gradient(90deg, #0BBAFB 0%, #4285EC 100%)", width:"1920px", height:"100%", display:'flex', justifyContent:'center',alignItems:'center'}}>
-                    <div style={{width:"800px", height:'440px',background:"white",  borderRadius: "8px", position:"relative"}}>
+                    <div style={{width:"800px", height:'440px',background:"white", borderRadius: "8px", position:"relative"}}>
                         <div style={{width:"240px",height:"60px",background:"white", borderRadius: "30px", position:"absolute", margin:'280px', marginTop:'-30px', boxShadow:"0px 3px 7px 0px #cccccc", fontSize: "32px", textAlign:"center"}}>
                             注册
                         </div>
@@ -105,8 +105,8 @@ class register extends Component {
                     </div>
                  </div>
             </div>
-        )
+        );
     }
 }
 
-export default (withRouter(register))
+export default (withRouter(register));

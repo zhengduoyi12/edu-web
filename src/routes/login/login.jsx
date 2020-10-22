@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Panel from './panel'
-import './login.css'
+import React, { Component } from 'react';
+import Panel from './panel';
+import './login.css';
 export default class Login extends Component {
     render() {
         return (
@@ -12,7 +12,7 @@ export default class Login extends Component {
                     <Panel/>
                  </div>   
             </div>
-        )
+        );
         
     }
 

@@ -6,4 +6,4 @@
 export const UniqueFn = (array, key) => {
     const map = new Map();
     return array.filter(item => !map.has(item[key]) && map.set(item[key], item));
-}
+};

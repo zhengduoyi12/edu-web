@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { withRouter , useHistory } from 'react-router-dom';
 import {Button} from 'antd';
 
@@ -11,7 +11,7 @@ const HotCmp = ({cmpList}) => {
   return (
     <div style={{width:"100%",height:"620px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
         {cmpList.map((item,index)=>{
-            return <div key={index} onClick={() => { goEntreDetails() }} style={{width:"400px",height:"300px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+            return <div key={index} onClick={() => { goEntreDetails(); }} style={{width:"400px",height:"300px",display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <div style={{width:"107px",height:"107px",marginTop:"35px",lineHeight:"107px",fontSize:"32px",color:"#CCC"}}>
                     {item.url?<img style={{width:"107px",height:"107px"}} src={item.url} alt=""></img>:<span>公司</span>}
                     
@@ -31,10 +31,10 @@ const HotCmp = ({cmpList}) => {
                     <span style={{fontSize:18,color:"#999",marginRight:20}}>{item.meeting}</span>
                     <span style={{fontSize:18,color:"#ff9900",float:"right",marginRight:55}}>{item.type}</span>
                 </div> */}
-            </div>
+            </div>;
         })}
     </div>
-  )
-}
+  );
+};
 
-export default HotCmp
+export default HotCmp;

@@ -1,14 +1,14 @@
 // js， hooks写法
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import { Tabs } from 'antd';
 
-import { getTypeClass } from 'apis/class'
+import { getTypeClass } from 'apis/class';
 
 const { TabPane } = Tabs;
 
 const TypeArea = () => {
     const [typeClass, setTypeClass] = useState([]);
-    console.log()
+    console.log();
     const classTabs = [
         {
             "name": "MyAQL基础入门-数据库概述",
@@ -38,7 +38,7 @@ const TypeArea = () => {
             setTypeClass(res.typeClass);
         }, (e) => {
             console.log(e);
-        })
+        });
     }, []);
     return (
         <div>
@@ -68,7 +68,7 @@ const TypeArea = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    )
+                                    );
                                 })
                             }
                         </TabPane>)
@@ -77,7 +77,7 @@ const TypeArea = () => {
             </Tabs>
 
         </div>
-    )
-}
+    );
+};
 
 export default TypeArea;

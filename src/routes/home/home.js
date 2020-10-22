@@ -1,23 +1,23 @@
 // 首页
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState } from "react";
 import { Carousel } from 'antd';
-import Header from 'components/Header.js'
-import Footer from 'components/Footer.js'
+import Header from 'components/Header.js';
+import Footer from 'components/Footer.js';
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
 import { homeBannerList, homeTopBoxTabs } from "utils";
-import { getHomeBannerInfo, getHomeInfo } from 'apis'
-import './home.css'
+import { getHomeBannerInfo, getHomeInfo } from 'apis';
+import './home.css';
 
 const TopBox = ({ name = "", index, src }) => {
   return (
     <div className="topItem" style={{ marginLeft: index === 0 ? 0 : '27px' }}>
       <div style={{ backgroundImage: `url(${src})`, height: '100%', color: '#fff', fontSize: '30px' }}>{name}</div>
     </div>
-  )
-}
+  );
+};
 
 // 内容3部分组件
 const JobIndex = ({ jobTabs = [] }) => {
@@ -50,8 +50,8 @@ const JobIndex = ({ jobTabs = [] }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CompanyRank = ({ compTabs = [] }) => {
   return (
@@ -65,8 +65,8 @@ const CompanyRank = ({ compTabs = [] }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 // header
 // 内容1: banner
@@ -88,13 +88,13 @@ const HomeView = () => {
       setBannerHoverList(res);
     }, (e) => {
       console.log(e);
-    })
+    });
     getHomeInfo().then((res) => {
       setCompTabs(res.compTabs);
       setJobTabs(res.jobTabs);
     }, (e) => {
       console.log(e);
-    })
+    });
   }, []);
 
   return (
@@ -141,7 +141,7 @@ const HomeView = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default HomeView;

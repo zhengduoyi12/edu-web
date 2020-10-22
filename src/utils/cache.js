@@ -12,13 +12,13 @@ class Cache {
      */
     constructor (prefix, expires, strage) {
         if (prefix) {
-            this.prefix = prefix.toString()
+            this.prefix = prefix.toString();
         }
         if (expires) {
-            this.expires = parseInt(expires, 10)
+            this.expires = parseInt(expires, 10);
         }
         if (strage) {
-            this.strage = strage
+            this.strage = strage;
         }
     }
 
@@ -33,45 +33,45 @@ class Cache {
     set (key, value, expires, strage) {
         // 非法缓存名过滤
         if (key === undefined || key === '' || typeof key === 'object') {
-            console.error('设置的缓存名不合法！')
-            return false
+            console.error('设置的缓存名不合法！');
+            return false;
         }
 
         // 非法缓存时间过滤
         if (!expires || typeof expires !== 'number') {
-            expires = this.expires
+            expires = this.expires;
         } else {
-            expires = parseInt(expires, 10)
+            expires = parseInt(expires, 10);
         }
 
         // 非法strage过滤
         if (!strage) {
-            strage = this.strage
+            strage = this.strage;
         }
 
         // storage中存储数据的键值
-        let cacheName = this.prefix + '-[' + key.toString() + ']'
+        let cacheName = this.prefix + '-[' + key.toString() + ']';
         // 获取过期到秒的时间戳
-        let expiresTime
+        let expiresTime;
         if (expires<0) {
-            expiresTime = expires
+            expiresTime = expires;
         } else {
-            expiresTime = Date.parse(new Date()) / 1000 + expires
+            expiresTime = Date.parse(new Date()) / 1000 + expires;
         }
         // 初始化存储数据
         const data = {
             type: typeof value,
             value: value,
             expires: expiresTime
-        }
+        };
 
         // 存入storage
         try {
-            strage.setItem(cacheName, JSON.stringify(data))
-            return true
+            strage.setItem(cacheName, JSON.stringify(data));
+            return true;
         } catch (err) {
-            console.error('存储失败：' + JSON.stringify(err))
-            return false
+            console.error('存储失败：' + JSON.stringify(err));
+            return false;
         }
     }
 
@@ -82,29 +82,29 @@ class Cache {
      */
     get (key) {
         // 获取当前到秒的时间戳，用于判断是否过期
-        let currentTime = Date.parse(new Date()) / 1000
+        let currentTime = Date.parse(new Date()) / 1000;
 
         // 非法缓存名过滤
         if (key === undefined || key === '' || typeof key === 'object') {
-            console.error('读取的缓存名不合法！')
-            return null
+            console.error('读取的缓存名不合法！');
+            return null;
         }
 
         // 获取storage中要读取的缓存名
-        let cacheName = this.prefix + '-[' + key.toString() + ']'
+        let cacheName = this.prefix + '-[' + key.toString() + ']';
         try {
-            let cacheStr = window.localStorage.getItem(cacheName)
+            let cacheStr = window.localStorage.getItem(cacheName);
             if (!cacheStr) {
-                cacheStr = window.sessionStorage.getItem(cacheName)
+                cacheStr = window.sessionStorage.getItem(cacheName);
             }
-            const cacheData = JSON.parse(cacheStr)
+            const cacheData = JSON.parse(cacheStr);
             // 判断缓存是否过期
             if (cacheData.expires >= 0 && cacheData.expires < currentTime) {
-                return null
+                return null;
             }
-            return cacheData.value
+            return cacheData.value;
         } catch (err) {
-            return null
+            return null;
         }
     }
 
@@ -116,17 +116,17 @@ class Cache {
     remove (key) {
         // 非法缓存名过滤
         if (key === undefined || key === '' || typeof key === 'object') {
-            console.error('移除的缓存名不合法！')
-            return false
+            console.error('移除的缓存名不合法！');
+            return false;
         }
-        let cacheName = this.prefix + '-[' + key.toString() + ']'
+        let cacheName = this.prefix + '-[' + key.toString() + ']';
         try {
-            window.localStorage.removeItem(cacheName)
-            window.sessionStorage.removeItem(cacheName)
-            return true
+            window.localStorage.removeItem(cacheName);
+            window.sessionStorage.removeItem(cacheName);
+            return true;
         } catch (err) {
-            console.error('移除指定缓存数据失败：' + JSON.stringify(err))
-            return false
+            console.error('移除指定缓存数据失败：' + JSON.stringify(err));
+            return false;
         }
     }
 
@@ -135,19 +135,19 @@ class Cache {
      */
     clear () {
         try {
-            window.localStorage.clear()
-            window.sessionStorage.clear()
-            return true
+            window.localStorage.clear();
+            window.sessionStorage.clear();
+            return true;
         } catch (err) {
-            console.error('清空所有缓存数据失败：' + JSON.stringify(err))
-            return false
+            console.error('清空所有缓存数据失败：' + JSON.stringify(err));
+            return false;
         }
     }
 }
 
-const prefix = 'edu-'
-const expires = 24 * 60 * 60
-const strage = window.localStorage
+const prefix = 'edu-';
+const expires = 24 * 60 * 60;
+const strage = window.localStorage;
 
-const _this = new Cache(prefix, expires, strage)
-export default _this
+const _this = new Cache(prefix, expires, strage);
+export default _this;

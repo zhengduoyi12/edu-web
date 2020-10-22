@@ -1,4 +1,4 @@
-import React , { useState }from "react"
+import React , { useState }from "react";
 import { withRouter , useHistory } from 'react-router-dom';
 import { Modal, Button } from 'antd';
 
@@ -56,7 +56,7 @@ const Resume = () => {
     return (
     <div style={{ width:'800px',height:'376px', backgroundColor:'rgb(221, 221, 221)', position:'relative'}}>
         <div style={{ fontSize:'32px', color:"#000000" ,position:'absolute', top:'5px',left:'26px'}}>学生简历</div>
-        <div  onClick={() => { goTalentList() }}style={{ fontSize:'18px', color:"#999999" ,position:'absolute', top:'20px',left:'745px'}}>更多</div>
+        <div onClick={() => { goTalentList(); }}style={{ fontSize:'18px', color:"#999999" ,position:'absolute', top:'20px',left:'745px'}}>更多</div>
         <div style={{ width:'800px', height:'300px',position:'absolute', top:'76px'}}>
             <div style={{ width:'800px', height:'30px',padding:'0 25px',borderBottom:'1px solid #CCCCCC',textAlign:'left',marginBottom:'12px'}} >
                 <span style={{ marginRight: '162px'}}>姓名</span>
@@ -73,7 +73,7 @@ const Resume = () => {
                             <span style={{ marginRight: '160px',color: (index===0||index===1||index===2)? '#0099FF':'#000000'}}>{item.school} </span>
                             <span style={{color: (index===0||index===1||index===2)? '#0099FF':'#000000'}}>{item.major} </span> 
                         </div>
-                    )
+                    );
                })
             }
         </div>
@@ -90,7 +90,7 @@ const Resume = () => {
           <Button>取消</Button>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
 export default withRouter(Resume);
