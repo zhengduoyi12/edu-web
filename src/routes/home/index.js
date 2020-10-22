@@ -100,22 +100,20 @@ const HomeView = () => {
   return (
     <div className='App'>
       <Header crtIndex={1} />
-      <div className='body_wrap1920'>
-        <div className="body">
-          <div className="bannerHover">
-            {bannerHoverList.map((text, index) => (
-              <div key={index} >
-                <div className="bannerInfo" onClick={() => {
-                  bannerRef.current.goTo(index);
-                }}>{text}</div>
-              </div>
-            ))}
-          </div>
+      <div className='body'>
+        <div className="bannerHover">
+          {bannerHoverList.map((text, index) => (
+            <div key={index} >
+              <div className="bannerInfo" onClick={() => {
+                bannerRef.current.goTo(index);
+              }}>{text}</div>
+            </div>
+          ))}
         </div>
         <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
           {homeBannerList.map((item, index) => (
             <div key={index} >
-              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }} />
+              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff', backgroundPosition:'center' }} />
             </div>
           ))}
         </Carousel>

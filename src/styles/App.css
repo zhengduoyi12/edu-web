@@ -47,15 +47,6 @@
   height: 135px;
 }
 
-.body_wrap1920 {
-  width: 1920px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right:auto;
-  height: auto;
-}
-
 .body_wrap {
   width: 100%;
   left: 0;
