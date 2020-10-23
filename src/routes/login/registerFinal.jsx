@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button} from 'antd';
 import {withRouter} from 'react-router-dom';
-import './register.css';
+
 class registerFinal extends Component {
 
     handleClick = e => {

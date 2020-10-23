@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Menu } from 'antd';
 import {withRouter} from 'react-router-dom';
-import './formStyle.css';
+
 
 
 class panel extends Component {
@@ -27,7 +27,7 @@ class panel extends Component {
       return (
         <div style={{ width: "800px", height: '440px', background: "white", borderRadius: "8px", position: "relative" }}>
           <div style={{ width: "240px", height: "60px", background: "white", borderRadius: "30px", position: "absolute", margin: '280px', marginTop: '-30px', boxShadow: "0px 3px 7px 0px #cccccc", fontSize: "32px", textAlign: "center" }}>
-                    登录
+            登录
           </div>
           <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
             <Menu.Item key="entre" >

@@ -9,7 +9,7 @@ import Footer from 'components/Footer.js';
 import bannerUrl from 'assets/images/prac_banner1.jpg';
 import NewJob from "./components/NewJob";
 import HotCmp from "./components/HotCmp";
-
+import './style.scss';
 
 const { Search } = Input;
 const JobIndex = (props) => {
@@ -63,7 +63,7 @@ const JobIndex = (props) => {
     <div className="App">
       <Header />
       <img src={bannerUrl} style={{ width: '1920px', height: '220px' }} alt="" />
-      <div style={{ width: '1920px', height: '160px', backgroundColor: '#DDDDDD', margin: '0 auto' }}>
+      <div className='jobTitles'>
         <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} onSearch={() => { goSearchResult(); }} />
       </div>
       <div style={{ width: '1200px', margin: '0 auto' }}>

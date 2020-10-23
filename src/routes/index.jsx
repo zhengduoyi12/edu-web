@@ -32,7 +32,6 @@ import Mine from 'routes/mine';
 import Login from 'routes/login/login';
 import Register from 'routes/login/register';
 import Register2 from 'routes/login/register2';
-import RegisterFinal from 'routes/login/registerFinal';
 
 // 404
 import NotFound from 'routes/404';
@@ -57,7 +56,6 @@ const Routes = () => (
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/register2" component={Register2} />
-      <Route path="/register3" component={RegisterFinal} />
       <Route path="/mine" component={Mine} />
       <Route path="/404" component={NotFound} />
       <Route path="*" component={NotFound} />
