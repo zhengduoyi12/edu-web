@@ -1,13 +1,260 @@
 import React from "react"
-import { withRouter } from 'react-router-dom';
+import { Input , Pagination, Table} from 'antd'
 
-import { navigate } from 'utils';
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import SearchTag from '../../search/components/SearchTag'
+
 
 const TalentList = () => {
-  
+
+  const columns = [
+    {
+      title: '姓名',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '性别',
+      dataIndex: 'gender',
+      key: 'gender',
+    },
+    {
+      title: '年龄',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: '意向职位',
+      key: 'role',
+      dataIndex: 'role', 
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: '地区',
+      key: 'area',
+      dataIndex: 'area', 
+    },
+    {
+      title: '学历',
+      dataIndex: 'education',
+      key: 'education',
+    },
+    {
+      title: '专业',
+      dataIndex: 'major',
+      key: 'major',
+    },
+    {
+      title: '院校',
+      dataIndex: 'school',
+      key: 'school',
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '2',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '3',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '4',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '5',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '6',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '7',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '8',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '9',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '10',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '11',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '12',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '13',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '14',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '15',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '16',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+    {
+      key: '17',
+      name:'海姚',
+      gender: '女',
+      age: 32,
+      role: '会计',
+      area: '陕西省西安市',
+      education: '本科',
+      major: '财务管理',
+      school: '西安培华学院',
+    },
+  ]
+
+
+
+  const { Search } = Input
     return (
-    <div>
-        人才库
+    <div class="App">
+      <Header/>
+      <div className="RoleSearch" style={{ width: '1920px', height: '160px', backgroundColor: '#DDDDDD'}}>
+        <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} onSearch={() => { goSearchResult() }} />
+      </div>
+      <div style={{ width: '1200px', margin: '0 auto', padding:'20px' }}>
+        <SearchTag/>
+        <Table columns={columns} dataSource={data}></Table>
+      </div> 
+      <Footer/>
     </div>
   )
 }
