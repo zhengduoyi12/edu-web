@@ -1,0 +1,121 @@
+$tab: ant-tabs-tab;
+$nth: nth-of-type;
+$bcolor: rgba(204,204,204,0.3);
+
+.body {
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab {
+        padding: 8px 50px;
+    }
+}
+.my-course {
+    .ant-tabs-nav {
+        width: 100%;
+    }
+    .create {
+        width: 200px;
+        height: 160px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        .anticon-plus {
+            font-size: 70px;
+            line-height: 110px;
+            color: #ccc;
+        }
+        .title {
+            font-size: 20px;
+            color: #1890ff;
+        }
+    }
+}
+.create-course {
+    .ant-breadcrumb {
+        text-align: left;
+    }
+    .ant-tabs-nav .ant-tabs-tab {
+        margin: 0;
+        line-height: 42px;
+    }
+    .#{$tab}:#{$nth}(1) {
+        background-color: $bcolor;
+        cursor: pointer;
+    }.#{$tab}:#{$nth}(5) {
+        background-color: $bcolor;
+        cursor: pointer;
+    }.#{$tab}:#{$nth}(7) {
+        background-color: $bcolor;
+        cursor: pointer;
+    }
+}
+.create-base {
+    .title {
+        height: 58px;
+        line-height: 58px;
+        background-color: $bcolor;
+        font-size: 20px;
+        text-align: left;
+        padding-left: 20px;
+    }
+    .ant-form-item {
+        margin: 40px 0;
+    }
+    .ant-btn {
+        margin-right: 20px;
+    }
+}
+.create-pic {
+    text-align: left;
+    .title {
+        height: 58px;
+        line-height: 58px;
+        background-color: $bcolor;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .img-area {
+        width: 300px;
+        height: 200px;
+        background-color: $bcolor;
+    }
+    .ant-row {
+        margin: 60px 0;
+    }
+    .ant-col-4 {
+        text-align: right;
+    }
+    .ant-btn {
+        margin-right: 20px;
+    }
+}
+
+.create-section {
+    text-align: left;
+    .title {
+        height: 58px;
+        line-height: 58px;
+        background-color: $bcolor;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .title-first {
+        font-size: 16px;
+        height: 46px; 
+        line-height: 46px;
+        font-weight: 700;
+        background-color: $bcolor;
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+    .title-second {
+        margin: 20px auto;
+        width: 80%;
+        font-size: 16px;
+        height: 46px; 
+        line-height: 46px;
+        font-weight: 700;
+        // margin-bottom: 20px;
+        background-color: $bcolor;
+        span {
+            margin-left: 16px;
+        }
+    }
+}

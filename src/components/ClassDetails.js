@@ -16,15 +16,14 @@ const ClassDetails = () => {
     const [tagList,setTagList] = useState([]);
     useEffect(() => {
         function addColorTag(tag){
-            // const tagArr = tag
             const color = ['red','gold','green','blue'];
-            return tag.map((it,i)=>{
-                for(let i=0;i<color.length;i++) {
-                    return {
-                        tag:it,
-                        color:color[i]
-                    };
-                }  
+            let i = 0;
+            return tag.map(it=>{
+                i++;
+                return {
+                    tag:it,
+                    color:color[i]
+                };
             });
         }
         getClassInfo().then((res) => {
@@ -35,9 +34,7 @@ const ClassDetails = () => {
         }, (err) => {
             console.log(err);
         });
-        
     }, []);
-    // console.log('tagList=>',tagList);
     
     return (
         <div className="App">
@@ -106,8 +103,12 @@ const ClassDetails = () => {
                             <div style={{padding:'10px 20px'}}>微信号：{teacher.wechat}</div>
                         </div>
                         <div style={{textAlign:'left',fontSize:'16px',fontWeight:700,marginTop:'20px'}}>标签：</div>
-                        <div>
-
+                        <div style={{display:'flex',flexWrap:'wrap'}}>
+                            {
+                                tagList.map((item,index)=>(
+                                    <div key={index} style={{marginTop:'10px'}}><Tag color={item.color}>{item.tag}</Tag></div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
