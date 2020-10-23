@@ -46,9 +46,9 @@ class TradeIndex extends Component {
           <div key={index} style={{ height: '174px', width:'384px', display:'inline-block',marginLeft: index === 0 ? '0px' : '22px', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
             <img style={{float:'left',height: '100px', width:'100px',marginLeft:'18px', marginTop:'37px'}} src={item.img} alt="" />
             <div style={{float:'left',marginLeft:'25px', textAlign:'left',width:'220px'}}>
-                <div style={{fontSize:'22px',lineHeight:'90px'}}>{item.title}</div>
-                <div style={{fontSize:'18px',lineHeight:'24px', color:'#333'}}>{item.desc}</div>
-                <div style={{fontSize:'14px',lineHeight:'20px', color:'#ccc',marginTop:'12px'}}>{item.desc2}</div>
+              <div style={{fontSize:'22px',lineHeight:'90px'}}>{item.title}</div>
+              <div style={{fontSize:'18px',lineHeight:'24px', color:'#333'}}>{item.desc}</div>
+              <div style={{fontSize:'14px',lineHeight:'20px', color:'#ccc',marginTop:'12px'}}>{item.desc2}</div>
             </div>
           </div>
         ))}

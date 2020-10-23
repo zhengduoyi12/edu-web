@@ -25,10 +25,10 @@ const ResumeIndex = () => {
         <span style={{ marginTop: '53px', float: 'right' }}>查看更多</span>
       </div>
       {teacherTabs.map((item, index) => (
-          <div key={index} style={{ height: '170px', width:'280px', display:'inline-block',marginLeft: index === 0 ? '0px' : '25px'}}>
-            <img src={item.img} style={{ height: '170px',width:'280px' }} alt="" />
-          </div>
-        ))}
+        <div key={index} style={{ height: '170px', width:'280px', display:'inline-block',marginLeft: index === 0 ? '0px' : '25px'}}>
+          <img src={item.img} style={{ height: '170px',width:'280px' }} alt="" />
+        </div>
+      ))}
     </div>
   );
 };

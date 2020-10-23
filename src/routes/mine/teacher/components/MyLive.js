@@ -2,11 +2,11 @@ import React from "react";
 
 const MyLive = () => {
 
-    return (
-        <div className='App'>
+  return (
+    <div className='App'>
             直播
-        </div>
-    );
+    </div>
+  );
 };
 
 export default MyLive;

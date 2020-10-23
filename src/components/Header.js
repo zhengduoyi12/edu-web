@@ -109,7 +109,7 @@ class Header extends Component {
             </Menu.Item>
           </Menu>
         </div>
-       {/* <div style={localStyle.tab}>
+        {/* <div style={localStyle.tab}>
           <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
             <TabPane tab="平台概况" key="1" style={{ fontSize: '20px' }} />
             <TabPane tab="实习就业" key="2" />

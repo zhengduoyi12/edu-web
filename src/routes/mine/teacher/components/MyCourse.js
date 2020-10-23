@@ -7,22 +7,22 @@ const { TabPane } = Tabs;
 
 const TeacherHome = () => {
 
-    return (
-        <div className='my-course'>
-            <Tabs defaultActiveKey="1">
-                <TabPane tab="我创建的课程" key="1">
-                    <div>
-                        <Link to="/createCourse"><div className="create">
-                            <PlusOutlined /><div className="title">创建新课程</div>
-                        </div></Link>
-                    </div>
-                </TabPane>
-                <TabPane tab="我主讲的课程" key="2">
+  return (
+    <div className='my-course'>
+      <Tabs defaultActiveKey="1">
+        <TabPane tab="我创建的课程" key="1">
+          <div>
+            <Link to="/createCourse"><div className="create">
+              <PlusOutlined /><div className="title">创建新课程</div>
+            </div></Link>
+          </div>
+        </TabPane>
+        <TabPane tab="我主讲的课程" key="2">
                     Content of tab 2我主讲的课程
-                </TabPane>
-            </Tabs>
-        </div>
-    );
+        </TabPane>
+      </Tabs>
+    </div>
+  );
 };
 
 export default TeacherHome;
