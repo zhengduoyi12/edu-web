@@ -21,7 +21,7 @@ const SearchResult = () => {
       </div> 
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
 export default SearchResult;

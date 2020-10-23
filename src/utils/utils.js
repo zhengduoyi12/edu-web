@@ -4,6 +4,6 @@
  * @param {string} key 数组中元素的唯一标识
  */
 export const UniqueFn = (array, key) => {
-    const map = new Map();
-    return array.filter(item => !map.has(item[key]) && map.set(item[key], item));
-}
+  const map = new Map();
+  return array.filter(item => !map.has(item[key]) && map.set(item[key], item));
+};

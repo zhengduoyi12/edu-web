@@ -6,7 +6,7 @@ import { Menu }from 'antd';
 
 import { withRouter } from 'react-router-dom';
 import { navigate } from 'utils';
-import './header.scss'
+import './header.scss';
 
 const { Search } = Input;
 const { TabPane } = Tabs;
@@ -32,7 +32,7 @@ const localStyle = {
   tab: {
     height: '45px'
   }
-}
+};
 
 class Header extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class Header extends Component {
   };
 
   goPage = (page, params = {}) => {
-    navigate(this.props.history, page, params)
+    navigate(this.props.history, page, params);
   }
 
   // tabChange = (index) => {
@@ -109,7 +109,7 @@ class Header extends Component {
             </Menu.Item>
           </Menu>
         </div>
-       {/* <div style={localStyle.tab}>
+        {/* <div style={localStyle.tab}>
           <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
             <TabPane tab="平台概况" key="1" style={{ fontSize: '20px' }} />
             <TabPane tab="实习就业" key="2" />
@@ -121,7 +121,7 @@ class Header extends Component {
           </Tabs>
         </div>*/}
       </div>
-    )
+    );
   }
 }
-export default withRouter(Header)
+export default withRouter(Header);

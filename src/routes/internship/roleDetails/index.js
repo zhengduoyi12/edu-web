@@ -90,7 +90,7 @@ const roleDetails = () => {
       </div>
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
 export default roleDetails;

@@ -43,7 +43,7 @@ const entreDetails = () => {
       <Footer/>  
     </div>
     
-  )
-}
+  );
+};
 
 export default entreDetails;

@@ -256,7 +256,7 @@ const TalentList = () => {
       </div> 
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
 export default TalentList;

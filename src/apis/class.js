@@ -201,18 +201,19 @@ export function getTypeClass() {
         }
       ]
     },
-  ]
+  ];
   return new Promise((resolve, reject) => {
-    const res = { typeClass }
+    const res = { typeClass };
     resolve(res);
-  })
+  });
 }
 
 export function getClassInfo() {
   const classBase = {
     title: '行业贡献免费公益课程',
     content: '直击维修痛点、疑难故障，教你正确诊断思路 4500元汽车维修、新能源、示波器核心课程保时捷新上市车型技术课程 保时捷原厂诊断编程系统课程',
-  }
+    tag: ['汽修专业','发动机维修','故障定位']
+  };
   const classList = [
     {
       title: '大课时1',
@@ -255,7 +256,7 @@ export function getClassInfo() {
         },
       ]
     }
-  ]
+  ];
   const teacher = {
     name:'陈昌凯',
     school:'南京大学',
@@ -267,9 +268,9 @@ export function getClassInfo() {
     email: 'clzzzz@163.com',
     supEmail: 'sahhh@163.com',
     wechat: 'chengLi_1000',
-  }
+  };
   return new Promise((resolve,reject)=>{
-    const res = {classBase,classList,teacher}
-    resolve(res)
-  })
+    const res = {classBase,classList,teacher};
+    resolve(res);
+  });
 }

@@ -1,23 +1,23 @@
 // 首页
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState } from "react";
 import { Carousel } from 'antd';
-import Header from 'components/Header.js'
-import Footer from 'components/Footer.js'
+import Header from 'components/Header.js';
+import Footer from 'components/Footer.js';
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
 import TeacherIndex from './components/TeacherIndex.js';
 import { homeBannerList, homeTopBoxTabs } from "utils";
-import { getHomeBannerInfo, getHomeInfo } from 'apis'
-import './home.css'
+import { getHomeBannerInfo, getHomeInfo } from 'apis';
+import './home.css';
 
 const TopBox = ({ name = "", index, src }) => {
   return (
     <div className="topItem" style={{ marginLeft: index === 0 ? 0 : '27px' }}>
       <div style={{ backgroundImage: `url(${src})`, height: '100%', color: '#fff', fontSize: '30px' }}>{name}</div>
     </div>
-  )
-}
+  );
+};
 
 // 内容3部分组件
 const JobIndex = ({ jobTabs = [] }) => {
@@ -38,7 +38,7 @@ const JobIndex = ({ jobTabs = [] }) => {
               </div>
               <div style={{ height: '20px', fontSize: '14px', color: '#999' }}>
                 南京大学基础课程
-                </div>
+              </div>
               <div style={{ marginTop: '10px' }}>
                 <div style={{ textAlign: 'left', width: '30%', display: 'inline-block' }}>
                   <span style={{ background: '#13B5B1', color: '#fff', width: '50px', height: '22px', lineHeight: '18px', fontSize: '12px', paddingLeft: '5px', paddingRight: '5px' }}>免费</span>
@@ -50,23 +50,23 @@ const JobIndex = ({ jobTabs = [] }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CompanyRank = ({ compTabs = [] }) => {
   return (
     <div style={{ height: '400px', fontSize: '18px', color: '#999', background: '#ddd', marginLeft: '30px' }}>
       <div style={{ height: '100px', fontSize: '32px', color: '#000', lineHeight: '100px' }}>
         名企榜单
-    </div>
+      </div>
       {compTabs.map((item, index) => (
         <div key={index} style={{ fontSize: '18px', lineHeight: '32px', color: item.color, textAlign: 'left', paddingLeft: '30px' }}>
           {item.title}
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 // header
 // 内容1: banner
@@ -88,34 +88,32 @@ const HomeView = () => {
       setBannerHoverList(res);
     }, (e) => {
       console.log(e);
-    })
+    });
     getHomeInfo().then((res) => {
       setCompTabs(res.compTabs);
       setJobTabs(res.jobTabs);
     }, (e) => {
       console.log(e);
-    })
+    });
   }, []);
 
   return (
     <div className='App'>
       <Header crtIndex={1} />
-      <div className='body_wrap1920'>
-        <div className="body">
-          <div className="bannerHover">
-            {bannerHoverList.map((text, index) => (
-              <div key={index} >
-                <div className="bannerInfo" onClick={() => {
-                  bannerRef.current.goTo(index);
-                }}>{text}</div>
-              </div>
-            ))}
-          </div>
+      <div className='body'>
+        <div className="bannerHover">
+          {bannerHoverList.map((text, index) => (
+            <div key={index} >
+              <div className="bannerInfo" onClick={() => {
+                bannerRef.current.goTo(index);
+              }}>{text}</div>
+            </div>
+          ))}
         </div>
         <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
           {homeBannerList.map((item, index) => (
             <div key={index} >
-              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff' }} />
+              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff', backgroundPosition:'center' }} />
             </div>
           ))}
         </Carousel>
@@ -141,7 +139,7 @@ const HomeView = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default HomeView;

@@ -1,5 +1,5 @@
 // js， hooks写法
-import React from "react"
+import React from "react";
 
 const ResumeIndex = () => {
   const resumeTabs = [
@@ -51,7 +51,7 @@ const ResumeIndex = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default ResumeIndex;
