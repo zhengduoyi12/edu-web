@@ -1,9 +1,9 @@
-import React from "react"
-import { Input , Pagination, Table} from 'antd'
+import React from "react";
+import { Input , Pagination, Table} from 'antd';
 
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import SearchTag from '../../search/components/SearchTag'
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import SearchTag from '../../search/components/SearchTag';
 
 
 const TalentList = () => {
@@ -28,7 +28,6 @@ const TalentList = () => {
       title: '意向职位',
       key: 'role',
       dataIndex: 'role', 
-      render: text => <a>{text}</a>,
     },
     {
       title: '地区',
@@ -239,16 +238,16 @@ const TalentList = () => {
       major: '财务管理',
       school: '西安培华学院',
     },
-  ]
+  ];
 
 
 
-  const { Search } = Input
-    return (
-    <div class="App">
+  const { Search } = Input;
+  return (
+    <div className="App">
       <Header/>
       <div className="RoleSearch" style={{ width: '1920px', height: '160px', backgroundColor: '#DDDDDD'}}>
-        <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} onSearch={() => { goSearchResult() }} />
+        <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />
       </div>
       <div style={{ width: '1200px', margin: '0 auto', padding:'20px' }}>
         <SearchTag/>
