@@ -8,7 +8,7 @@ const NewJob = ({jobList}) => {
   return (
     <div style={{width:"100%",height:"562px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
       {jobList.map((item,index)=>{
-        return <div key={index} onClick={() => { goRoleDetails(); }} style={{width:"382px",height:"172px",border:"1px solid #ccc",textAlign:"left"}}>
+        return <div key={index} onClick={() => { goRoleDetails(); }} style={{width:"382px",height:"172px",border:"1px solid #ccc",textAlign:"left",cursor:"pointer"}}>
           <div style={{marginLeft:"10px",marginTop:"34px",height:"22px",fontWeight:700}}>
             <span style={{fontSize:"22px"}}>{item.name}——{item.cmp}</span>
             <span style={{fontSize:"18px",color:"#ff9900",float:"right",marginRight:"26px"}}>{item.money}元</span>

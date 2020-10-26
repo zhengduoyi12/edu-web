@@ -1,0 +1,46 @@
+.Streaming{
+    .ant-card-body{
+        padding: 0;
+        h2{
+            margin-bottom: 50px;
+            font-size: 18px;
+            color:#000000;
+            font-weight: bold;
+        }
+        p{
+            font-size: 14px;
+            color:#AAAAAA;
+           
+        }
+        .shadowIcon{
+            width:60px;
+            height: 20px;
+            background-color: #000000;
+            z-index:999;
+            position: absolute;
+            top:20px;
+            left:200px;
+            color:#ffffff;
+            text-align: center;
+        }
+    }
+   
+}
+
+.Recommend{
+    .ant-card-body{
+        padding: 0;
+        h2{
+            margin-bottom: 50px;
+            font-size: 18px;
+            color:#000000;
+            font-weight: bold;
+        }
+        p{
+            font-size: 14px;
+            color:#AAAAAA;
+           
+        }
+    }
+   
+}

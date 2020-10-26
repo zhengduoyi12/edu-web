@@ -8,6 +8,8 @@ const { TabPane } = Tabs;
 
 const TypeArea = () => {
   const [typeClass, setTypeClass] = useState([]);
+  // tofix, 没用的代码删掉
+  // 尽量不要用class来表示课，因为class是保留字段，有其他意思
   console.log();
   const classTabs = [
     {

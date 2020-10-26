@@ -2,13 +2,14 @@ import React from 'react';
 
 import Header from 'components/Header.js';
 import Footer from 'components/Footer.js';
+// tofix, 备注
 import FamousArea from './components/FamousArea';
 import LiveArea from './components/LiveArea';
 import SeniorArea from './components/SeniorArea';
 import SelectArea from './components/SelectArea';
 import TypeArea from './components/TypeArea';
 
-
+// tofix, 样式抽离出去
 const bannerUrl=require('assets/ibanner.jpg');
 const Intelligence = () => {
   return (

@@ -4,7 +4,7 @@ import { Input , Pagination, Table} from 'antd';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import SearchTag from '../../search/components/SearchTag';
-
+import '../style.scss';
 
 const TalentList = () => {
 
@@ -244,9 +244,9 @@ const TalentList = () => {
 
   const { Search } = Input;
   return (
-    <div className="App">
+    <div className="TalentList">
       <Header/>
-      <div className="RoleSearch" style={{ width: '1920px', height: '160px', backgroundColor: '#DDDDDD'}}>
+      <div className="RoleSearch" style={{ height: '160px', backgroundColor: '#DDDDDD'}}>
         <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />
       </div>
       <div style={{ width: '1200px', margin: '0 auto', padding:'20px' }}>

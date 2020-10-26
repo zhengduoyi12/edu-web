@@ -1,6 +1,7 @@
 // js， hooks写法
 import React from "react";
 import { CaretDownOutlined } from '@ant-design/icons';
+// tofix, CaretDownOutlined等icon要不要写个组件包装一下，现在看的有点复杂
 
 const LiveArea = () => {
   const leftImgUrl=require('assets/leftTop.png');
