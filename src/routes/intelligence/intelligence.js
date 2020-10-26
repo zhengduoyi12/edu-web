@@ -1,10 +1,9 @@
 import React from 'react';
-
 import Header from 'components/Header.js';
 import Footer from 'components/Footer.js';
-// tofix, 备注
-import FamousArea from './components/FamousArea';
+// 组件：在线直播、名师直播、高级课程、精选课程、分类课程
 import LiveArea from './components/LiveArea';
+import FamousArea from './components/FamousArea';
 import SeniorArea from './components/SeniorArea';
 import SelectArea from './components/SelectArea';
 import TypeArea from './components/TypeArea';
@@ -35,8 +34,7 @@ const Intelligence = () => {
           <div style={{height:'80px',textAlign:'left'}}>
             <span style={{fontSize:'32px', fontWeight:'bold',lineHeight:'80px'}}>分类课程</span>
             <span style={{fontSize:'24px', lineHeight:'80px',float:'right'}}>更多</span>
-          </div>
-                        
+          </div>         
           <TypeArea />
         </div>
       </div>

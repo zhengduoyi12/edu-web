@@ -1,4 +1,4 @@
-// js， hooks写法
+// 智慧培训-在线直播课程
 import React from "react";
 import { CaretDownOutlined } from '@ant-design/icons';
 // tofix, CaretDownOutlined等icon要不要写个组件包装一下，现在看的有点复杂

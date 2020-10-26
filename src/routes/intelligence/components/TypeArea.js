@@ -1,4 +1,4 @@
-// js， hooks写法
+// 智慧培训-分类课程
 import React, { useEffect, useState } from "react";
 import { Tabs } from 'antd';
 
@@ -7,37 +7,10 @@ import { getTypeClass } from 'apis/class';
 const { TabPane } = Tabs;
 
 const TypeArea = () => {
-  const [typeClass, setTypeClass] = useState([]);
-  // tofix, 没用的代码删掉
-  // 尽量不要用class来表示课，因为class是保留字段，有其他意思
-  console.log();
-  const classTabs = [
-    {
-      "name": "MyAQL基础入门-数据库概述",
-      "content": "南京大学基础课程",
-      "img": require("assets/u161_a.png"),
-      "member": "380"
-    }, {
-      "name": "MyAQL基础入门-数据库概述",
-      "content": "南京大学基础课程",
-      "img": require("assets/u169_a.png"),
-      "member": "380"
-
-    }, {
-      "name": "全技能数据人才培养方案：第一课理论基础",
-      "content": "湖南大学基础课程",
-      "img": require("assets/u177_a.png"),
-      "member": "380"
-    }, {
-      "name": "MyAQL基础入门-数据库概述",
-      "content": "南京大学基础课程",
-      "img": require("assets/u161_a.png"),
-      "member": "380"
-    }
-  ];
+  const [typeCourse, setTypeCourse] = useState([]);
   useEffect(() => {
     getTypeClass().then((res) => {
-      setTypeClass(res.typeClass);
+      setTypeCourse(res.typeCourse);
     }, (e) => {
       console.log(e);
     });
@@ -46,12 +19,12 @@ const TypeArea = () => {
     <div>
       <Tabs defaultActiveKey="1">
         {
-          typeClass.map((it, i) => (
+          typeCourse.map((it, i) => (
             <TabPane tab={it.name} key={i}>
               {
                 it['class'].map((item, index) => {
                   return (
-                    <div key={`classList_` + index} style={{ marginBottom: "69px", height: '300px', width: '274px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
+                    <div key={index} style={{ marginBottom: "69px", height: '300px', width: '274px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
                       <div style={{ height: '300px', width: '280px', display: 'inline-block', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
                         <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
                         <div style={{ padding: '8px' }}>
@@ -77,7 +50,6 @@ const TypeArea = () => {
           )
         }
       </Tabs>
-
     </div>
   );
 };

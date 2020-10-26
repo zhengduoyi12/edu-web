@@ -1,4 +1,4 @@
-// tofix, 这个模块的简单介绍，其他模块都要
+// 智慧培训-名师直播
 import { Card } from "antd";
 import React from "react";
 
