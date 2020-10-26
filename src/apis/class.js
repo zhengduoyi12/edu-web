@@ -1,3 +1,4 @@
+
 export function getTypeClass() {
   const typeClass = [
     {

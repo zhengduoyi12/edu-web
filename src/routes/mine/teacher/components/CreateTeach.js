@@ -4,6 +4,9 @@ import {Form,Input,Button} from 'antd';
 
 const CreateTeach = (props={}) => {
   const {createTeachKey} = props;
+  const nextStep = () => {
+    createTeachKey();
+  };
   return (
     <div className="create-base">
       <div className="title">基础信息</div>
@@ -20,7 +23,7 @@ const CreateTeach = (props={}) => {
         </Form.Item>
         <Form.Item wrapperCol={{ span: 8,offset:8}}>
           <Button type="primary" htmlType="submit">保存</Button>
-          <Button type="primary" htmlType="submit" onClick={createTeachKey}>下一步</Button>
+          <Button type="primary" htmlType="submit" onClick={nextStep}>下一步</Button>
           <Button>取消</Button>
         </Form.Item>
       </Form>

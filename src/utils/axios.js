@@ -4,7 +4,7 @@ import qs from 'qs';
 // import index from '@/index';
 import { getAuth } from './authentication';
 
-const baseURL = '/api';
+const baseURL = '/edu';
 const timeout = 20000;
 const FORM_CONTENT_TYPE = 'application/x-www-form-urlencoded; charset=utf-8';
 const JSON_CONTENT_TYPE = 'application/json; charset=utf-8';
@@ -33,7 +33,7 @@ instance.interceptors.request.use((config) => {
 // 全局异常处理
 instance.interceptors.response.use(response => {
   const {code, message} = response.data;
-  if (code !== 200) {
+  if (code !== '00000') {
     alert('错误码：'+code+'，错误信息：'+message);
     if (code===401) {
       toLogin();
