@@ -54,7 +54,7 @@ const PracticeIndex = (props) => {
         </div>
                 
         <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-          <p onClick={() => { goSearchResult();}}style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>更多职位</p>
+          <p onClick={() => { goSearchResult();}}style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold',cursor:"pointer"}}>更多职位</p>
         </div>
                    
         <div>
@@ -63,7 +63,7 @@ const PracticeIndex = (props) => {
         </div>
 
         <div style={{width:'140px',height:'40px', background:'#0099FF',color:'white',margin:'0 auto'}}>
-          <p onClick={() => { goSearchResult();}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold'}}>了解更多</p>
+          <p onClick={() => { goSearchResult();}} style={{lineHeight:'40px', fontSize:'18px',fontWeight:'bold',cursor:"pointer"}}>了解更多</p>
         </div>
       </div>
                  

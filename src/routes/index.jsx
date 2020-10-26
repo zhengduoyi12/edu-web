@@ -18,7 +18,7 @@ import Internship from 'routes/internship';
 import TalentList from 'routes/internship/talentList';
 import RoleDetails from 'routes/internship/roleDetails';
 import EntreDetails from 'routes/internship/entreDetails';
-
+import PublicTeacher from 'routes/internship/entreDetails/PublicTeacher';
 //实训
 import TrainIndex from 'routes/train';
 
@@ -50,6 +50,7 @@ const Routes = () => (
       <Route path="/talentList" component={TalentList} />
       <Route path="/roleDetails" component={RoleDetails} />
       <Route path="/entreDetails" component={EntreDetails} />
+      <Route path="/publicTeacher" component={PublicTeacher} />
       <Route path="/search" component={SearchResult} />
       <Route path="/train" component={TrainIndex} />
       <Route path="/job" component={JobIndex} />

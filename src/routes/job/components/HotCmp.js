@@ -11,7 +11,7 @@ const HotCmp = ({cmpList}) => {
   return (
     <div style={{width:"100%",height:"620px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
       {cmpList.map((item,index)=>{
-        return <div key={index} onClick={() => { goEntreDetails(); }} style={{width:"400px",height:"260px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+        return <div key={index} onClick={() => { goEntreDetails(); }} style={{width:"400px",height:"260px",display:"flex",flexDirection:"column",alignItems:"center",cursor:"pointer"}}>
           <div style={{width:"107px",height:"107px",marginTop:"0px",lineHeight:"107px",fontSize:"32px",background:"rgba(204,204,204,0.3)",color:"#CCC"}}>
                     公司
           </div>

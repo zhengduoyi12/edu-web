@@ -53,7 +53,6 @@ const SeniorArea = () => {
                   </div>
                 </div>
               </Link>
-
             </div>
           );
         })
