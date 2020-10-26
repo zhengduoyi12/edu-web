@@ -27,6 +27,7 @@ const SeniorArea = () => {
       "member": "380"
     }
   ];
+  // tofix, link跳转肯定要要带参数的，id，课程id什么的，能写上就写上
 
   return (
     <div>

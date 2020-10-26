@@ -67,7 +67,7 @@ const PracticeIndex = (props) => {
         </div>
       </div>
                  
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };
