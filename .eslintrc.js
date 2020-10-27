@@ -28,6 +28,7 @@ module.exports = {
         "react/prop-types": 0,
         "no-unused-vars": 0,
         'indent' : ["warn", 2],
+        "react/display-name": "off"
     },
     "globals": {},
     "settings": {

@@ -70,12 +70,12 @@ const TopCard = () => {
       <div style={{width:'400px', height:'200px',float:'right'}}>
         <div style={{height:"100px", paddingTop:'60px',paddingLeft:'240px'}}>
           <span><HeartTwoTone /></span>
-          <span>收藏</span>
+          <span onClick={()=>{window.alert('已收藏');}}>收藏</span>
           <span style={{marginLeft:'20px'}}>竞争力分析</span>
         </div>
         <div style={{height:"100px",padding:'20px'}}>
           <div style={{width:'200px', height:'40px',borderRadius:'8px', backgroundColor:'#00BBFF',lineHeight:'40px',textAlign:'center',float:'right'}}>
-            <span style={{fontSize:'20px', fontWeight:'bold',color:'#ffffff'}}>申请岗位</span>
+            <span onClick={()=>{window.alert('一键申请通过');}}style={{fontSize:'20px', fontWeight:'bold',color:'#ffffff'}}>申请岗位</span>
           </div>
         </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Tag } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import { List } from "antd/lib/form/Form";
-
+import { withRouter , useHistory } from 'react-router-dom';
 const roleList=[
   {name:'111'},
   {name:'2222'},
@@ -16,13 +16,21 @@ const roleList=[
   {name:'2222'},
 ];
 const SearchResList= () => {
+  const history = useHistory();
+   
+  function gopositionDetails(){
+    history.push("/positionDetails");
+  }
+  function gocmpDetails(){
+    history.push("/cmpDetails");
+  }
   return (
     <div style={{padding:"20px"}}>
       {
         roleList.map((item, index)=>(
-          <div key={index} style={{width:'800px', height:'130px',backgroundColor:'white', marginBottom:'20px', border:'1px solid #CCCCCC', borderRadius:"4px",padding:'10px'}}>
+          <div key={index} style={{width:'800px', height:'130px',backgroundColor:'white', marginBottom:'20px', border:'1px solid #CCCCCC', borderRadius:"4px",padding:'10px',cursor:'pointer'}}>
             <div style={{height:'60px', textAlign:'left'}}>
-              <div style={{width:"410px",height:"60px",padding:'4px 8px',float:'left'}}>
+              <div onClick={()=>{gopositionDetails();}} style={{width:"410px",height:"60px",padding:'4px 8px',float:'left'}}>
                 <div style={{color:'#00c2b3', fontSize:'16px'}}>
                   <span>Android系统工程师
                   </span>
@@ -38,7 +46,7 @@ const SearchResList= () => {
                   </p>
                 </div>
               </div>
-              <div style={{width:"350px",height:"60px",float:'right'}}>
+              <div onClick={()=>{gocmpDetails();}} style={{width:"350px",height:"60px",float:'right'}}>
                 <div style={{width:"280px", display:'inline-block'}}>
                   <div style={{color:'#00c2b3', fontSize:'16px'}}>
                     <span>海康威视

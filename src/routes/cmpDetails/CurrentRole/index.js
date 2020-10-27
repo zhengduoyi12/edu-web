@@ -15,7 +15,7 @@ const CurrentRoleInfo=[
 const CurrentRole = () => {
   const history = useHistory();
   function goRoleDetails(){
-    history.push("/roleDetails");
+    history.push("/positionDetails");
   }
   return (
     <div className="App" style={{textAlign:'left'}}>

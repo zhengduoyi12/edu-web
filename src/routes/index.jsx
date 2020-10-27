@@ -16,9 +16,17 @@ import ClassDetails from 'routes/intelligence/classDetails';
 // 实习
 import Internship from 'routes/internship';
 import TalentList from 'routes/internship/talentList';
-import RoleDetails from 'routes/internship/roleDetails';
-import EntreDetails from 'routes/internship/entreDetails';
-import PublicTeacher from 'routes/internship/entreDetails/PublicTeacher';
+
+
+//岗位
+import positionDetails from 'routes/positionDetails';
+
+//公司
+import CmpDetails from 'routes/cmpDetails';
+
+//公共老师页面
+import TeacherDetails from 'routes/teacherDetails';
+
 //实训
 import TrainIndex from 'routes/train';
 
@@ -48,9 +56,9 @@ const Routes = () => (
       <Route path="/classDetails" component={ClassDetails} />
       <Route path="/internship" component={Internship} />
       <Route path="/talentList" component={TalentList} />
-      <Route path="/roleDetails" component={RoleDetails} />
-      <Route path="/entreDetails" component={EntreDetails} />
-      <Route path="/publicTeacher" component={PublicTeacher} />
+      <Route path="/positionDetails" component={positionDetails} />
+      <Route path="/cmpDetails" component={CmpDetails} />
+      <Route path="/teacherDetails" component={TeacherDetails} />
       <Route path="/search" component={SearchResult} />
       <Route path="/train" component={TrainIndex} />
       <Route path="/job" component={JobIndex} />

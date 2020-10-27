@@ -48,7 +48,6 @@ const Resume = () => {
     },
   ];
   const history = useHistory();
-  const [visible, setVisible] = useState(false);
   function goTalentList(){
     history.push("/talentList");
   }
@@ -67,7 +66,7 @@ const Resume = () => {
         {
           data.map((item,index)=>{
             return(
-              <div key={item.key} onClick={() => setVisible(true)} style={{ width:'800px', height:'30px',textAlign:'left', padding:'0 25px',marginBottom:'12px',cursor:"pointer"}}>
+              <div key={item.key} onClick={() => window.alert("查看简历")} style={{ width:'800px', height:'30px',textAlign:'left', padding:'0 25px',marginBottom:'12px',cursor:"pointer"}}>
                 <span style={{ marginRight: '160px' , color: (index===0||index===1||index===2)? '#0099FF':'#000000'}}>{item.name} </span>
                 <span style={{ marginRight: '160px',color: (index===0||index===1||index===2)? '#0099FF':'#000000'}}>{item.role} </span>
                 <span style={{ marginRight: '160px',color: (index===0||index===1||index===2)? '#0099FF':'#000000'}}>{item.school} </span>
@@ -77,18 +76,6 @@ const Resume = () => {
           })
         }
       </div>
-      <Modal
-        title="查看简历"
-        centered
-        visible={visible}
-        width={1000}
-        onCancel={() => setVisible(false)}
-        footer={false}
-      >
-        <p>只有企业账号才能查看简历, 您可以登录或者注册企业账号</p>
-        <Button>登录</Button>
-        <Button>取消</Button>
-      </Modal>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { withRouter , useHistory } from 'react-router-dom';
 const NewJob = ({jobList}) => {
   const history = useHistory();
   function goRoleDetails(){
-    history.push("/roleDetails");
+    history.push("/positionDetails");
   }
 
   return (

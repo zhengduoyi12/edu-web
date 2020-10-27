@@ -1,5 +1,5 @@
 import React from "react";
-import { Input , Pagination, Table} from 'antd';
+import { Input, Table, Space } from 'antd';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -48,6 +48,16 @@ const TalentList = () => {
       title: '院校',
       dataIndex: 'school',
       key: 'school',
+    },
+    {
+      title: '操作',
+      key: 'action',
+      render: () => (
+        <Space size="middle">
+          <a onClick={()=>{window.alert('查看简历');}}>查看</a>
+          <a onClick={()=>{window.alert('下载简历');}}>下载</a>
+        </Space>
+      ),
     },
   ];
   const data = [
