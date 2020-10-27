@@ -11,7 +11,7 @@ const TitleRow = (props) => {
         </div>
       </div>
       <div style={{fontSize:'18px',padding:'20px',borderBottom:'1px solid #AAAAAA'}}>
-          {params.details}
+        {params.details}
       </div>
     </div>
   );
