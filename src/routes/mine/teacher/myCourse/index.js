@@ -5,7 +5,7 @@ import { PlusOutlined } from '@ant-design/icons';
 
 const { TabPane } = Tabs;
 
-const TeacherHome = () => {
+const MyCourse = () => {
 
   return (
     <div className='my-course'>
@@ -25,4 +25,4 @@ const TeacherHome = () => {
   );
 };
 
-export default TeacherHome;
+export default MyCourse;

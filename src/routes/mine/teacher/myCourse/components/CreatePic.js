@@ -1,19 +1,36 @@
-import React from 'react';
-import { Upload, message, Button,Row, Col } from 'antd';
+import React, { useState } from 'react';
+import { Upload, message, Button, Row, Col } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
-const CreatePic = (props={}) => {
-  const {createPicKey} = props;
+import { getUploadUrl } from 'apis/course';
+
+const CreatePic = (props = {}) => {
+  const { createPicKey, courseId } = props;
+  const [uploadUrl, setUploadUrl] = useState('');
   const nextStep = () => {
     createPicKey();
   };
   const up = {
     name: 'file',
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    // action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
     headers: {
       authorization: 'authorization-text',
     },
     onChange(info) {
+      let params = {
+        courseId: courseId,
+        fileName: info.file.name,
+        resourceFrom: 0
+      };
+      getUploadUrl(params).then(res => {
+        const { code, data } = res;
+        if (code == '00000') {
+          setUploadUrl(data);
+          console.log('uploadUrl', uploadUrl);
+          up.action = uploadUrl;
+        }
+      });
+      console.log('info', info);
       if (info.file.status !== 'uploading') {
         console.log(info.file, info.fileList);
       }

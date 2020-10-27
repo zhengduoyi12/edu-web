@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
-
-const CreateSection = () => {
+import { Input, Form, Cascader, Select, Radio,Button } from 'antd';
+import ChapterItem from './ChapterItem';
+// import Form from "antd/lib/form/Form";
+const { Search } = Input;
+const CreateSection = (props = {}) => {
+  const { courseId } = props;
+  const [chapter, setChapter] = useState(true);
   const classList = [
     {
       title: '大课时1',
@@ -29,6 +34,10 @@ const CreateSection = () => {
       ]
     }
   ];
+  const onSearchChapter = (value) => {
+    console.log('value', value + chapter);
+    setChapter(true);
+  };
   return (
     <div className="create-section">
       <div className="title">课程内容</div>
@@ -36,24 +45,16 @@ const CreateSection = () => {
         {
           classList.map((item, index) => (
             <div key={index}>
-              <div className="title-first">第{index + 1}章： {item.title}</div>
-              {
-                item.class.map((it, i) => (
-                  <div key={i} className="title-second">
-                    <span>课时{i + 1}</span>
-                    <span>{it.title}</span>
-                    <span>({it.time}分钟)</span>
-                    <span>({it.type})</span>
-                  </div>
-                ))
-              }
-              <div className="title-second" style={{textAlign:'center'}}>
-                <span>+ 添加新课时</span>
-              </div>
+              <ChapterItem item={item} index={index} />
             </div>
+            
           ))
         }
-        <div className="title-first" style={{textAlign:'center'}}>+ 添加新章节</div>
+        {
+          chapter == true ? (<div className="title-first" style={{ textAlign: 'center' }} onClick={() => setChapter(false)}>+ 添加新章节</div>) :
+            (<div className="title-first-edit"><div className="edit-title">第{classList.length + 1}章：</div><Search placeholder="请输入章节名称" enterButton="新建" onSearch={onSearchChapter} /></div>)
+        }
+
       </div>
 
     </div>

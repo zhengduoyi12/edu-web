@@ -7,10 +7,10 @@ const { Option } = Select;
 
 const CreateBase = (props = {}) => {
   const [tagList, setTagList] = useState([]);
-  const { createBaseKey } = props;
+  const { createBaseKey,setCourseId } = props;
   const courseDegree = ['零基础入门', '入门到中级', '中级到高级', '高级精通'].map((item, index) => (<Option key={index}>{item}</Option>));
-  const courseTag = ['零基础入门', '入门到中级', '中级到高级', '高级精通'].map((item, index) => (<Option key={index}>{item}</Option>));
-  const [courseId, setCourseId] = useState(0);
+  // const [courseId, setCourseId] = useState(0);
+
   const [typeOption, setTypeOption] = useState([
     {
       "id": 1,
@@ -121,11 +121,6 @@ const CreateBase = (props = {}) => {
       "updateUserId": null
     }
   ]);
-  // let { activeKey,setActiveKey } = useContext(MyContext);
-  // const nextStep = () => {
-  //     console.log(123);
-  //     setActiveKey('3');
-  // };
   const selectList = [
     {
       "id": 1,
@@ -273,15 +268,12 @@ const CreateBase = (props = {}) => {
     };
     setTypeOption(tfType(typeOption));
 
-    getCourseTag().then((res) => {
-      console.log('getCourseTag res=>', res);
-    });
+    // getCourseTag().then((res) => {
+    //   console.log('getCourseTag res=>', res);
+    // });
   }, []);
-  const nextStep = () => {
-    console.log(159);
-  };
-  const onFinish = (values) => {
-    addBasicInfo(values).then(res => {
+  const onFinish = (value) => {
+    addBasicInfo(value).then(res => {
       const { code, data } = res;
       if (code == '00000') {
         setCourseId(data);
@@ -291,13 +283,11 @@ const CreateBase = (props = {}) => {
       console.log(err);
     });
   };
-
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
   const tfTag = (id) => {
     let arr = [];
-    console.log('typeOption', selectList);
     selectList.forEach(el => {
       if (el.parentId == id) {
         arr.push({
@@ -306,14 +296,11 @@ const CreateBase = (props = {}) => {
         });
       }
     });
-    console.log('arr', arr);
     arr = arr.map((item) => (<Option key={item.tag}>{item.tagName}</Option>));
     return arr;
   };
   const changeSelect = (value, selectedOptions) => {
-    console.log('selectedOptions', selectedOptions);
     const { id } = selectedOptions[1];
-    console.log('id', id);
     setTagList(tfTag(id));
   };
 

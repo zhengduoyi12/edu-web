@@ -3,7 +3,7 @@ import request from 'utils/axios';
 // 课程分类option
 export function getCourseTag(params) {
   return request({
-    url: '/edu.course/tagInfo',
+    url: '/course/tagInfo',
     method: 'get',
     params,
   });
@@ -11,7 +11,7 @@ export function getCourseTag(params) {
 // 新增课程基本信息
 export function addBasicInfo(params) {
   return request({
-    url: '/edu.course/basicInfo',
+    url: '/course/basicInfo',
     method: 'post',
     params,
   });
@@ -19,7 +19,7 @@ export function addBasicInfo(params) {
 // 获取文件临时url
 export function getUploadUrl(params) {
   return request({
-    url: '/edu.course/upload',
+    url: '/course/uploadUrl',
     method: 'get',
     params
   });
@@ -27,7 +27,7 @@ export function getUploadUrl(params) {
 // 文件上传
 export function uploadFile(params) {
   return request({
-    url: '/edu.course/saveFilePath',
+    url: '/course/saveFilePath',
     method: 'put',
     params
   });
@@ -35,7 +35,7 @@ export function uploadFile(params) {
 // 新增个人介绍
 export function addPersonIntro(params) {
   return request({
-    url: '/edu.course/personalIntroduction',
+    url: '/course/personalIntroduction',
     method: 'put',
     params,
   });
@@ -43,7 +43,7 @@ export function addPersonIntro(params) {
 // 新增章节
 export function addChapter(params) {
   return request({
-    url: '/edu.course/chapterInfo',
+    url: '/course/chapterInfo',
     method: 'put',
     params,
   });
@@ -51,7 +51,7 @@ export function addChapter(params) {
 // 新增课程价格
 export function addCoursePrice(params) {
   return request({
-    url: '/edu.course/coursePrice',
+    url: '/course/coursePrice',
     method: 'put',
     params,
   });
@@ -59,9 +59,16 @@ export function addCoursePrice(params) {
 // 新增课程权限
 export function addCourseAuth(params) {
   return request({
-    url: '/edu.course/courseAuth',
-    method: 'post',
+    url: '/course/courseAuth',
+    method: 'put',
     params,
   });
 }
-
+// 获取章节列表
+export function getChapterList(params) {
+  return request({
+    url: '/course/chapterInfoDetail',
+    method: 'get',
+    params,
+  });
+}

@@ -3,7 +3,11 @@ import { Link, Route } from 'react-router-dom';
 import Header from 'components/Header.js';
 import Footer from 'components/Footer.js';
 import { Layout, Menu, Tabs } from 'antd';
-import MyCourse from './components/MyCourse';
+import MyCourse from './myCourse';
+import MyLive from './myLive';
+import InternshipManage from './internshipManage';
+import JobManage from './jobManage';
+import MsgCenter from './msgCenter';
 
 import './index.scss';
 
@@ -31,7 +35,16 @@ const TeacherHome = () => {
             <MyCourse />
           </TabPane>
           <TabPane tab="我的直播" key="2">
-                        Content of tab 2
+            <MyLive />
+          </TabPane>
+          <TabPane tab="实习管理" key="3">
+            <InternshipManage />
+          </TabPane>
+          <TabPane tab="实训管理" key="4">
+            <JobManage />
+          </TabPane>
+          <TabPane tab="信息中心" key="5">
+            <MsgCenter />
           </TabPane>
 
         </Tabs>

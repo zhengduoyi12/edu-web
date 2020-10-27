@@ -27,7 +27,7 @@ import JobIndex from 'routes/job';
 
 // 用户中心
 import Mine from 'routes/mine';
-import CreateCourse from 'routes/mine/teacher/createCourse';
+import CreateCourse from 'routes/mine/teacher/myCourse/createCourse';
 
 // 登录注册
 import Login from 'routes/login/login';

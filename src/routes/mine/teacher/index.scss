@@ -105,6 +105,25 @@ $bcolor: rgba(204,204,204,0.3);
         margin: 20px 0;
         padding-left: 20px;
     }
+    .title-first-edit {
+        display: flex;
+        font-size: 16px;
+        height: 46px; 
+        line-height: 46px;
+        font-weight: 700;
+        margin: 20px 0;
+        padding-left: 20px;
+        .edit-title {
+            width: 65px;
+        }
+        .ant-input {
+            height: 46px;
+        }
+        .ant-btn {
+            height: 46px;
+            width: 80px;
+        }
+    }
     .title-second {
         margin: 20px auto;
         width: 80%;
@@ -117,5 +136,33 @@ $bcolor: rgba(204,204,204,0.3);
         span {
             margin-left: 16px;
         }
+    }
+    .title-second-edit {
+        width: 80%;
+        padding: 20px;
+        margin: 20px auto;
+        background-color: $bcolor;
+        .ant-form-item {
+            margin: 20px 0;
+        }
+        .ant-btn {
+            margin-right: 20px;
+        }
+    }
+}
+.create-price {
+    text-align: left;
+    .title {
+        height: 58px;
+        line-height: 58px;
+        background-color: $bcolor;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    .ant-form-item {
+        margin: 40px 0;
+    }
+    .ant-btn {
+        margin-right: 20px;
     }
 }
