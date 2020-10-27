@@ -1,4 +1,4 @@
-// js， hooks写法
+// 智慧培训-精选课程
 import React from "react";
 
 const SelectArea = () => {
@@ -26,13 +26,12 @@ const SelectArea = () => {
       "member": "380"
     }
   ];
-
   return (
     <div>
       {
         classTabs.map((item, index) => {
           return (
-            <div key={`classList_`+index} style={{ marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
+            <div key={index} style={{ marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
               <div style={{ height: '300px', width: '280px', display: 'inline-block', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
                 <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
                 <div style={{ padding: '8px' }}>

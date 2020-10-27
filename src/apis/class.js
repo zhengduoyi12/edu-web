@@ -1,5 +1,6 @@
+
 export function getTypeClass() {
-  const typeClass = [
+  const typeCourse = [
     {
       name: 'It计算机',
       class: [
@@ -203,7 +204,7 @@ export function getTypeClass() {
     },
   ];
   return new Promise((resolve, reject) => {
-    const res = { typeClass };
+    const res = { typeCourse };
     resolve(res);
   });
 }

@@ -11,7 +11,7 @@ import SearchResult from 'routes/search';
 
 // 智慧课程
 import Intelligence from 'routes/intelligence/intelligence';
-import ClassDetails from '../components/ClassDetails';
+import ClassDetails from 'routes/intelligence/classDetails';
 
 // 实习
 import Internship from 'routes/internship';

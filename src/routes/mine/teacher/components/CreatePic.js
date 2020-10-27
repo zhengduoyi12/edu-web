@@ -4,6 +4,9 @@ import { UploadOutlined } from '@ant-design/icons';
 
 const CreatePic = (props={}) => {
   const {createPicKey} = props;
+  const nextStep = () => {
+    createPicKey();
+  };
   const up = {
     name: 'file',
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
@@ -41,7 +44,7 @@ const CreatePic = (props={}) => {
       <Row>
         <Col offset={9}>
           <Button type="primary" htmlType="submit">保存</Button>
-          <Button type="primary" htmlType="submit" onClick={createPicKey}>下一步</Button>
+          <Button type="primary" htmlType="submit" onClick={nextStep}>下一步</Button>
           <Button>取消</Button>
         </Col>
       </Row>

@@ -1,4 +1,4 @@
-// js， hooks写法
+// 智慧培训-名师直播
 import { Card } from "antd";
 import React from "react";
 
@@ -42,7 +42,7 @@ const FamousArea = () => {
       "img": require("assets/profile1.png"),
     }
   ];
-
+  // tofix, card点击的click事件加上，空的function也行
   return (
     <div style={{ width: '1200px', margin: '40px 0' }}>
       <div style={{ height: '100px', fontSize: "32px", fontWeight: 'bold', textAlign: 'left', lineHeight: '100px' }} >
