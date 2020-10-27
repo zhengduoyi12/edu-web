@@ -3,7 +3,7 @@ import { withRouter , useHistory } from 'react-router-dom';
 const NewJob = ({jobList}) => {
   const history = useHistory();
   function goRoleDetails(){
-    history.push("/roleDetails");
+    history.push("/positionDetails");
   }
   return (
     <div style={{width:"100%",height:"562px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>

@@ -8,7 +8,7 @@ const teacherTabs=[
 const AllTeachers = () => {
   const history = useHistory();
   function goPublicTeacher(){
-    history.push("/publicTeacher");
+    history.push("/teacherDetails");
   }
   return (
     <div className="App" style={{textAlign:'left',display:'flex',flexWrap:'wrap'}}>

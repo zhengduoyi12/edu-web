@@ -13,7 +13,7 @@ const bannerUrl=require('assets/ibanner.jpg');
 const Intelligence = () => {
   return (
     <div className="App">
-      <Header crtIndex={3} />
+      <Header crtIndex={'intelligence'} />
       <img src={bannerUrl} style={{width:'1920px',height:'220px'}} alt=''>
       </img>
       <div style={{width:'1200px', margin:'0 auto'}}>

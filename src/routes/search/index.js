@@ -11,14 +11,16 @@ const SearchResult = () => {
   return (
     <div className="SearchResult">
       <Header/>
-      <div className="RoleSearch" style={{ height: '160px', backgroundColor: '#DDDDDD'}}>
-        <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />
+      <div className="container">
+        <div className="RoleSearch">
+          <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />
+        </div>
+        <div style={{ padding:'20px' }}>
+          <SearchTag/>
+          <SearchResList/>
+          <Pagination defaultCurrent={1} total={50} />
+        </div>
       </div>
-      <div style={{ width: '1200px', margin: '0 auto', padding:'20px' }}>
-        <SearchTag/>
-        <SearchResList/>
-        <Pagination defaultCurrent={1} total={50} />
-      </div> 
       <Footer/>
     </div>
   );

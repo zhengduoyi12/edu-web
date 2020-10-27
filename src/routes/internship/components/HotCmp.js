@@ -6,7 +6,7 @@ const HotCmp = ({cmpList}) => {
   const history = useHistory();
    
   function goEntreDetails(){
-    history.push("/entreDetails");
+    history.push("/cmpDetails");
   }
   return (
     <div style={{width:"100%",height:"620px",display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
