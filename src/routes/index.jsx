@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 
 // 首页
 import Home from 'routes/home';
+import Info from 'routes/home/info';
 
 //搜索
 import SearchResult from 'routes/search';
@@ -52,6 +53,7 @@ const Routes = () => (
     <Route exact path="/" render={() => <Redirect to="/home" />} />
     <Switch>
       <Route path="/home" component={Home} />
+      <Route path="/info" component={Info} />
       <Route path="/intelligence" component={Intelligence} />
       <Route path="/classDetails" component={ClassDetails} />
       <Route path="/internship" component={Internship} />

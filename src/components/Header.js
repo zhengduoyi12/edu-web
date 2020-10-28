@@ -1,7 +1,6 @@
 // 组件
 import React, { Component } from "react";
-// import { baseStyle } from 'styles/baseStyle';
-import { Input, Button, Tabs } from 'antd';
+import { Input, Button } from 'antd';
 import { Menu }from 'antd';
 
 import { withRouter } from 'react-router-dom';
@@ -9,7 +8,6 @@ import { navigate } from 'utils';
 import './header.scss';
 
 const { Search } = Input;
-const { TabPane } = Tabs;
 const { SubMenu } = Menu;
 
 const localStyle = {
@@ -38,7 +36,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 'basicInfo',
+      crtIndex: props.crtIndex,
     };
   }
 
@@ -52,18 +50,9 @@ class Header extends Component {
     navigate(this.props.history, page, params);
   }
 
-  // tabChange = (index) => {
-  //   // 有点奇怪，需要封装
-  //   const pageMap = {
-  //     1: 'home',
-  //     2: 'practice',
-  //     3: 'intelligence',
-  //   }
-  //   this.goPage(pageMap[index] || '404');
-  // }
-  
   render() {
-    const { current } = this.state;
+    const { crtIndex } = this.state;
+    console.log(crtIndex);
     return (
       <div className="header">
         <div style={localStyle.row}>
@@ -75,7 +64,7 @@ class Header extends Component {
               placeholder="请输入关键词"
               enterButton="搜索"
               size="large"
-              onSearch={value => alert('请重新搜索')}
+              onSearch={value => alert(`请重新搜索${value}`)}
             />
           </div>
           <div style={localStyle.flex1}>
@@ -84,13 +73,14 @@ class Header extends Component {
           </div>
         </div>
         <div>
-          <Menu onClick={this.handleClick} selectedKeys={[this.props.history.location.pathname]} mode="horizontal">
+          <Menu onClick={this.handleClick} selectedKeys={[crtIndex || this.props.history.location.pathname]} mode="horizontal">
             <Menu.Item key="/home">
               平台概况
             </Menu.Item>
             <SubMenu key="SubMenu" title="实习就业">
               <Menu.Item key="/internship">实习入口</Menu.Item>
               <Menu.Item key="/job">就业入口</Menu.Item>
+              <Menu.Item key="/sxjy" className="hidden">实习就业</Menu.Item>
             </SubMenu>
             <Menu.Item key="/intelligence">
               智慧培训
@@ -109,17 +99,6 @@ class Header extends Component {
             </Menu.Item>
           </Menu>
         </div>
-        {/* <div style={localStyle.tab}>
-          <Tabs defaultActiveKey="1" activeKey={crtIndex} onChange={this.tabChange} tabBarGutter="100px" >
-            <TabPane tab="平台概况" key="1" style={{ fontSize: '20px' }} />
-            <TabPane tab="实习就业" key="2" />
-            <TabPane tab="智慧培训" key="3" />
-            <TabPane tab="数媒交易" key="4" />
-            <TabPane tab="技能认证" key="5" />
-            <TabPane tab="双师互聘" key="6" />
-            <TabPane tab="设备共享" key="7" />
-          </Tabs>
-        </div>*/}
       </div>
     );
   }

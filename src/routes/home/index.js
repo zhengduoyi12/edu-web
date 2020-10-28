@@ -10,10 +10,11 @@ import TeacherIndex from './components/TeacherIndex.js';
 import { homeBannerList, homeTopBoxTabs } from "utils";
 import { getHomeBannerInfo, getHomeInfo } from 'apis';
 import './home.css';
+import { navigate } from 'utils';
 
-const TopBox = ({ name = "", index, src }) => {
+const TopBox = ({ name = "", index, src, onPress = () => {} }) => {
   return (
-    <div className="topItem" style={{ marginLeft: index === 0 ? 0 : '27px' }}>
+    <div className="topItem" style={{ marginLeft: index === 0 ? 0 : '27px' }} onClick={onPress} >
       <div style={{ backgroundImage: `url(${src})`, height: '100%', color: '#fff', fontSize: '30px' }}>{name}</div>
     </div>
   );
@@ -77,7 +78,7 @@ const CompanyRank = ({ compTabs = [] }) => {
 // 内容6：优秀人才
 // 内容7：双师互聘
 // footer
-const HomeView = () => {
+const HomeView = (props) => {
   const bannerRef = useRef();
   const [bannerHoverList, setBannerHoverList] = useState([]);
   const [compTabs, setCompTabs] = useState([]);
@@ -99,7 +100,7 @@ const HomeView = () => {
 
   return (
     <div className='App'>
-      <Header crtIndex={1} />
+      <Header />
       <div className='body'>
         <div className="bannerHover">
           {bannerHoverList.map((text, index) => (
@@ -113,7 +114,7 @@ const HomeView = () => {
         <Carousel ref={bannerRef} autoplay autoplaySpeed={5000}>
           {homeBannerList.map((item, index) => (
             <div key={index} >
-              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff', backgroundPosition:'center' }} />
+              <div style={{ backgroundImage: `url('${item.url}')`, height: '360px', color: '#fff', backgroundPosition: 'center' }} />
             </div>
           ))}
         </Carousel>
@@ -121,7 +122,9 @@ const HomeView = () => {
       <div className='body'>
         <div className='rowFlex'>
           {homeTopBoxTabs.map((item, index) => (
-            <TopBox key={index} name={item.name} index={index} src={item.img} />
+            <TopBox key={index} name={item.name} index={index} src={item.img} onPress={() => {
+              navigate(props.history, 'info', { title: item.name });
+            }} />
           ))}
         </div>
         <div className='rowFlex' style={{ height: '400px', marginTop: '28px' }}>
