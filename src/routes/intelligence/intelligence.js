@@ -14,7 +14,7 @@ const Intelligence = () => {
   return (
     <div className="App">
       <Header crtIndex={'intelligence'} />
-      <img src={bannerUrl} style={{width:'1920px',height:'220px'}} alt=''>
+      <img src={bannerUrl} style={{width:'1200px',height:'220px'}} alt=''>
       </img>
       <div style={{width:'1200px', margin:'0 auto'}}>
         <div style={{fontSize:'32px', fontWeight:'bold', height:'140px',lineHeight:'140px'}}>

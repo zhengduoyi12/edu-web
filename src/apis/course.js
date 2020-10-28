@@ -16,7 +16,7 @@ export function addBasicInfo(params) {
     params,
   });
 }
-// 获取文件临时url
+// 获取文件上传url
 export function getUploadUrl(params) {
   return request({
     url: '/course/uploadUrl',
@@ -24,11 +24,14 @@ export function getUploadUrl(params) {
     params
   });
 }
-// 文件上传
-export function uploadFile(params) {
+// 保存上传资源
+export function savaFile(params) {
   return request({
     url: '/course/saveFilePath',
-    method: 'put',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
     params
   });
 }
@@ -36,14 +39,6 @@ export function uploadFile(params) {
 export function addPersonIntro(params) {
   return request({
     url: '/course/personalIntroduction',
-    method: 'put',
-    params,
-  });
-}
-// 新增章节
-export function addChapter(params) {
-  return request({
-    url: '/course/chapterInfo',
     method: 'put',
     params,
   });
@@ -69,6 +64,22 @@ export function getChapterList(params) {
   return request({
     url: '/course/chapterInfoDetail',
     method: 'get',
+    params,
+  });
+}
+// 新增章节
+export function addChapter(params) {
+  return request({
+    url: '/course/chapterDirectory',
+    method: 'post',
+    params,
+  });
+}
+// 新增课时
+export function addLesson(params) {
+  return request({
+    url: '/course/lessonInfo',
+    method: 'post',
     params,
   });
 }
