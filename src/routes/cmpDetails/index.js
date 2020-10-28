@@ -12,7 +12,7 @@ const entreDetails = () => {
   
   return (
     <div className="App">
-      <Header/>
+      <Header crtIndex={'/sxjy'}/>
       <div style={{ width:"1200px", margin:"0 auto"}}>
         <div style={{height:'380px', backgroundColor:'#4682B4', textAlign:'center',paddingTop:"60px"}}>
           <img style={{width:"100px", height:'100px', borderRadius:"50%",margin:"0px auto"}} src={require('assets/images/prac_cpy05.jpg')}/>

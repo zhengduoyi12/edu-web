@@ -10,7 +10,7 @@ const SearchResult = () => {
   const { Search } = Input;
   return (
     <div className="SearchResult">
-      <Header/>
+      <Header crtIndex={'/sxjy'}/>
       <div className="container">
         <div className="RoleSearch">
           <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />

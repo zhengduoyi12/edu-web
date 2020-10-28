@@ -255,7 +255,7 @@ const TalentList = () => {
   const { Search } = Input;
   return (
     <div className="TalentList">
-      <Header/>
+      <Header crtIndex={'/sxjy'}/>
       <div className="RoleSearch" style={{ height: '160px', backgroundColor: '#DDDDDD'}}>
         <Search placeholder="输入关键词" enterButton="搜索" style={{ width: 400 }} />
       </div>
