@@ -56,7 +56,7 @@ const roleDetails = () => {
 
   return (
     <div className="positionDetails">
-      <Header/>
+      <Header crtIndex={'/sxjy'} />
       <img src={bannerUrl} alt="" style={{width:'1200px',height:'220px'}}/>
       <div className="container">
         <TopCard/>

@@ -100,7 +100,7 @@ const HomeView = (props) => {
 
   return (
     <div className='App'>
-      <Header crtIndex={1} />
+      <Header />
       <div className='body'>
         <div className="bannerHover">
           {bannerHoverList.map((text, index) => (
