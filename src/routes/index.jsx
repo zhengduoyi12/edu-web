@@ -36,7 +36,6 @@ import JobIndex from 'routes/job';
 
 // 用户中心
 import Mine from 'routes/mine';
-import CmpMine from 'routes/mine/company';
 import CreateCourse from 'routes/mine/teacher/myCourse/createCourse';
 
 // 登录注册
@@ -69,7 +68,6 @@ const Routes = () => (
       <Route path="/register" component={Register} />
       <Route path="/register2" component={Register2} />
       <Route path="/mine" component={Mine} />
-      <Route path="/companyMine" component={CmpMine} />
       <Route path="/createCourse" component={CreateCourse} />
       <Route path="/404" component={NotFound} />
       <Route path="*" component={NotFound} />

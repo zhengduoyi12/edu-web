@@ -6,6 +6,7 @@ import React from "react";
 import PersonHome from "./person";
 import StudentHome from "./student";
 import TeacherHome from "./teacher";
+import CompanyHome from './company';
 import Not from "routes/404";
 
 const Mine = () => {
@@ -17,6 +18,8 @@ const Mine = () => {
     typeModule = <StudentHome />;
   } else if (role === 2) {
     typeModule = <TeacherHome />;
+  } else if (role === 3) {
+    typeModule = <CompanyHome />;
   } else {
     typeModule = <Not />;
   }
