@@ -1,41 +1,92 @@
 import React, { useEffect, useState } from "react";
-import { Input, Form, Cascader, Select, Radio,Button } from 'antd';
+import { Input, Form, Cascader, Select, Radio, Button } from 'antd';
 import ChapterItem from './ChapterItem';
+import { getChapterList, addChapter } from 'apis/course';
+
 // import Form from "antd/lib/form/Form";
 const { Search } = Input;
 const CreateSection = (props = {}) => {
   const { courseId } = props;
   const [chapter, setChapter] = useState(true);
+  const [courseList, setCourseList] = useState([]);
   const classList = [
     {
-      title: '大课时1',
+      chapterName: '大课时1',
       class: [
         {
-          id: '0101',
+          chapterId: '0101',
           type: '录播',
-          title: '小课时1',
+          chapterName: '小课时1',
           time: 74
         }, {
-          id: '0102',
+          chapterId: '0102',
           type: '录播',
-          title: '小课时1',
+          chapterName: '小课时1',
           time: 81
         }
       ]
     }, {
-      title: '大课时2',
+      chapterName: '大课时2',
       class: [
         {
-          id: '0201',
+          chapterId: '0201',
           type: '录播',
-          title: '小课时1',
+          chapterName: '小课时1',
           time: 74
         }
       ]
+    }, {
+      chapterName: '大课时3',
+      class: []
     }
   ];
+  useEffect(() => {
+    const tfCourseList = (data) => {
+      let arr = [];
+      data.forEach(el => {
+        if (!el.lessonId) {
+          arr.push({
+            chapterId: el.chapterId,
+            chapterName: el.chapterName,
+            class: []
+          });
+        }
+      });
+      data.forEach(el => {
+        if (el.lessonId) {
+          arr.forEach(it => {
+            if (it.chapterId == el.chapterId) {
+              it.class.push(el);
+            }
+          });
+        }
+      });
+      return arr;
+    };
+    let params = {
+      chapterId: 4
+    };
+    getChapterList(params).then(res => {
+      const { code, data } = res;
+      if (code == '00000') {
+        setCourseList(tfCourseList(data));
+      }
+    });
+  }, []);
+  console.log('courseList', courseList);
   const onSearchChapter = (value) => {
     console.log('value', value + chapter);
+    let params = {
+      chapterId: 1,
+      chapterName: value,
+      courseId: 4
+    };
+    addChapter(params).then(res => {
+      const { code, data } = res;
+      if (code == '00000') {
+        console.log('data', data);
+      }
+    });
     setChapter(true);
   };
   return (
@@ -47,7 +98,7 @@ const CreateSection = (props = {}) => {
             <div key={index}>
               <ChapterItem item={item} index={index} />
             </div>
-            
+
           ))
         }
         {
