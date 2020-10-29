@@ -1,10 +1,13 @@
 import React,{ useState }from "react";
 import Header from 'components/Header.js';
 import Footer from 'components/Footer.js';
-import { Layout, Menu} from 'antd';
-import MyCoursePlan from './myCoursePlan';
+import { Layout, Menu } from 'antd';
+import MyCoursePlan from '../teacher/myCourse';
 import MyPosition from './myPosition';
 import MyStream from './mystream';
+import MyInfor from './myInfor';
+import PositionManagement from './myPosition/positionManagement';
+import './style.scss';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -15,10 +18,10 @@ const CompanyHome = () => {
     setDisplayIndex(e.key);
     console.log('displayIndex',displayIndex);
   }
-  const [displayIndex, setDisplayIndex]=useState('0');
+  const [displayIndex, setDisplayIndex]=useState('11');
 
   return (
-    <div>
+    <div className="CompanyHome">
       <Header />
       <div style={{ width: '100%', backgroundColor: '#00c0c0' }}>
         <div className="body" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', height: '220px' }}>
@@ -32,13 +35,14 @@ const CompanyHome = () => {
       <div className="body" style={{ marginTop: '40px' }}>
         <Layout>
           <Sider
-            style={{
-            }}
+            theme={'light'}
+            width={256}
           >
             <Menu
               onClick={(e)=>{handleClick(e);}}
               style={{ width: 256 }}
-              defaultSelectedKeys={['']}
+              defaultOpenKeys={['11']}
+              defaultSelectedKeys={['11']}
               mode="inline"
             >
               <Menu.Item key="1">
@@ -48,29 +52,46 @@ const CompanyHome = () => {
                 我的直播
               </Menu.Item>
               <SubMenu key="sub2" title="岗位">
-                <Menu.Item key="5">发布新岗位</Menu.Item>
-                <Menu.Item key="6">岗位管理</Menu.Item>
+                <Menu.Item key="3">发布新岗位</Menu.Item>
+                <Menu.Item key="4">岗位管理</Menu.Item>
               </SubMenu>
+              <Menu.Item key="5">
+                候选人
+              </Menu.Item>
               <SubMenu key="sub3" title="实习管理">
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
+                <Menu.Item key="6">实习管理</Menu.Item>
+                <Menu.Item key="7">实习考评</Menu.Item>
               </SubMenu>
+              <Menu.Item key="8">
+                实训管理
+              </Menu.Item>
+              <Menu.Item key="9">
+                企业合作
+              </Menu.Item>
+              <Menu.Item key="10">
+                就业管理
+              </Menu.Item>
+              <Menu.Item key="11">
+                信息中心
+              </Menu.Item>
             </Menu>
           </Sider>
-          <Layout className="site-layout" style={{ marginLeft: 200 }}>
-            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+          <Layout className="site-layout">
+            <Content>
               { (() => {
                 switch (displayIndex) {
-                case '0':
-                  return <MyCoursePlan/>;
                 case '1':
-                  return <MyStream/>;
+                  return <MyCoursePlan/>;
                 case '2':
-                  return <MyPosition/>;
+                  return <MyStream/>;
                 case '3':
                   return <MyPosition/>;
                 case '4':
+                  return <PositionManagement/>;
+                case '5':
                   return <MyPosition/>;
+                case '11':
+                  return <MyInfor/>;
                 default:
                   return null;
                 }
