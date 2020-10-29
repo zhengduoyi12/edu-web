@@ -1,6 +1,7 @@
 // 智慧培训-名师直播
-import { Card } from "antd";
 import React from "react";
+import { Card } from "antd";
+import { Link } from 'react-router-dom';
 
 const FamousArea = () => {
   const streamingTabs = [
@@ -46,32 +47,34 @@ const FamousArea = () => {
   return (
     <div style={{ width: '1200px', margin: '40px 0' }}>
       <div style={{ height: '100px', fontSize: "32px", fontWeight: 'bold', textAlign: 'left', lineHeight: '100px' }} >
-                名师直播
+        名师直播
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent:'space-between',height:'320px'}}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', height: '320px' }}>
         {
           streamingTabs.map((item, index) => {
             return (
-              <div key={`streamingTabs_` + index} style={{ width: '390px', height: '148px'}}>
-                <Card hoverable bordered={false} style={{ width: '390px', height: '148px' }}>
-                  <div style={{ width: '80px', height: '100px', display: 'inline-block',float:'left'}}>
-                    <img src={item.img} style={{ width: '80px', height: '80px', borderRadius: '50%' }} alt='' />
-                  </div>
-                  <div style={{ width: '250px',height: '100px', display: 'inline-block',float:'left',marginLeft:'10px', textAlign: 'left' }}>
-                    <div style={{ marginBottom: '10px' }}>
-                      <span>{item.time}</span>
-                      <span style={{ margin: '0 15px' }}>|</span>
-                      <span style={{ color: '#49af4f' }}>开播提醒 </span>
+              <Link key={index} to={{ pathname: `/classDetails/${index}`}} target='_blank'>
+                <div style={{ width: '390px', height: '148px' }}>
+                  <Card hoverable bordered={false} style={{ width: '390px', height: '148px' }}>
+                    <div style={{ width: '80px', height: '100px', display: 'inline-block', float: 'left' }}>
+                      <img src={item.img} style={{ width: '80px', height: '80px', borderRadius: '50%' }} alt='' />
                     </div>
-                    <div style={{ marginBottom: '10px' }}>{item.name}</div>
-                    <div style={{ fontSize: '12px', color: '#666' }}>
-                      <span style={{ marginRight: '15px' }}>{item.hoster}</span>
-                      <span>{item.title}</span>
+                    <div style={{ width: '250px', height: '100px', display: 'inline-block', float: 'left', marginLeft: '10px', textAlign: 'left' }}>
+                      <div style={{ marginBottom: '10px' }}>
+                        <span>{item.time}</span>
+                        <span style={{ margin: '0 15px' }}>|</span>
+                        <span style={{ color: '#49af4f' }}>开播提醒 </span>
+                      </div>
+                      <div style={{ marginBottom: '10px' }}>{item.name}</div>
+                      <div style={{ fontSize: '12px', color: '#666' }}>
+                        <span style={{ marginRight: '15px' }}>{item.hoster}</span>
+                        <span>{item.title}</span>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
 
-              </div>
+                </div>
+              </Link>
             );
           })
         }

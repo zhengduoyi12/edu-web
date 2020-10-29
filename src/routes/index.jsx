@@ -9,6 +9,7 @@ import Info from 'routes/home/info';
 
 //搜索
 import SearchResult from 'routes/search';
+import SearchCourse from 'routes/search/course';
 
 // 智慧课程
 import Intelligence from 'routes/intelligence/intelligence';
@@ -55,13 +56,14 @@ const Routes = () => (
       <Route path="/home" component={Home} />
       <Route path="/info" component={Info} />
       <Route path="/intelligence" component={Intelligence} />
-      <Route path="/classDetails" component={ClassDetails} />
+      <Route path="/classDetails/:id" component={ClassDetails} />
       <Route path="/internship" component={Internship} />
       <Route path="/talentList" component={TalentList} />
       <Route path="/positionDetails" component={positionDetails} />
       <Route path="/cmpDetails" component={CmpDetails} />
       <Route path="/teacherDetails" component={TeacherDetails} />
       <Route path="/search" component={SearchResult} />
+      <Route path="/searchCcourse" component={SearchCourse} />
       <Route path="/train" component={TrainIndex} />
       <Route path="/job" component={JobIndex} />
       <Route path="/login" component={Login} />

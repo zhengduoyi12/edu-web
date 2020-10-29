@@ -27,7 +27,6 @@ const SeniorArea = () => {
       "member": "380"
     }
   ];
-  // tofix, link跳转肯定要要带参数的，id，课程id什么的，能写上就写上
 
   return (
     <div>
@@ -35,7 +34,7 @@ const SeniorArea = () => {
         classTabs.map((item, index) => {
           return (
             <div key={index} style={{ marginBottom: "69px", height: '300px', width: '277px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px' }}>
-              <Link to="/classDetails">
+              <Link to={{pathname:`/classDetails/${index}`}} target='_blank'>
                 <div style={{ height: '300px', width: '280px', display: 'inline-block', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
                   <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
                   <div style={{ padding: '8px' }}>

@@ -10,7 +10,7 @@ import { getClassInfo } from 'apis/class';
 const { TabPane } = Tabs;
 
 const imgSheet = require('assets/sheet.png');
-const ClassDetails = () => {
+const ClassDetails = (props = {}) => {
   const [teacher, setTeacher] = useState({});
   const [classBase, setClassBase] = useState({});
   const [classList, setClassList] = useState([]);

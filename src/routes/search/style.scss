@@ -7,9 +7,26 @@
     }
     .RoleSearch{
         height:160px;
-        background-color:#DDDDDD;
+        background-color:rgba(204, 204, 204, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+.course {
+    .course-search{
+        height:160px;
+        background-color:rgba(204, 204, 204, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .course-container {
+        .list-course {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
 }

@@ -1,0 +1,46 @@
+.course-card {
+    height: 300px;
+    width: 280px;
+    margin: 10px;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #999;
+    img {
+        height: 172px;
+        width: 100%;
+    }
+    .content {
+        padding: 8px;;
+    }
+    .content-top {
+        height: 60px;
+        font-size: 18px;
+    }
+    .content-mid {
+        height: 20px;
+        font-size: 14px;
+        color: #999;
+    }
+    .content-bot {
+        margin-top: 10px;
+        .bot-left {
+            text-align: left;
+            width: 30%;
+            display: inline-block;
+            span {
+                background-color: #13b5b1;
+                color: #fff;
+                width: 50px;
+                height: 22px;
+                line-height: 22px;
+                font-size: 12px;
+                padding: 0 5px;
+            }
+        }
+        .bot-right {
+            text-align: center;
+            width: 60%;
+            display: inline-block;
+        }
+    }
+}
