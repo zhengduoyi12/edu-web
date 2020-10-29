@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Carousel } from 'antd';
 import Header from 'components/Header.js';
 import Footer from 'components/Footer.js';
+import CourseCard from 'components/CourseCard';
 import TrainIndex from './components/TrainIndex.js';
 import TradeIndex from './components/TradeIndex.js';
 import ResumeIndex from './components/ResumeIndex.js';
@@ -19,9 +20,13 @@ const TopBox = ({ name = "", index, src, onPress = () => {} }) => {
     </div>
   );
 };
-
+const internshipList=[
+  {img:require('assets/images/u161_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+  {img:require('assets/images/u169_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+  {img:require('assets/images/u177_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+];
 // 内容3部分组件
-const JobIndex = ({ jobTabs = [] }) => {
+const JobIndex = () => {
   return (
     <div>
       <div className='row'>
@@ -30,24 +35,8 @@ const JobIndex = ({ jobTabs = [] }) => {
         <span className='home_more'>查看更多</span>
       </div>
       <div style={{ textAlign: 'left' }}>
-        {jobTabs.map((item, index) => (
-          <div key={index} style={{ height: '300px', width: '280px', display: 'inline-block', marginLeft: index === 0 ? '0px' : '30px', borderColor: '#999', borderWidth: '1px', borderStyle: 'solid' }}>
-            <img src={item.img} style={{ height: '172px', width: '100%' }} alt="" />
-            <div style={{ padding: '8px' }}>
-              <div style={{ height: '60px', fontSize: '18px' }}>
-                {item.title}
-              </div>
-              <div style={{ height: '20px', fontSize: '14px', color: '#999' }}>
-                南京大学基础课程
-              </div>
-              <div style={{ marginTop: '10px' }}>
-                <div style={{ textAlign: 'left', width: '30%', display: 'inline-block' }}>
-                  <span style={{ background: '#13B5B1', color: '#fff', width: '50px', height: '22px', lineHeight: '18px', fontSize: '12px', paddingLeft: '5px', paddingRight: '5px' }}>免费</span>
-                </div>
-                <div style={{ textAlign: 'right', width: '60%', display: 'inline-block' }}>380人已完成学习</div>
-              </div>
-            </div>
-          </div>
+        {internshipList.map((item, index) => (
+          <CourseCard key={index} item={item}/>
         ))}
       </div>
     </div>
@@ -82,7 +71,7 @@ const HomeView = (props) => {
   const bannerRef = useRef();
   const [bannerHoverList, setBannerHoverList] = useState([]);
   const [compTabs, setCompTabs] = useState([]);
-  const [jobTabs, setJobTabs] = useState([]);
+ 
 
   useEffect(() => {
     getHomeBannerInfo().then((res) => {
@@ -92,7 +81,6 @@ const HomeView = (props) => {
     });
     getHomeInfo().then((res) => {
       setCompTabs(res.compTabs);
-      setJobTabs(res.jobTabs);
     }, (e) => {
       console.log(e);
     });
@@ -129,7 +117,7 @@ const HomeView = (props) => {
         </div>
         <div className='rowFlex' style={{ height: '400px', marginTop: '28px' }}>
           <div className='flex3'>
-            <JobIndex jobTabs={jobTabs} />
+            <JobIndex />
           </div>
           <div className='flex1'>
             <CompanyRank compTabs={compTabs} />

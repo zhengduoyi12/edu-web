@@ -2,13 +2,20 @@ import React from "react";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
+import CourseCard from 'components/CourseCard';
 import { Tabs } from "antd";
 import Streaming from './Streaming';
 import Recommend from './Recommend';
-import SeniorArea from 'routes/intelligence/components/SeniorArea';
+
 
 const { TabPane } = Tabs;
 const PublicTeacher = () => {
+  const internshipList=[
+    {img:require('assets/images/u161_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+    {img:require('assets/images/u169_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+    {img:require('assets/images/u177_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+    {img:require('assets/images/u161_a.png'), name:'MyAQL基础入门-数据库概述', content:'南京大学基础课程'},
+  ];
   const teacherInfo = {
     name: "陈粒",
     fansNum: "109",
@@ -73,7 +80,9 @@ const PublicTeacher = () => {
             <Streaming/>
             <Recommend/>
             <div style={{ fontSize:'18px',fontWeight:'bold',color:"#000000", marginBottom:"20px",textAlign:'left'}}>其他课程</div>
-            <SeniorArea/>
+            {internshipList.map((item, index) => (
+              <CourseCard key={index} item={item}/>
+            ))}
           </TabPane>
           <TabPane tab="课程" key="2"></TabPane>
           <TabPane tab="老师" key="3"></TabPane>
