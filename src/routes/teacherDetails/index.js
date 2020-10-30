@@ -6,6 +6,7 @@ import CourseCard from 'components/CourseCard';
 import { Tabs } from "antd";
 import Streaming from './Streaming';
 import Recommend from './Recommend';
+import CourseList from './CourseList';
 
 
 const { TabPane } = Tabs;
@@ -84,7 +85,9 @@ const PublicTeacher = () => {
               <CourseCard key={index} item={item}/>
             ))}
           </TabPane>
-          <TabPane tab="课程" key="2"></TabPane>
+          <TabPane tab="课程" key="2">
+            <CourseList />
+          </TabPane>
           <TabPane tab="老师" key="3"></TabPane>
           <TabPane tab="关于我们" key="4">
             Content of Tab Pane 3
