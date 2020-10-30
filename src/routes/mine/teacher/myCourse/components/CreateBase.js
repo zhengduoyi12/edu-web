@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+// 创建课程-基本信息
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Select, Cascader } from 'antd';
 
 import { getCourseTag, addBasicInfo } from 'apis/course';
@@ -328,8 +329,14 @@ const CreateBase = (props = {}) => {
         <Form.Item label="课程分类">
           <Cascader options={typeOption} onChange={changeSelect} placeholder="请选择课程分类" />
         </Form.Item>
-        <Form.Item label="课程介绍" name="courseIntroduction" rules={[{ required: true, message: '请输入课程介绍!', }]}>
-          <Input.TextArea placeholder="请输入课程介绍" />
+        <Form.Item label="课程概述" name="courseIntroduction" rules={[{ required: true, message: '请输入常见问题!', }]}>
+          <Input.TextArea placeholder="请输入课程概述" />
+        </Form.Item>
+        <Form.Item label="课程目标" name="courseTarget" rules={[{ required: true, message: '请输入常见问题!', }]}>
+          <Input.TextArea placeholder="请输入课程目标" />
+        </Form.Item>
+        <Form.Item label="常见问题" name="courseQuestion" rules={[{ required: true, message: '请输入常见问题!', }]}>
+          <Input.TextArea placeholder="请输入常见问题" />
         </Form.Item>
         <Form.Item label="标签添加" name="tagIndex" rules={[{ required: true, message: '请选择课程标签!', }]}>
           <Select>

@@ -8,7 +8,7 @@ const CourseCard = (props={}) => {
 
   return ( 
     <div className="course-card">
-      <Link to={{pathname:`/classDetails/${item.name}`}}>
+      <Link to={{pathname:`/classDetails/${item.name}`}} target="_blank">
         <img src={item.img} alt="" />
         <div className="content">
           <div className="content-top">

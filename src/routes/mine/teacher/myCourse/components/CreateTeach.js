@@ -1,3 +1,4 @@
+// 创建课程-讲师信息
 import React from 'react';
 import {Form,Input,Button} from 'antd';
 import {addPersonIntro} from 'apis/course';

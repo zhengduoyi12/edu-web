@@ -1,3 +1,4 @@
+// 创建课程-课程图片
 import React, { useState } from 'react';
 import { Upload, message, Button, Row, Col, Image } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
