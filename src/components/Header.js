@@ -57,7 +57,7 @@ class Header extends Component {
       <div className="header">
         <div style={localStyle.row}>
           <div style={localStyle.title}>
-            长三角产数融合智慧云平台
+            长三角产教融合智慧云平台
           </div>
           <div style={localStyle.flex1}>
             <Search
