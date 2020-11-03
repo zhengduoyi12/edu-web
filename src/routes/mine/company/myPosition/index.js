@@ -108,7 +108,7 @@ const MyPosition = () => {
 
             <Form.Item
               label="薪资范围"
-              name="salary"
+              name="payRange"
             // rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Select //defaultValue="05" 
