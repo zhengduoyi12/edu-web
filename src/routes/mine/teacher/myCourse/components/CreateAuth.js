@@ -6,18 +6,12 @@ import { addCourseAuth } from 'apis/course';
 const { RangePicker } = DatePicker;
 
 const CreateAuth = (props = {}) => {
-  const { courseId } = props;
+  const { courseId,courseForm,setCourseForm} = props;
 
   const onFinish = (value) => {
-    const params = value;
-    params.id = courseId;
-    addCourseAuth(params).then(res => {
-      const { code } = res;
-      if (code == '00000') {
-        console.log('success');
-      }
-    }, err => {
-      console.log(err);
+    setCourseForm({
+      ...courseForm,
+      ...value
     });
   };
   const onFinishFailed = (errorInfo) => {
@@ -43,7 +37,7 @@ const CreateAuth = (props = {}) => {
         <Form.Item label="开放时间">
           <RangePicker placeholder={['开始时间','结束时间']} />
         </Form.Item>
-        <Form.Item wrapperCol={{ span: 8, offset: 8 }}>
+        <Form.Item wrapperCol={{ span: 8, offset: 9 }}>
           <Button type="primary" htmlType="submit">保存</Button>
           <Button>取消</Button>
         </Form.Item>
