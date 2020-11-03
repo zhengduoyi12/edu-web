@@ -29,8 +29,6 @@ module.exports = {
         "no-unused-vars": 0,
         'indent' : ["warn", 2],
         "react/display-name": "off",
-        "react-hooks/rules-of-hooks": 'error',
-        "react-hooks/exhaustive-deps": 'warn'
     },
     "globals": {},
     "settings": {

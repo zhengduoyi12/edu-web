@@ -58,7 +58,7 @@ const ClassDetails = (props = {}) => {
                 <DetailCatalog classList={classList} />
               </TabPane>
               <TabPane tab="评论" key="3">
-            <DetailComment />
+                <DetailComment />
               </TabPane>
               <TabPane tab="作业" key="4">
 

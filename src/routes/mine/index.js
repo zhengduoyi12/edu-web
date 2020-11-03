@@ -10,7 +10,7 @@ import CompanyHome from './company';
 import Not from "routes/404";
 
 const Mine = () => {
-  const role = 0;
+  const role = 3;
   let typeModule;
   if (role === 0) {
     typeModule = <PersonHome />;
