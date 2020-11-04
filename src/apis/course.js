@@ -29,13 +29,13 @@ export function addCourseInfo(params) {
   return request({
     url: '/course/courseInfo',
     method: 'post',
-    params,
+    data:params,
   });
 }
 // 查 文件上传url
 export function getUploadUrl(params) {
   return request({
-    url: '/course/uploadUrl',
+    url: '/file/uploadUrl',
     method: 'get',
     params
   });
@@ -53,6 +53,6 @@ export function addLesson(params) {
   return request({
     url: '/course/lessonInfo',
     method: 'post',
-    params,
+    data:params,
   });
 }

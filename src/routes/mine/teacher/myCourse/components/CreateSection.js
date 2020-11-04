@@ -6,7 +6,7 @@ import ChapterItem from './ChapterItem';
 // import Form from "antd/lib/form/Form";
 const { Search } = Input;
 const CreateSection = (props = {}) => {
-  const { courseId, courseForm, setCourseForm,createSectionKey } = props;
+  const { courseId, courseForm, setCourseForm,createSectionKey,setLessonForm } = props;
   const [chapter, setChapter] = useState(true);
   const [chapterName, setChapterName] = useState('');
   const [courseList, setCourseList] = useState([]);
@@ -16,7 +16,7 @@ const CreateSection = (props = {}) => {
   const classList = [
     {
       chapterName: '大课时1',
-      children: [
+      courseLessonROList: [
         {
           chapterId: '0101',
           type: '录播',
@@ -31,7 +31,7 @@ const CreateSection = (props = {}) => {
       ]
     }, {
       chapterName: '大课时2',
-      children: [
+      courseLessonROList: [
         {
           chapterId: '0201',
           type: '录播',
@@ -41,7 +41,7 @@ const CreateSection = (props = {}) => {
       ]
     }, {
       chapterName: '大课时3',
-      children: []
+      courseLessonROList: []
     }
   ];
   useEffect(() => {
@@ -52,7 +52,7 @@ const CreateSection = (props = {}) => {
           arr.push({
             chapterId: el.chapterId,
             chapterName: el.chapterName,
-            children: []
+            courseLessonROList: []
           });
         }
       });
@@ -60,7 +60,7 @@ const CreateSection = (props = {}) => {
         if (el.lessonId) {
           arr.forEach(it => {
             if (it.chapterId == el.chapterId) {
-              it.children.push(el);
+              it.courseLessonROList.push(el);
             }
           });
         }
@@ -73,7 +73,7 @@ const CreateSection = (props = {}) => {
       setChapterName(value);
       setCourseList(() => {
         let arr = courseList;
-        arr.push({ chapterName: value, children: [] });
+        arr.push({ chapterName: value, courseLessonROList: [] });
         return arr;
       });
       setChapter(true);
@@ -82,7 +82,7 @@ const CreateSection = (props = {}) => {
     }
   };
   const clickAdd = () => {
-    if (courseList.length > 0 && courseList[courseList.length - 1].children.length == 0) {
+    if (courseList.length > 0 && courseList[courseList.length - 1].courseLessonROList.length == 0) {
       message.warning('请添加上一章节的课时！');
     } else {
       setChapter(false);
@@ -92,26 +92,29 @@ const CreateSection = (props = {}) => {
     let courseArr = courseList;
     courseArr = courseArr.map((item, index) => {
       return {
+        courseId,
         chapterName,
-        children: item.children.map((it, i) => {
+        chapterNum:index,
+        courseLessonROList: item.courseLessonROList.map((it, i) => {
           return {
             ...it,
             lessonNum: i + 1,
-            chapterNum: index + 1,
-            chapterName: item.chapterName
+            // chapterNum: index + 1,
+            // chapterName: item.chapterName
           };
         })
       };
     });
-    let arr = [];
-    courseArr.forEach(item=>{
-      item.children.forEach(it=> {
-        arr.push(it);
-      });
-    });
-    console.log('课时表单=>',arr);
+    // let arr = [];
+    // courseArr.forEach(item=>{
+    //   item.courseLessonROList.forEach(it=> {
+    //     arr.push(it);
+    //   });
+    // });
+    console.log('课时表单=>',courseArr);
     // 提交表单
-    
+    setLessonForm(courseArr);
+    createSectionKey();
   };
   return (
     <div className="create-section">

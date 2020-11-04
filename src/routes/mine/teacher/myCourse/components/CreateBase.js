@@ -10,8 +10,8 @@ const { Option } = Select;
 
 const CreateBase = (props = {}) => {
   const [form] = Form.useForm();
-
-  const { createBaseKey,setCourseForm, setCourseId, courseId } = props;
+  console.log('useForm=>',form);
+  const { createBaseKey, setCourseForm, setCourseId, courseId, baseGet } = props;
   const [tagList, setTagList] = useState([]);
   const [btnStatus, setBtnStatus] = useState(false);
   const courseDegree = ['零基础入门', '入门到中级', '中级到高级', '高级精通'].map((item, index) => (<Option key={index}>{item}</Option>));
@@ -20,7 +20,8 @@ const CreateBase = (props = {}) => {
   const [typeOption, setTypeOption] = useState([]);
   const [selectList, setSelectList] = useState([]);
   useEffect(() => {
-    // form.setFieldsValue(data);
+    form.setFieldsValue(baseGet);
+    console.log('form=>',form);
     const tfType = (tag) => {
       let arr = [];
       tag.forEach(el => {
@@ -62,10 +63,6 @@ const CreateBase = (props = {}) => {
         setSelectList(data);
       }
     });
-
-    // getCourseTag().then((res) => {
-    //   console.log('getCourseTag res=>', res);
-    // });
   }, []);
   const onFinish = (value) => {
     // setCourseId(data);
@@ -100,6 +97,8 @@ const CreateBase = (props = {}) => {
     return arr;
   };
   const changeSelect = (value, selectedOptions) => {
+    console.log('选择value',value);
+    console.log('选择selectedOptions',selectedOptions);
     const { id } = selectedOptions[1];
     setTagList(tfTag(id));
   };

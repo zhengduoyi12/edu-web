@@ -7,6 +7,15 @@ $bcolor: rgba(204,204,204,0.3);
         padding: 8px 50px;
     }
 }
+.teacher {
+    .btn-area {
+        margin-left:60%;
+        .ant-btn {
+            margin-left: 20px;
+        }
+    }
+    
+}
 .my-course {
     .ant-tabs-nav {
         width: 100%;

@@ -1,7 +1,7 @@
 // 创建课程-权限设置
 import React from "react";
 import { Form, Button, Radio,DatePicker,Input } from 'antd';
-import { addCourseAuth } from 'apis/course';
+import { addCourseInfo } from 'apis/course';
 
 const { RangePicker } = DatePicker;
 

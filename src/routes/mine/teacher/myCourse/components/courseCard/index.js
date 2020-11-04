@@ -12,7 +12,8 @@ const CourseCard = (props = {}) => {
           <div className="box">
             <img src="" alt="" />
             <div className="title">{item.courseName}</div>
-            <div className="label">{item.forPerson}</div>
+            {/* <div className="label">{item.forPerson}</div> */}
+            <div className="label">{item.lessonCount}课时</div>
           </div>
         </Card>
       </Link>

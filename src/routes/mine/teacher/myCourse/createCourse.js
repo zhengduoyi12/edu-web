@@ -9,6 +9,8 @@ import CreateSection from './components/CreateSection';
 import CreatePrice from './components/CreatePrice';
 import CreateAuth from './components/CreateAuth';
 
+import { addCourseInfo,getCourseInfo,addLesson } from 'apis/course';
+
 import '../index.scss';
 
 const { TabPane } = Tabs;
@@ -16,8 +18,11 @@ const { TabPane } = Tabs;
 const TeacherHome = (props={}) => {
   const {id} = props.match.params;
   const [activeKey,setActiveKey] = useState('2');
-  const [courseId, setCourseId] = useState(id);
+  const [courseId, setCourseId] = useState(0);
   const [courseForm,setCourseForm] = useState({});
+  const [courseGet,setCourseGet] = useState({});
+  const [baseGet,setBaseGet] = useState({});
+  const [lessonForm,setLessonForm] = useState([]);
   const createBaseKey = () => {
     setActiveKey('3');
   };
@@ -31,9 +36,44 @@ const TeacherHome = (props={}) => {
     setActiveKey('7');
   };
   const createAuthKey = () => {
+    addCourseInfo(courseForm).then(res=>{
+      const {code,data} = res;
+      if(code=='00000'){
+        console.log('data=>',data);
+        setCourseId(data);
+      }
+    });
     setActiveKey('9');
   };
-  console.log('setCourseForm',courseForm);
+  const createSectionKey = () => {
+    addLesson(lessonForm).then(res=>{
+      const {code,data} = res;
+      if(code=='00000'){
+        console.log('data=>',data);
+      }
+    });
+    // lessonForm
+  };
+
+  useEffect(()=>{
+    if(id) {
+      getCourseInfo({courseId:id}).then(res=>{
+        const {code,data} = res;
+        if(code=='00000') {
+          // setCourseGet(data);
+          setBaseGet({
+            courseName:data.courseName,
+            forPerson:data.forPerson,
+            difficulty:data.difficulty,
+            summary:data.summary,
+            target:data.target,
+            commonProblem:data.commonProblem,
+            tagIndex:data.tagIndex,
+          });
+        }
+      });
+    }
+  },[]);
 
   return (
     <div className='App'>
@@ -57,7 +97,7 @@ const TeacherHome = (props={}) => {
         <Tabs defaultActiveKey="6" activeKey={activeKey} onChange={(key)=>{setActiveKey(key);}} tabPosition="left" style={{ minHeight: 220 }}>
           <TabPane tab="课程信息" key="1" disabled></TabPane>
           <TabPane tab="基本信息" key="2">
-            <CreateBase createBaseKey={createBaseKey} setCourseId={setCourseId} courseId={courseId} setCourseForm={setCourseForm} />
+            <CreateBase createBaseKey={createBaseKey} courseId={courseId} setCourseForm={setCourseForm} baseGet={baseGet} />
           </TabPane>
           <TabPane tab="课程图片" key="3">
             <CreatePic createPicKey={createPicKey} courseId={courseId} courseForm={courseForm} setCourseForm={setCourseForm}/>
@@ -74,7 +114,7 @@ const TeacherHome = (props={}) => {
           </TabPane>
           <TabPane tab="课程内容" key="8" disabled></TabPane>
           <TabPane tab="章节内容" key="9">
-            <CreateSection courseId={courseId} />
+            <CreateSection courseId={courseId} createSectionKey={createSectionKey} setLessonForm={setLessonForm} />
           </TabPane>
         </Tabs>
       </div>

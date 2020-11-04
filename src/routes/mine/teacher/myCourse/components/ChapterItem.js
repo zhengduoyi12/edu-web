@@ -90,7 +90,7 @@ const ChapterItem = (props = {}) => {
     };
     setCourseList(()=>{
       let arr = courseList;
-      arr[index].children.push(lessonForm);
+      arr[index].courseLessonROList.push(lessonForm);
       return arr;
     });
     setLesson(true);
@@ -102,7 +102,7 @@ const ChapterItem = (props = {}) => {
     <div>
       <div className="title-first">第{index + 1}章： {item.chapterName}</div>
       {
-        item.children.map((it, i) => (
+        item.courseLessonROList.map((it, i) => (
           <div key={i} className="title-second">
             <span>课时{i + 1}</span>
             <span>{it.lessonName}</span>
