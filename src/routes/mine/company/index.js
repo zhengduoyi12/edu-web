@@ -18,7 +18,7 @@ const CompanyHome = () => {
     setDisplayIndex(e.key);
     console.log('displayIndex',displayIndex);
   }
-  const [displayIndex, setDisplayIndex]=useState('11');
+  const [displayIndex, setDisplayIndex]=useState('3');
 
   return (
     <div className="CompanyHome">
@@ -41,8 +41,8 @@ const CompanyHome = () => {
             <Menu
               onClick={(e)=>{handleClick(e);}}
               style={{ width: 256 }}
-              defaultOpenKeys={['11']}
-              defaultSelectedKeys={['11']}
+              defaultOpenKeys={['sub2']}
+              defaultSelectedKeys={['3']}
               mode="inline"
             >
               <Menu.Item key="1">

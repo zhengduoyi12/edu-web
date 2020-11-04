@@ -33,21 +33,22 @@
                     }
                     .titleRow{
                         border-bottom: 1px solid #DDDDDD;
-                        display: flex;
-                        flex-wrap: wrap;
-                        font-size: 16px;
+                        font-size: 18px;
                         font-weight: bold;
                         color:#000000;
                         margin-bottom: 20px;
+                        margin-top: 60px;
+                        // line-height: 30px;
                         .titleIcon{
+                            float: left;
                             height:20px;
                             width:8px;
                             background-color: #00BBFF;
-                            margin-bottom: 4px;
                             margin-right: 8px;
+                            margin-top: 8px;
                         }
                     }
-                    .container{
+                    .form-container{
                         width:450px;
                         margin:0 auto;
                     }

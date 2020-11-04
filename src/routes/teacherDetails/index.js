@@ -42,7 +42,7 @@ const PublicTeacher = () => {
               borderRadius: "50%",
               margin: "0px auto",
             }}
-            src={require("assets/images/prac_cpy05.jpg")}
+            src={require("assets/images/people-3.jpg")}
           />
           <div
             style={{

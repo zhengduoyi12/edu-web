@@ -7,26 +7,25 @@ import { getAuth } from './authentication';
 const baseURL = '/edu';
 const timeout = 20000;
 const FORM_CONTENT_TYPE = 'application/x-www-form-urlencoded; charset=utf-8';
-const JSON_CONTENT_TYPE = 'application/json; charset=utf-8';
+const JSON_CONTENT_TYPE = 'application/json';
 const JSON_HEADER = {headers: {'Content-Type': JSON_CONTENT_TYPE}};
 
 let instance = axios.create({
   baseURL,
-  timeout,
-  headers: {
-    'Content-Type': FORM_CONTENT_TYPE,
-  }
+  timeout:5000,
+  headers: {}
 });
 
 // 请求拦截处理
 instance.interceptors.request.use((config) => {
   // 请求头增加token
-  config.headers['token'] = getAuth().token;
+  config.headers['Authorization'] = 'Bearer';
+  //config.headers['token'] = getAuth().token;
   // form表单格式提交
-  if (config.headers['Content-Type']===FORM_CONTENT_TYPE) {
-    // 对表单格式的数据进行处理
-    config.data = qs.stringify(config.data);
-  }
+  // if (config.headers['Content-Type']===FORM_CONTENT_TYPE) {
+  //   // 对表单格式的数据进行处理
+  //   config.data = qs.stringify(config.data);
+  // }
   return config;
 }, error => Promise.reject(error));
 
