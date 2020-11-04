@@ -25,7 +25,7 @@ const CreatePrice = (props = {}) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Form.Item label="课程价格" name="priceFlag" rules={[{ required: true, message: '请选择课程价格!', }]}>
+        <Form.Item label="课程价格" name="chargeFlag" rules={[{ required: true, message: '请选择课程价格!', }]}>
           <Radio.Group>
             <Radio value={0}>免费</Radio>
             <Radio value={1}>收费</Radio>

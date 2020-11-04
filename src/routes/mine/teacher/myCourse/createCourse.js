@@ -27,10 +27,10 @@ const TeacherHome = (props={}) => {
   const createTeachKey = () => {
     setActiveKey('6');
   };
-  const createSectionKey = () => {
-    setActiveKey('8');
-  };
   const createPriceKey = () => {
+    setActiveKey('7');
+  };
+  const createAuthKey = () => {
     setActiveKey('9');
   };
   console.log('setCourseForm',courseForm);
@@ -65,16 +65,16 @@ const TeacherHome = (props={}) => {
           <TabPane tab="讲师信息" key="4">
             <CreateTeach createTeachKey={createTeachKey} courseId={courseId} courseForm={courseForm} setCourseForm={setCourseForm}/>
           </TabPane>
-          <TabPane tab="课程内容" key="5" disabled></TabPane>
-          <TabPane tab="章节内容" key="6">
-            <CreateSection createSectionKey={createSectionKey} courseId={courseId} courseForm={courseForm} setCourseForm={setCourseForm} />
-          </TabPane>
-          <TabPane tab="课程设置" key="7" disabled></TabPane>
-          <TabPane tab="课程价格" key="8">
+          <TabPane tab="课程设置" key="5" disabled></TabPane>
+          <TabPane tab="课程价格" key="6">
             <CreatePrice createPriceKey={createPriceKey} courseId={courseId} courseForm={courseForm} setCourseForm={setCourseForm}/>
           </TabPane>
-          <TabPane tab="课程权限" key="9">
-            <CreateAuth courseForm={courseForm} setCourseForm={setCourseForm} />
+          <TabPane tab="课程权限" key="7">
+            <CreateAuth createAuthKey={createAuthKey} courseForm={courseForm} setCourseForm={setCourseForm} />
+          </TabPane>
+          <TabPane tab="课程内容" key="8" disabled></TabPane>
+          <TabPane tab="章节内容" key="9">
+            <CreateSection courseId={courseId} />
           </TabPane>
         </Tabs>
       </div>

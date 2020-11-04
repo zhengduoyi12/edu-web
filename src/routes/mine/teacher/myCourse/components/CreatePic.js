@@ -14,7 +14,6 @@ const CreatePic = (props = {}) => {
   const [backUrl, setBackUrl] = useState('');
   useEffect(() => {
     setCutUrl(uploadUrl.slice(uploadUrl.indexOf('image'), uploadUrl.indexOf('?')));
-    console.log('upProps', upProps);
   });
   const nextStep = () => {
     setCourseForm({

@@ -6,7 +6,7 @@ import './style.scss';
 const CourseCard = (props = {}) => {
   const { item } = props;
   return (
-    <div className="course-card">
+    <div className="course-item">
       <Link to={{ pathname: `/createCourse/${item.id}` }}>
         <Card>
           <div className="box">

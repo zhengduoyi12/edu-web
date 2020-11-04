@@ -2,238 +2,24 @@
 import React, { useState, useEffect } from "react";
 import { Input, Form, Cascader, Select, Radio, Button, DatePicker } from 'antd';
 import moment from 'moment';
-import { addChapter, addLesson } from 'apis/course';
+import { getCourseTag } from 'apis/course';
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 const ChapterItem = (props = {}) => {
   const { item, index,courseList,setCourseList } = props;
   const [tagList, setTagList] = useState([]);
+
+  const [typeOption, setTypeOption] = useState([]);
+  const [selectList, setSelectList] = useState([]);
+
   const [lesson, setLesson] = useState(true);
-  const [typeOption, setTypeOption] = useState([
-    {
-      "id": 1,
-      "tagName": "计算机",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 2,
-      "tagName": "编程语言",
-      "parentId": 1,
-      "grandpaId": 0,
-      "tagPath": "2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 3,
-      "tagName": "java",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "3/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 4,
-      "tagName": "python",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "4/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 5,
-      "tagName": "go",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "5/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 6,
-      "tagName": "工程",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 7,
-      "tagName": "机械维修",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 8,
-      "tagName": "小汽车发动机维修",
-      "parentId": 7,
-      "grandpaId": 6,
-      "tagPath": "8/7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 9,
-      "tagName": "室内设计",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "9/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    }
-  ]);
-  const selectList = [
-    {
-      "id": 1,
-      "tagName": "计算机",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 2,
-      "tagName": "编程语言",
-      "parentId": 1,
-      "grandpaId": 0,
-      "tagPath": "2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 3,
-      "tagName": "java",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "3/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 4,
-      "tagName": "python",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "4/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 5,
-      "tagName": "go",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "5/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 6,
-      "tagName": "工程",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 7,
-      "tagName": "机械维修",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 8,
-      "tagName": "小汽车发动机维修",
-      "parentId": 7,
-      "grandpaId": 6,
-      "tagPath": "8/7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 9,
-      "tagName": "室内设计",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "9/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    }
-  ];
+  
   useEffect(() => {
     const tfType = (tag) => {
       let arr = [];
       tag.forEach(el => {
-        if (el.parentId == 0 && el.grandpaId == 0) {
+        if (el.parentId == 0 && el.grandpaId == 0) 
+        {
           arr.push({
             id: el.id,
             value: el.tagName,
@@ -264,7 +50,13 @@ const ChapterItem = (props = {}) => {
       });
       return arr;
     };
-    setTypeOption(tfType(typeOption));
+    getCourseTag().then(res => {
+      const { code, data } = res;
+      if (code == '00000') {
+        setTypeOption(tfType(data));
+        setSelectList(data);
+      }
+    });
   }, []);
   const tfTag = (id) => {
     let arr = [];
@@ -288,7 +80,7 @@ const ChapterItem = (props = {}) => {
     let liveEndTime = moment(liveTime[0]).format('YYYY-MM-DD hh:mm:ss');
     let liveStateTime = moment(liveTime[1]).format('YYYY-MM-DD hh:mm:ss');
     let lessonForm = {
-      chapterType: value.chapterType,
+      lessonType: value.lessonType,
       lessonName: value.lessonName,
       tagIndex: value.tagIndex,
       liveEndTime,
@@ -306,10 +98,6 @@ const ChapterItem = (props = {}) => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
-  const onChange = (value, dateString) => {
-    console.log('Selected Time: ', value);
-    console.log('Formatted Selected Time: ', dateString);
-  };
   return (
     <div>
       <div className="title-first">第{index + 1}章： {item.chapterName}</div>
@@ -318,8 +106,6 @@ const ChapterItem = (props = {}) => {
           <div key={i} className="title-second">
             <span>课时{i + 1}</span>
             <span>{it.lessonName}</span>
-            {/* <span>({it.time}分钟)</span>
-            <span>({it.type})</span> */}
           </div>
         ))
       }
@@ -332,7 +118,7 @@ const ChapterItem = (props = {}) => {
             layout="horizontal"
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}>
-            <Form.Item label="课时类型" name="chapterType" initialValue={2} rules={[{ required: true, message: '请选择课时类型!', }]}>
+            <Form.Item label="课时类型" name="lessonType" initialValue={2} rules={[{ required: true, message: '请选择课时类型!', }]}>
               <Radio.Group>
                 <Radio value={0} disabled>视频</Radio>
                 <Radio value={1} disabled>文档</Radio>
@@ -360,9 +146,6 @@ const ChapterItem = (props = {}) => {
           </Form>
         </div>)
       }
-      {/* <div className="title-second" style={{ textAlign: 'center' }}>
-                <span>+ 添加新课时</span>
-              </div> */}
     </div>
   );
 };

@@ -6,13 +6,16 @@ import { addCourseAuth } from 'apis/course';
 const { RangePicker } = DatePicker;
 
 const CreateAuth = (props = {}) => {
-  const { courseId,courseForm,setCourseForm} = props;
+  const { courseId,createAuthKey,courseForm,setCourseForm} = props;
 
   const onFinish = (value) => {
     setCourseForm({
       ...courseForm,
       ...value
     });
+    // 提交表单
+    
+    createAuthKey();
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -27,7 +30,7 @@ const CreateAuth = (props = {}) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Form.Item label="课程权限" name="authedFlag" rules={[{ required: true, message: '请选择课程权限!', }]}>
+        <Form.Item label="课程权限" name="authFlag" rules={[{ required: true, message: '请选择课程权限!', }]}>
           <Radio.Group>
             <Radio value={0}>公开</Radio>
             <Radio value={1}>仅个人可见</Radio>

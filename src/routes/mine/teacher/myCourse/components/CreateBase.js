@@ -4,7 +4,7 @@ import { Form, Input, Button, Select, Cascader } from 'antd';
 
 import axios from 'axios';
 
-import { getCourseTag, getBasicInfo, addBasicInfo } from 'apis/course';
+import { getCourseTag } from 'apis/course';
 
 const { Option } = Select;
 
@@ -20,16 +20,7 @@ const CreateBase = (props = {}) => {
   const [typeOption, setTypeOption] = useState([]);
   const [selectList, setSelectList] = useState([]);
   useEffect(() => {
-    if (courseId) {
-      getBasicInfo({ courseId: courseId }).then(res => {
-        const { code, data } = res;
-        if (code == '00000') {
-          form.setFieldsValue(data);
-        }
-      });
-      setBtnStatus(true);
-    }
-
+    // form.setFieldsValue(data);
     const tfType = (tag) => {
       let arr = [];
       tag.forEach(el => {

@@ -109,11 +109,9 @@ const CreateSection = (props = {}) => {
         arr.push(it);
       });
     });
-    setCourseForm({
-      ...courseForm,
-      courseLessonROList:arr
-    });
-    createSectionKey();
+    console.log('课时表单=>',arr);
+    // 提交表单
+    
   };
   return (
     <div className="create-section">
@@ -133,7 +131,7 @@ const CreateSection = (props = {}) => {
       </div>
       <Row>
         <Col offset={10}>
-          <Button type="primary" htmlType="submit" onClick={nextStep}>下一步</Button>
+          <Button type="primary" htmlType="submit" onClick={nextStep}>保存</Button>
           <Button>取消</Button>
         </Col>
       </Row>
