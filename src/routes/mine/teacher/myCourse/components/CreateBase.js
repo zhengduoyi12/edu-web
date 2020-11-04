@@ -77,9 +77,9 @@ const CreateBase = (props = {}) => {
     // });
   }, []);
   const onFinish = (value) => {
-        // setCourseId(data);
-        setCourseForm(value);
-        createBaseKey();
+    // setCourseId(data);
+    setCourseForm(value);
+    createBaseKey();
     // axios({
     //   url: '/edu/course/courseInfo',
     //   method: 'post',
