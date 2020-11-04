@@ -4,7 +4,8 @@ import qs from 'qs';
 // import index from '@/index';
 import { getAuth } from './authentication';
 
-const baseURL = '/edu';
+//const baseURL = '/edu';
+const baseURL = 'http://10.1.132.200:8000';
 const timeout = 20000;
 const FORM_CONTENT_TYPE = 'application/x-www-form-urlencoded; charset=utf-8';
 const JSON_CONTENT_TYPE = 'application/json';
