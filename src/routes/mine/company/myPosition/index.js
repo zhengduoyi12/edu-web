@@ -169,12 +169,14 @@ const MyPosition = () => {
               <Input />
             </Form.Item>
             <Form.Item >
-              <Button type="primary" htmlType="submit">
-                发布
-              </Button>
-              <Button style={{marginLeft:'20px'}}>
+              <div style={{textAlign:'center'}}>
+                <Button type="primary" htmlType="submit">
+                  保存
+                </Button>
+              </div>
+              {/* <Button style={{marginLeft:'20px'}}>
                 保存待发布
-              </Button>
+              </Button> */}
             </Form.Item>
 
           </Form>
