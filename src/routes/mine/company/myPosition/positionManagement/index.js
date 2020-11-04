@@ -8,35 +8,49 @@ const MyStream = () => {
     {
       title: '岗位名称',
       dataIndex: 'title',
+      width:200,
+      align:'center',
+      fixed: 'left',
     },
     {
       title: '岗位状态',
       dataIndex: 'status',
+      width:100,
+      align:'center',
+      fixed: 'left',
     },
     {
       title: '部门名称',
       dataIndex: 'department',
       ellipsis: true,
+      align:'center',
     },
     {
       title: '工作地点',
       dataIndex: 'location',
       ellipsis: true,
+      align:'center',
     },
     {
       title: '招聘人数',
       dataIndex: 'headcount',
+      align:'center',
     },
     {
       title: '更新时间',
       dataIndex: 'updateTime',
+      align:'center',
     },
     {
-      title: '待处理简历',
-      dataIndex: 'id',
+      title: '待审批简历',
+      // dataIndex: 'id',
+      align:'center',
     },
     {
       title: '操作列',
+      width:200,
+      align:'center',
+      fixed: 'right',
       render: (text,record) => (
         <Space size="middle">
           <Link style={{color:'blue'}} to={{pathname:`/positionDetails/${record.id}`}} target="_blank">查看</Link>
@@ -113,9 +127,12 @@ const MyStream = () => {
           </div>
         ))}
       </div>
+      <br/>
       <Table
+        bordered
         columns={columns}
         dataSource={pageRes}
+        scroll={{ x: 1300 }}
       />
     </div>
   );
