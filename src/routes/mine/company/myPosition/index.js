@@ -81,7 +81,7 @@ const MyPosition = () => {
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Select //defaultValue="noRequire"
-               style={{ width: 200 }} onChange={handleChange}
+                style={{ width: 200 }} onChange={handleChange}
               >
                 <Option value="noRequire">无要求</Option>
                 <Option value="13">1-3年</Option>
@@ -96,7 +96,7 @@ const MyPosition = () => {
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Select //defaultValue="noRequire"
-               style={{ width: 200 }} onChange={handleChange}
+                style={{ width: 200 }} onChange={handleChange}
               >
                 <Option value="0">无要求</Option>
                 <Option value="1">大专</Option>
@@ -109,10 +109,10 @@ const MyPosition = () => {
             <Form.Item
               label="薪资范围"
               name="payRange"
-            rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Select //defaultValue="05" 
-              style={{ width: 200 }} onChange={handleChange}
+                style={{ width: 200 }} onChange={handleChange}
               >
                 <Option value="0">0-5k</Option>
                 <Option value="1">5k-10k</Option>

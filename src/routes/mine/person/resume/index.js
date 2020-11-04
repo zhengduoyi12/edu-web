@@ -165,7 +165,7 @@ const Resume = () => {
             <Input placeholder='请输入公司名称'/>
           </Form.Item>
           <Form.Item label="工作时间" name="password">
-              <RangePicker />
+            <RangePicker />
           </Form.Item>
           <Form.Item label="职位名称" name="password">
             <Input placeholder='请输入职位名称'/>
