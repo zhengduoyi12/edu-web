@@ -6,7 +6,7 @@ import { addChapter, addLesson } from 'apis/course';
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 const ChapterItem = (props = {}) => {
-  const { item, index } = props;
+  const { item, index,courseList,setCourseList } = props;
   const [tagList, setTagList] = useState([]);
   const [lesson, setLesson] = useState(true);
   const [typeOption, setTypeOption] = useState([
@@ -287,15 +287,21 @@ const ChapterItem = (props = {}) => {
     let {liveTime} = value;
     let liveEndTime = moment(liveTime[0]).format('YYYY-MM-DD hh:mm:ss');
     let liveStateTime = moment(liveTime[1]).format('YYYY-MM-DD hh:mm:ss');
-    let params = {
-      chapterId: 1,
+    let lessonForm = {
       chapterType: value.chapterType,
       lessonName: value.lessonName,
-      lessonTag: value.lessonTag,
+      tagIndex: value.tagIndex,
       liveEndTime,
-      liveStateTime
+      liveStateTime,
+      lessonFilePath:'',
+      referenceFilePath: '',
     };
-    console.log('params',params);
+    setCourseList(()=>{
+      let arr = courseList;
+      arr[index].children.push(lessonForm);
+      return arr;
+    });
+    setLesson(true);
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -308,12 +314,12 @@ const ChapterItem = (props = {}) => {
     <div>
       <div className="title-first">第{index + 1}章： {item.chapterName}</div>
       {
-        item.class.map((it, i) => (
+        item.children.map((it, i) => (
           <div key={i} className="title-second">
             <span>课时{i + 1}</span>
             <span>{it.lessonName}</span>
-            <span>({it.time}分钟)</span>
-            <span>({it.type})</span>
+            {/* <span>({it.time}分钟)</span>
+            <span>({it.type})</span> */}
           </div>
         ))
       }
@@ -326,10 +332,10 @@ const ChapterItem = (props = {}) => {
             layout="horizontal"
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}>
-            <Form.Item label="课时类型" name="chapterType" rules={[{ required: true, message: '请选择课时类型!', }]}>
+            <Form.Item label="课时类型" name="chapterType" initialValue={2} rules={[{ required: true, message: '请选择课时类型!', }]}>
               <Radio.Group>
-                <Radio value={0}>视频</Radio>
-                <Radio value={1}>文档</Radio>
+                <Radio value={0} disabled>视频</Radio>
+                <Radio value={1} disabled>文档</Radio>
                 <Radio value={2}>直播</Radio>
               </Radio.Group>
             </Form.Item>
@@ -339,7 +345,7 @@ const ChapterItem = (props = {}) => {
             <Form.Item label="课时分类">
               <Cascader options={typeOption} onChange={changeSelect} allowClear={false} placeholder="请选择课时分类" />
             </Form.Item>
-            <Form.Item label="标签添加" name="lessonTag" rules={[{ required: true, message: '请选择课程标签!', }]}>
+            <Form.Item label="标签添加" name="tagIndex" rules={[{ required: true, message: '请选择课程标签!', }]}>
               <Select>
                 {tagList}
               </Select>

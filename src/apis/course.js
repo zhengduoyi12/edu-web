@@ -8,10 +8,26 @@ export function getCourseTag(params) {
     params,
   });
 }
-// 新增课程基本信息
+// 获取所有课程
+export function getAllCourse(params) {
+  return request({
+    url: '/course/allCourseInfo',
+    method: 'get',
+    params,
+  });
+}
+// 获取 课程基本信息
+export function getBasicInfo(params) {
+  return request({
+    url: '/course/courseInfo',
+    method: 'get',
+    params,
+  });
+}
+// 新增 课程基本信息
 export function addBasicInfo(params) {
   return request({
-    url: '/course/basicInfo',
+    url: '/course/courseInfo',
     method: 'post',
     params,
   });
@@ -62,7 +78,15 @@ export function addCourseAuth(params) {
 // 获取章节列表
 export function getChapterList(params) {
   return request({
-    url: '/course/chapterInfoDetail',
+    url: '/course/allChapter',
+    method: 'get',
+    params,
+  });
+}
+// 获取课时列表
+export function getLessonList(params) {
+  return request({
+    url: '/course/courseLessonInfo',
     method: 'get',
     params,
   });

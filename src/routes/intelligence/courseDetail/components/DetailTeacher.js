@@ -4,7 +4,7 @@ import React from "react";
 const DetailBase = (props = {}) => {
   const { teacher } = props;
   return (
-    <div style={{ textAlign: 'left', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', backgroundColor: "#dcdcdc" }}>
+    <div style={{ textAlign: 'left', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', backgroundColor: "#f0f0f0" }}>
       <img src={teacher.selfImg} style={{ width: '100px', height: "140px", padding: '20px 0' }} alt=""></img>
       <div style={{ height: '100px', width: '170px', padding: '20px 0' }}>
         <div style={{ height: '60px', lineHeight: '60px', fontSize: '22px' }}>老师：{teacher.name}</div>

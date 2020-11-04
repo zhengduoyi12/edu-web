@@ -70,7 +70,7 @@ const Routes = () => (
       <Route path="/register" component={Register} />
       <Route path="/register2" component={Register2} />
       <Route path="/mine" component={Mine} />
-      <Route path="/createCourse" component={CreateCourse} />
+      <Route path="/createCourse/:id?" component={CreateCourse} />
       <Route path="/404" component={NotFound} />
       <Route path="*" component={NotFound} />
     </Switch>
