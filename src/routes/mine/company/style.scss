@@ -8,7 +8,7 @@
                 margin-left: 20px;
                 .title{
                     height:60px;
-                    background-color: #DDDDDD;
+                    background-color: #F5F5F5;
                     padding:20px;
                     font-weight:bold;
                     font-size:18px;
@@ -32,7 +32,7 @@
                         }
                     }
                     .titleRow{
-                        border-bottom: 1px solid #DDDDDD;
+                        border-bottom: 1px solid #F5F5F5;
                         font-size: 18px;
                         font-weight: bold;
                         color:#000000;
@@ -87,17 +87,23 @@
             background-color: #FFFFFF;
         }
         .ant-menu-item {
+            font-size: 18px;
+            height:60px;
+            line-height: 60px;
             text-align: center;
             margin:0;
-            background-color: #DDDDDD;
+            background-color: #F5F5F5;
         }
         .ant-menu-submenu-title{
             margin:0;
+            font-size: 18px;
+            height:60px;
+            line-height: 60px;
         }
         .ant-menu-submenu{
             text-align: center;
             margin:0;
-            background-color: #DDDDDD;
+            background-color: #F5F5F5;
             .ant-menu-submenu-arrow{
                // right:0;
                 margin-left: 4px;
