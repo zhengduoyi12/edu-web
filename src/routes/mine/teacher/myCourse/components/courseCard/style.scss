@@ -1,26 +1,28 @@
-.ant-card {
-    margin: 10px;
-    width: 312px;
-    height: 312px;
-    .ant-card-body {
-        padding: 0;
-    }
-}
-.box {
-    text-align: left;
-    img {
+.course-card {
+    .ant-card {
+        margin: 10px;
         width: 312px;
-        height: 212px;
+        height: 312px;
+        .ant-card-body {
+            padding: 0;
+        }
     }
-    .title {
-        font-size: 16px;
-        line-height: 60px;
-        height: 60px;
-        padding: 0 10px;
-    }
-    .label {
-        font-size: 14px;
-        height: 40px;
-        padding: 10px;
+    .box {
+        text-align: left;
+        img {
+            width: 312px;
+            height: 212px;
+        }
+        .title {
+            font-size: 16px;
+            line-height: 60px;
+            height: 60px;
+            padding: 0 10px;
+        }
+        .label {
+            font-size: 14px;
+            height: 40px;
+            padding: 10px;
+        }
     }
 }
