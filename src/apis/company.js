@@ -11,10 +11,17 @@ export function addPosition(data) {
 }
 
 export function queryPosition(data) {
-    return request({
-      url: '/job/getPage',
-      params:data,
-      method:'get',
-    });
-  }
-  
+  return request({
+    url: '/job/getPage',
+    params:data,
+    method:'get',
+  });
+}
+
+export function deletePosition(data) {
+  return request({
+    url: '/job/delete',
+    params:data,
+    method:'get',
+  });
+}

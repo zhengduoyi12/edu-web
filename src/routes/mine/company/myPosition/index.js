@@ -109,7 +109,7 @@ const MyPosition = () => {
             <Form.Item
               label="薪资范围"
               name="payRange"
-            // rules={[{ required: true, message: 'Please input your username!' }]}
+            rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Select //defaultValue="05" 
               style={{ width: 200 }} onChange={handleChange}
