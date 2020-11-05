@@ -1,0 +1,50 @@
+import React from 'react';
+import CourseCard from 'components/CourseCard';
+import '../style.scss';
+
+const CourseList = () => {
+  const courseList = [
+    {
+      "name": "MyAQL基础入门-数据库概述",
+      "content": "南京大学基础课程",
+      "img": require("assets/u161_a.png"),
+      "member": "380"
+    }, {
+      "name": "MyAQL基础入门-数据库概述",
+      "content": "南京大学基础课程",
+      "img": require("assets/u169_a.png"),
+      "member": "380"
+    
+    }, {
+      "name": "全技能数据人才培养方案：第一课理论基础",
+      "content": "湖南大学基础课程",
+      "img": require("assets/u177_a.png"),
+      "member": "380"
+    }, {
+      "name": "MyAQL基础入门-数据库概述",
+      "content": "南京大学基础课程",
+      "img": require("assets/u161_a.png"),
+      "member": "380"
+    }, {
+      "name": "全技能数据人才培养方案：第一课理论基础",
+      "content": "湖南大学基础课程",
+      "img": require("assets/u177_a.png"),
+      "member": "380"
+    }, {
+      "name": "MyAQL基础入门-数据库概述",
+      "content": "南京大学基础课程",
+      "img": require("assets/u161_a.png"),
+      "member": "380"
+    }
+  ];
+  return (
+    <div className="course-list">
+      <div className="title">全部课程</div>
+      {courseList.map((item,i)=>(
+        <CourseCard key={i} item={item} />
+      ))}
+    </div>
+  );
+};
+
+export default CourseList;

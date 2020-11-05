@@ -1,147 +1,64 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import { Table, Space } from 'antd';
-
+import { Link } from 'react-router-dom';
+import { queryPosition, deletePosition } from 'apis/company';
 const MyStream = () => {
+  const page = 1;
   const columns = [
     {
       title: '岗位名称',
-      dataIndex: 'name',
+      dataIndex: 'title',
+      width:200,
+      align:'center',
+      fixed: 'left',
     },
     {
       title: '岗位状态',
-      dataIndex: 'state',
+      dataIndex: 'status',
+      width:100,
+      align:'center',
+      fixed: 'left',
     },
     {
       title: '部门名称',
       dataIndex: 'department',
+      ellipsis: true,
+      align:'center',
     },
     {
       title: '工作地点',
-      dataIndex: 'place',
+      dataIndex: 'location',
+      ellipsis: true,
+      align:'center',
     },
     {
       title: '招聘人数',
-      dataIndex: 'number',
+      dataIndex: 'headcount',
+      align:'center',
     },
     {
       title: '更新时间',
-      dataIndex: 'time',
+      dataIndex: 'updateTime',
+      align:'center',
     },
     {
-      title: '待处理简历',
-      dataIndex: 'resume',
+      title: '待审批简历',
+      // dataIndex: 'id',
+      align:'center',
     },
     {
       title: '操作列',
-      render: () => (
+      width:200,
+      align:'center',
+      fixed: 'right',
+      render: (text,record) => (
         <Space size="middle">
-          <a onClick={()=>{window.alert('查看');}}>查看</a>
-          <a onClick={()=>{window.alert('发布');}}>下载</a>
+          <Link style={{color:'blue'}} to={{pathname:`/positionDetails/${record.id}`}} target="_blank">查看</Link>
+          <a style={{color:'blue'}} onClick={()=>{window.alert('发布');}}>发布</a>
+          <a style={{color:'blue'}} onClick={()=>{deleteRow(record.id);}}>删除</a>
         </Space>
       )
     }
-  ];
-  const data = [
-    {
-      key: '1',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '2',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '3',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '4',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '5',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '6',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '7',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '8',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '9',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
-    {
-      key: '10',
-      name: '汽修装潢美容师',
-      state: '已发布',
-      department: '汽车装潢部',
-      place:'杭州',
-      number:3,
-      time:'2020-10-27',
-      resume:3,
-    },
   ];
   const stateList=[
     {key:1, value:'全部状态'},
@@ -152,6 +69,28 @@ const MyStream = () => {
     {key:6, value:'已结束'},
     {key:7, value:'不通过'},
   ];
+  function deleteRow(id){
+    let data={
+      id,
+    };
+    deletePosition(data).then(res => {
+      window.alert('删除成功');
+      let data={
+        current:page,
+        enterpriseOrgId:0,
+        size:10
+      };
+      queryPosition(data).then(res => {
+        if(res.data){
+          setPageRes(res.data.records);
+        }
+      }, err => {
+        console.log(err);
+      });
+    }, err => {
+      console.log(err);
+    });
+  }
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
       console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -161,23 +100,39 @@ const MyStream = () => {
       name: record.name,
     }),
   };
+  const [ pageRes, setPageRes ]= useState([]);
+  useEffect(() => {
+    let data={
+      current:page,
+      enterpriseOrgId:0,
+      size:10
+    };
+    queryPosition(data).then(res => {
+      if(res.data){
+        setPageRes(res.data.records);
+      }
+    }, err => {
+      console.log(err);
+    });
+  },[pageRes.length]);
+
   return (
     <div className="positionManagement">
       <div className="title">岗位管理</div>
       <div className="stateArea">
         {stateList.map((item,index)=>(
-          <div key={'positionManagement_'+item.key}>
+          <div key={'positionManagement_'+index}>
             <span>{item.value}</span>
             <span>(0)</span>
           </div>
         ))}
       </div>
+      <br/>
       <Table
-        rowSelection={{
-          ...rowSelection,
-        }}
+        bordered
         columns={columns}
-        dataSource={data}
+        dataSource={pageRes}
+        scroll={{ x: 1300 }}
       />
     </div>
   );

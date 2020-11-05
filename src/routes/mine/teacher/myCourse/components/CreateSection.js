@@ -1,19 +1,22 @@
 // 创建课程-创建章节
 import React, { useEffect, useState } from "react";
-import { Input, Form, Cascader, Select, Radio, Button } from 'antd';
+import { Input, Form, Cascader, Select, Radio, Button, message, Row, Col } from 'antd';
 import ChapterItem from './ChapterItem';
-import { getChapterList, addChapter } from 'apis/course';
 
 // import Form from "antd/lib/form/Form";
 const { Search } = Input;
 const CreateSection = (props = {}) => {
-  const { courseId } = props;
+  const { courseId, courseForm, setCourseForm,createSectionKey,setLessonForm } = props;
   const [chapter, setChapter] = useState(true);
+  const [chapterName, setChapterName] = useState('');
   const [courseList, setCourseList] = useState([]);
+  const [lessonList, setLessonList] = useState([]);
+
+
   const classList = [
     {
       chapterName: '大课时1',
-      class: [
+      courseLessonROList: [
         {
           chapterId: '0101',
           type: '录播',
@@ -28,7 +31,7 @@ const CreateSection = (props = {}) => {
       ]
     }, {
       chapterName: '大课时2',
-      class: [
+      courseLessonROList: [
         {
           chapterId: '0201',
           type: '录播',
@@ -38,18 +41,18 @@ const CreateSection = (props = {}) => {
       ]
     }, {
       chapterName: '大课时3',
-      class: []
+      courseLessonROList: []
     }
   ];
   useEffect(() => {
-    const tfCourseList = (data) => {
+    const tfLessonList = (data) => {
       let arr = [];
       data.forEach(el => {
         if (!el.lessonId) {
           arr.push({
             chapterId: el.chapterId,
             chapterName: el.chapterName,
-            class: []
+            courseLessonROList: []
           });
         }
       });
@@ -57,58 +60,84 @@ const CreateSection = (props = {}) => {
         if (el.lessonId) {
           arr.forEach(it => {
             if (it.chapterId == el.chapterId) {
-              it.class.push(el);
+              it.courseLessonROList.push(el);
             }
           });
         }
       });
       return arr;
     };
-    let params = {
-      chapterId: 4
-    };
-    getChapterList(params).then(res => {
-      const { code, data } = res;
-      if (code == '00000') {
-        setCourseList(tfCourseList(data));
-      }
-    });
   }, []);
-  console.log('courseList', courseList);
-  const onSearchChapter = (value) => {
-    console.log('value', value + chapter);
-    let params = {
-      chapterId: 1,
-      chapterName: value,
-      courseId: 4
-    };
-    addChapter(params).then(res => {
-      const { code, data } = res;
-      if (code == '00000') {
-        console.log('data', data);
-      }
+  const createChapter = (value) => {
+    if (value) {
+      setChapterName(value);
+      setCourseList(() => {
+        let arr = courseList;
+        arr.push({ chapterName: value, courseLessonROList: [] });
+        return arr;
+      });
+      setChapter(true);
+    } else {
+      message.warning('请输入章节名称！');
+    }
+  };
+  const clickAdd = () => {
+    if (courseList.length > 0 && courseList[courseList.length - 1].courseLessonROList.length == 0) {
+      message.warning('请添加上一章节的课时！');
+    } else {
+      setChapter(false);
+    }
+  };
+  const nextStep = () => {
+    let courseArr = courseList;
+    courseArr = courseArr.map((item, index) => {
+      return {
+        courseId,
+        chapterName,
+        chapterNum:index,
+        courseLessonROList: item.courseLessonROList.map((it, i) => {
+          return {
+            ...it,
+            lessonNum: i + 1,
+            // chapterNum: index + 1,
+            // chapterName: item.chapterName
+          };
+        })
+      };
     });
-    setChapter(true);
+    // let arr = [];
+    // courseArr.forEach(item=>{
+    //   item.courseLessonROList.forEach(it=> {
+    //     arr.push(it);
+    //   });
+    // });
+    console.log('课时表单=>',courseArr);
+    // 提交表单
+    setLessonForm(courseArr);
+    createSectionKey();
   };
   return (
     <div className="create-section">
       <div className="title">课程内容</div>
       <div style={{ width: '80%', margin: '0 auto' }}>
         {
-          classList.map((item, index) => (
+          courseList.map((item, index) => (
             <div key={index}>
-              <ChapterItem item={item} index={index} />
+              <ChapterItem item={item} index={index} courseList={courseList} setCourseList={setCourseList} />
             </div>
-
           ))
         }
         {
-          chapter == true ? (<div className="title-first" style={{ textAlign: 'center' }} onClick={() => setChapter(false)}>+ 添加新章节</div>) :
-            (<div className="title-first-edit"><div className="edit-title">第{classList.length + 1}章：</div><Search placeholder="请输入章节名称" enterButton="新建" onSearch={onSearchChapter} /></div>)
+          chapter == true ? (<div className="title-first" style={{ textAlign: 'center' }} onClick={clickAdd}>+ 添加新章节</div>) :
+            (<div className="title-first-edit"><div className="edit-title">第{courseList.length + 1}章：</div><Search placeholder="请输入章节名称" enterButton="新建" onSearch={createChapter} /></div>)
         }
-
       </div>
-
+      <Row>
+        <Col offset={10}>
+          <Button type="primary" htmlType="submit" onClick={nextStep}>保存</Button>
+          <Button>取消</Button>
+        </Col>
+      </Row>
     </div>
   );
 };

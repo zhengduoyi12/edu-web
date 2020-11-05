@@ -1,24 +1,21 @@
 // 创建课程-权限设置
 import React from "react";
 import { Form, Button, Radio,DatePicker,Input } from 'antd';
-import { addCourseAuth } from 'apis/course';
+import { addCourseInfo } from 'apis/course';
 
 const { RangePicker } = DatePicker;
 
 const CreateAuth = (props = {}) => {
-  const { courseId } = props;
+  const { courseId,createAuthKey,courseForm,setCourseForm} = props;
 
   const onFinish = (value) => {
-    const params = value;
-    params.id = courseId;
-    addCourseAuth(params).then(res => {
-      const { code } = res;
-      if (code == '00000') {
-        console.log('success');
-      }
-    }, err => {
-      console.log(err);
+    setCourseForm({
+      ...courseForm,
+      ...value
     });
+    // 提交表单
+    
+    createAuthKey();
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -33,7 +30,7 @@ const CreateAuth = (props = {}) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <Form.Item label="课程权限" name="authedFlag" rules={[{ required: true, message: '请选择课程权限!', }]}>
+        <Form.Item label="课程权限" name="authFlag" rules={[{ required: true, message: '请选择课程权限!', }]}>
           <Radio.Group>
             <Radio value={0}>公开</Radio>
             <Radio value={1}>仅个人可见</Radio>
@@ -43,7 +40,7 @@ const CreateAuth = (props = {}) => {
         <Form.Item label="开放时间">
           <RangePicker placeholder={['开始时间','结束时间']} />
         </Form.Item>
-        <Form.Item wrapperCol={{ span: 8, offset: 8 }}>
+        <Form.Item wrapperCol={{ span: 8, offset: 9 }}>
           <Button type="primary" htmlType="submit">保存</Button>
           <Button>取消</Button>
         </Form.Item>

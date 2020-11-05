@@ -4,21 +4,23 @@ import {Form,Input,Button} from 'antd';
 import {addPersonIntro} from 'apis/course';
 
 const CreateTeach = (props={}) => {
-  const {createTeachKey,courseId} = props;
-  // const nextStep = () => {
-  //   createTeachKey();
-  // };
+  const {createTeachKey,courseId,courseForm,setCourseForm} = props;
   const onFinish = (value) => {
-    const params = value;
-    params.id = courseId;
-    addPersonIntro(params).then(res => {
-      const { code } = res;
-      if (code == '00000') {
-        createTeachKey();
-      }
-    }, err => {
-      console.log(err);
+    setCourseForm({
+      ...courseForm,
+      ...value
     });
+    createTeachKey();
+    // const params = value;
+    // params.id = courseId;
+    // addPersonIntro(params).then(res => {
+    //   const { code } = res;
+    //   if (code == '00000') {
+    //     createTeachKey();
+    //   }
+    // }, err => {
+    //   console.log(err);
+    // });
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -40,7 +42,6 @@ const CreateTeach = (props={}) => {
           <Input.TextArea />
         </Form.Item>
         <Form.Item wrapperCol={{ span: 8,offset:8}}>
-          <Button type="primary" htmlType="submit">保存</Button>
           <Button type="primary" htmlType="submit">下一步</Button>
           <Button>取消</Button>
         </Form.Item>

@@ -7,23 +7,38 @@ $bcolor: rgba(204,204,204,0.3);
         padding: 8px 50px;
     }
 }
+.teacher {
+    .btn-area {
+        margin-left:60%;
+        .ant-btn {
+            margin-left: 20px;
+        }
+    }
+    
+}
 .my-course {
     .ant-tabs-nav {
         width: 100%;
     }
-    .create {
-        width: 200px;
-        height: 160px;
-        border: 1px solid #ccc;
-        cursor: pointer;
-        .anticon-plus {
-            font-size: 70px;
-            line-height: 110px;
-            color: #ccc;
-        }
-        .title {
-            font-size: 20px;
-            color: #1890ff;
+    .course-area {
+        display: flex;
+        flex-wrap: wrap;
+        .create {
+            margin: 10px;
+            width: 312px;
+            height: 312px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            .anticon-plus {
+                font-size: 140px;
+                line-height: 200px;
+                color: #ccc;
+            }
+            .title {
+                line-height: 60px;
+                font-size: 20px;
+                color: #1890ff;
+            }
         }
     }
 }
@@ -41,7 +56,7 @@ $bcolor: rgba(204,204,204,0.3);
     }.#{$tab}:#{$nth}(5) {
         background-color: $bcolor;
         cursor: pointer;
-    }.#{$tab}:#{$nth}(7) {
+    }.#{$tab}:#{$nth}(8) {
         background-color: $bcolor;
         cursor: pointer;
     }
@@ -148,6 +163,9 @@ $bcolor: rgba(204,204,204,0.3);
         .ant-btn {
             margin-right: 20px;
         }
+    }
+    .ant-btn {
+        margin-right: 20px;
     }
 }
 .create-price {

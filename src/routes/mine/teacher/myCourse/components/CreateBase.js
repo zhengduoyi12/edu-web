@@ -2,237 +2,26 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Select, Cascader } from 'antd';
 
-import { getCourseTag, addBasicInfo } from 'apis/course';
+import axios from 'axios';
+
+import { getCourseTag } from 'apis/course';
 
 const { Option } = Select;
 
 const CreateBase = (props = {}) => {
+  const [form] = Form.useForm();
+  console.log('useForm=>',form);
+  const { createBaseKey, setCourseForm, setCourseId, courseId, baseGet } = props;
   const [tagList, setTagList] = useState([]);
-  const { createBaseKey,setCourseId } = props;
+  const [btnStatus, setBtnStatus] = useState(false);
   const courseDegree = ['零基础入门', '入门到中级', '中级到高级', '高级精通'].map((item, index) => (<Option key={index}>{item}</Option>));
   // const [courseId, setCourseId] = useState(0);
 
-  const [typeOption, setTypeOption] = useState([
-    {
-      "id": 1,
-      "tagName": "计算机",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 2,
-      "tagName": "编程语言",
-      "parentId": 1,
-      "grandpaId": 0,
-      "tagPath": "2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 3,
-      "tagName": "java",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "3/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 4,
-      "tagName": "python",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "4/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 5,
-      "tagName": "go",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "5/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 6,
-      "tagName": "工程",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 7,
-      "tagName": "机械维修",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 8,
-      "tagName": "小汽车发动机维修",
-      "parentId": 7,
-      "grandpaId": 6,
-      "tagPath": "8/7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 9,
-      "tagName": "室内设计",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "9/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    }
-  ]);
-  const selectList = [
-    {
-      "id": 1,
-      "tagName": "计算机",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 2,
-      "tagName": "编程语言",
-      "parentId": 1,
-      "grandpaId": 0,
-      "tagPath": "2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 3,
-      "tagName": "java",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "3/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 4,
-      "tagName": "python",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "4/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 5,
-      "tagName": "go",
-      "parentId": 2,
-      "grandpaId": 1,
-      "tagPath": "5/2/1",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 6,
-      "tagName": "工程",
-      "parentId": 0,
-      "grandpaId": 0,
-      "tagPath": "6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 7,
-      "tagName": "机械维修",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 8,
-      "tagName": "小汽车发动机维修",
-      "parentId": 7,
-      "grandpaId": 6,
-      "tagPath": "8/7/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    },
-    {
-      "id": 9,
-      "tagName": "室内设计",
-      "parentId": 6,
-      "grandpaId": 0,
-      "tagPath": "9/6",
-      "isDeleted": null,
-      "createTime": null,
-      "createUserId": null,
-      "updateTime": null,
-      "updateUserId": null
-    }
-  ];
+  const [typeOption, setTypeOption] = useState([]);
+  const [selectList, setSelectList] = useState([]);
   useEffect(() => {
+    form.setFieldsValue(baseGet);
+    console.log('form=>',form);
     const tfType = (tag) => {
       let arr = [];
       tag.forEach(el => {
@@ -267,22 +56,29 @@ const CreateBase = (props = {}) => {
       });
       return arr;
     };
-    setTypeOption(tfType(typeOption));
-
-    // getCourseTag().then((res) => {
-    //   console.log('getCourseTag res=>', res);
-    // });
-  }, []);
-  const onFinish = (value) => {
-    addBasicInfo(value).then(res => {
+    getCourseTag().then(res => {
       const { code, data } = res;
       if (code == '00000') {
-        setCourseId(data);
-        createBaseKey();
+        setTypeOption(tfType(data));
+        setSelectList(data);
       }
-    }, err => {
-      console.log(err);
     });
+  }, []);
+  const onFinish = (value) => {
+    // setCourseId(data);
+    setCourseForm(value);
+    createBaseKey();
+    // axios({
+    //   url: '/edu/course/courseInfo',
+    //   method: 'post',
+    //   data: value
+    // }).then(res => {
+    //   const { code, data } = res.data;
+    //   if (code == '00000') {
+    //     setCourseId(data);
+    //     createBaseKey();
+    //   }
+    // });
   };
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -301,6 +97,8 @@ const CreateBase = (props = {}) => {
     return arr;
   };
   const changeSelect = (value, selectedOptions) => {
+    console.log('选择value',value);
+    console.log('选择selectedOptions',selectedOptions);
     const { id } = selectedOptions[1];
     setTagList(tfTag(id));
   };
@@ -312,6 +110,7 @@ const CreateBase = (props = {}) => {
         labelCol={{ span: 4, offset: 4 }}
         wrapperCol={{ span: 8 }}
         layout="horizontal"
+        form={form}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
@@ -329,13 +128,13 @@ const CreateBase = (props = {}) => {
         <Form.Item label="课程分类">
           <Cascader options={typeOption} onChange={changeSelect} placeholder="请选择课程分类" />
         </Form.Item>
-        <Form.Item label="课程概述" name="courseIntroduction" rules={[{ required: true, message: '请输入常见问题!', }]}>
+        <Form.Item label="课程概述" name="summary" rules={[{ required: true, message: '请输入课程概述!', }]}>
           <Input.TextArea placeholder="请输入课程概述" />
         </Form.Item>
-        <Form.Item label="课程目标" name="courseTarget" rules={[{ required: true, message: '请输入常见问题!', }]}>
+        <Form.Item label="课程目标" name="target" rules={[{ required: true, message: '请输入课程目标!', }]}>
           <Input.TextArea placeholder="请输入课程目标" />
         </Form.Item>
-        <Form.Item label="常见问题" name="courseQuestion" rules={[{ required: true, message: '请输入常见问题!', }]}>
+        <Form.Item label="常见问题" name="commonProblem" rules={[{ required: true, message: '请输入常见问题!', }]}>
           <Input.TextArea placeholder="请输入常见问题" />
         </Form.Item>
         <Form.Item label="标签添加" name="tagIndex" rules={[{ required: true, message: '请选择课程标签!', }]}>
@@ -345,7 +144,7 @@ const CreateBase = (props = {}) => {
         </Form.Item>
         <Form.Item wrapperCol={{ span: 8, offset: 8 }}>
           {/* <Button type="primary" htmlType="submit">保存</Button> */}
-          <Button type="primary" htmlType="submit">下一步</Button>
+          <Button type="primary" htmlType="submit" disabled={btnStatus}>下一步</Button>
           <Button>取消</Button>
         </Form.Item>
       </Form>

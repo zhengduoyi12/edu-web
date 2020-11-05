@@ -1,5 +1,6 @@
 import React, { useState }from "react";
 import { Form , Cascader , Select, Input, Button, Checkbox, InputNumber } from 'antd';
+import { addPosition } from 'apis/company';
 const MyPosition = () => {
   const [contentDisplay, setContentDisplay] = useState(false);
 
@@ -10,10 +11,28 @@ const MyPosition = () => {
     console.log(`selected ${value}`);
   }
   function handleDisplay(contentDisplay){
-   // console.log('contentDisplay',contentDisplay);
+    // console.log('contentDisplay',contentDisplay);
     setContentDisplay(!contentDisplay);
   }
   const plainOptions = ['五险一金', '住房补贴', '交通补贴','节日福利', '专业培训', '绩效奖金'];
+  const onFinish = (value) => {
+    let data= {};
+    data={...value,benefits: value.benefits.join(',')};
+    data.enterpriseOrgId=0;
+    //console.log(data);
+    addPosition(data).then(res => {
+      const { code, data } = res;
+      if (code == '00000') {
+        alert('success');
+        setContentDisplay(!contentDisplay);
+      }
+    }, err => {
+      console.log(err);
+    });
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
   return (
     <div className='MyPosition'>
       <div className="title">发布岗位</div>
@@ -29,16 +48,19 @@ const MyPosition = () => {
         <div className="form-container">
           <Form
             name="basic"
-            initialValues={{ remember: true }}
-            //onFinish={onFinish}
-            // onFinishFailed={onFinishFailed}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            initialValues={{
+              ['headcount']: 3
+            }}
           >
             <Form.Item
               label="招聘类型"
-              name="recruitType"
+              name="type"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
-              <Select defaultValue="graduate" style={{ width: 200 }} onChange={handleChange}
+              <Select //defaultValue="graduate" 
+                style={{ width: 200 }} onChange={handleChange}
               >
                 <Option value="general">社会招聘</Option>
                 <Option value="graduate">应届毕业生招聘</Option>
@@ -48,8 +70,8 @@ const MyPosition = () => {
             </Form.Item>
             <Form.Item
               label="岗位名称"
-              name="positionName"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              name="title"
+              rules={[{ required: true, message: 'Please input your positionName!' }]}
             >
               <Input />
             </Form.Item>
@@ -58,7 +80,8 @@ const MyPosition = () => {
               name="experience"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
-              <Select defaultValue="noRequire" style={{ width: 200 }} onChange={handleChange}
+              <Select //defaultValue="noRequire"
+                style={{ width: 200 }} onChange={handleChange}
               >
                 <Option value="noRequire">无要求</Option>
                 <Option value="13">1-3年</Option>
@@ -67,44 +90,60 @@ const MyPosition = () => {
                 <Option value="10more">10年以上</Option>
               </Select>
             </Form.Item>
+            <Form.Item
+              label="学历要求"
+              name="education"
+              rules={[{ required: true, message: 'Please input your username!' }]}
+            >
+              <Select //defaultValue="noRequire"
+                style={{ width: 200 }} onChange={handleChange}
+              >
+                <Option value="0">无要求</Option>
+                <Option value="1">大专</Option>
+                <Option value="2">本科</Option>
+                <Option value="3">硕士</Option>
+                <Option value="4">博士</Option>
+              </Select>
+            </Form.Item>
 
             <Form.Item
               label="薪资范围"
-              name="salary"
+              name="payRange"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
-              <Select defaultValue="05" style={{ width: 200 }} onChange={handleChange}
+              <Select //defaultValue="05" 
+                style={{ width: 200 }} onChange={handleChange}
               >
-                <Option value="05">0-5k</Option>
-                <Option value="510">5k-10k</Option>
-                <Option value="1020">10-15k</Option>
-                <Option value="1520">15k-20k</Option>
-                <Option value="2025">20k-25k</Option>
-                <Option value="2530">25k-30k</Option>
-                <Option value="3035">30k-35k</Option>
-                <Option value="3540">35k-40k</Option>
-                <Option value="40more">40k以上</Option>
+                <Option value="0">0-5k</Option>
+                <Option value="1">5k-10k</Option>
+                <Option value="2">10-15k</Option>
+                <Option value="3">15k-20k</Option>
+                <Option value="4">20k-25k</Option>
+                <Option value="5">25k-30k</Option>
+                <Option value="6">30k-35k</Option>
+                <Option value="7">35k-40k</Option>
+                <Option value="8">40k以上</Option>
               </Select>
             </Form.Item>
             <Form.Item
               label="招聘人数"
-              name="numb"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              name="headcount"
+              rules={[{ required: true, message: 'Please input your headcount!' }]}
             >
-              <InputNumber min={1} defaultValue={3} onChange={handleChange}></InputNumber >
+              <InputNumber min={1} onChange={handleChange}></InputNumber >
             </Form.Item>
 
             <Form.Item
               label="职位描述"
               name="description"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, message: 'Please input your description!' }]}
             >
               <TextArea rows={6} maxLength={500} showCount></TextArea>
             </Form.Item>
 
             <Form.Item
               label="福利待遇"
-              name="bonus"
+              name="benefits"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <CheckboxGroup
@@ -116,7 +155,7 @@ const MyPosition = () => {
 
             <Form.Item
               label="工作地点"
-              name="place"
+              name="location"
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Input />
@@ -130,12 +169,14 @@ const MyPosition = () => {
               <Input />
             </Form.Item>
             <Form.Item >
-              <Button type="primary" htmlType="submit">
-                发布
-              </Button>
-              <Button style={{marginLeft:'20px'}}>
+              <div style={{textAlign:'center'}}>
+                <Button type="primary" htmlType="submit">
+                  保存
+                </Button>
+              </div>
+              {/* <Button style={{marginLeft:'20px'}}>
                 保存待发布
-              </Button>
+              </Button> */}
             </Form.Item>
 
           </Form>
