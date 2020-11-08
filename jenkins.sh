@@ -9,4 +9,4 @@ fi
 log_dir="/var/log/edu_web"
 workspace="/var/lib/jenkins/workspace"
 job_name="edu_web"
-docker run  --name ${image_name}-${1} -id -v ${workspace}/${job_name}:/workspace/${job_name} -v ${log_dir}:${log_dir}  -p ${1}:3001 ${image_name} sh /workspace/${job_name}/restart.sh ${1}
+docker run  --name ${image_name}-${1} -i -v ${workspace}/${job_name}:/workspace/${job_name} -v ${log_dir}:${log_dir}  -p ${1}:3001 ${image_name} sh /workspace/${job_name}/restart.sh ${1}
