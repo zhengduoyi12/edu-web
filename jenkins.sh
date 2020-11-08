@@ -1,5 +1,5 @@
 image_name="deploy_web"
-container=`docker ps -a | grep ${image_name}-${1} | awk '{print $1}'`
+container=`docker ps -a | grep 0.0.0.0:${1}  | awk '{print $1}'`
 if [ -n "$container" ]
 then
    echo -e "删除容器: $container"
